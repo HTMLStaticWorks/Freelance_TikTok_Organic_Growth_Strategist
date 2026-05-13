@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campaign Details | ViralPro Studio</title>
+  <meta name="description" content="Detailed TikTok campaign breakdown — objectives, strategy, content plan, results analytics, and key learnings." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .camp-hero{background:var(--gradient-hero);min-height:45vh;display:flex;align-items:center;padding-top:var(--nav-height);position:relative;overflow:hidden;}
+    .result-metric{background:var(--gradient-primary);border-radius:var(--border-radius-lg);padding:1.5rem;text-align:center;color:#fff;}
+    .result-val{font-family:var(--font-primary);font-size:2.5rem;font-weight:900;line-height:1;}
+    .result-label{font-size:0.8rem;opacity:0.8;margin-top:4px;}
+    .content-plan-card{background:var(--clr-card);border:1px solid var(--clr-card-border);border-radius:var(--border-radius-lg);padding:1.25rem;display:flex;gap:1rem;align-items:flex-start;}
+    .cp-week{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--clr-primary);background:rgba(255,45,85,0.1);padding:4px 10px;border-radius:100px;white-space:nowrap;flex-shrink:0;}
+    .timeline-camp{position:relative;padding-left:2rem;}
+    .timeline-camp::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--clr-primary),var(--clr-secondary));}
+    [dir=rtl] .timeline-camp{padding-left:0;padding-right:2rem;}
+    [dir=rtl] .timeline-camp::before{left:auto;right:16px;}
+    .tc-item{position:relative;padding-bottom:2rem;}
+    .tc-dot{position:absolute;left:-2rem;top:4px;width:14px;height:14px;border-radius:50%;background:var(--clr-primary);}
+    [dir=rtl] .tc-dot{left:auto;right:-2rem;}
+    .tc-phase{font-size:0.72rem;font-weight:700;color:var(--clr-primary);text-transform:uppercase;letter-spacing:.1em;}
+    .lesson-card{background:var(--clr-card);border-left:4px solid var(--clr-primary);border-radius:0 var(--border-radius) var(--border-radius) 0;padding:1.25rem 1.5rem;}
+    [dir=rtl] .lesson-card{border-left:none;border-right:4px solid var(--clr-primary);border-radius:var(--border-radius) 0 0 var(--border-radius);}
+  </style>
+</head>
+<body>
+  <nav class="navbar"><div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><div class="logo-icon">V</div><span>ViralPro<span style="color:var(--clr-primary);">Studio</span></span></a>
+    <ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="dashboard.html">Dashboard</a></li></ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn theme-toggle"><svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg></button>
+      <button class="nav-icon-btn rtl-toggle"><svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016 11l-1.414 2.828A4.3 4.3 0 006 16.3V21M12 5h3a3 3 0 010 6h-3m0 0v10"/></svg><svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 5H9M15 3v2"/></svg></button>
+      <a href="login.html" class="btn btn-secondary btn-sm">Login</a><a href="contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+      <button class="hamburger" id="hamburgerBtn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div></nav>
+  <div id="drawerOverlay" class="drawer-overlay"></div>
+  <div id="mobileDrawer" class="mobile-drawer">
+    <div class="drawer-header"><a href="../index.html" class="nav-logo"><div class="logo-icon">V</div>ViralPro<span style="color:var(--clr-primary);">Studio</span></a><button id="drawerClose" class="drawer-close"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
+    <nav class="drawer-nav"><a href="../index.html">🏠 Home</a><a href="about.html">👤 About</a><a href="services.html">⚡ Services</a><a href="portfolio.html">📊 Portfolio</a><a href="case-studies.html">📋 Case Studies</a><a href="pricing.html">💎 Pricing</a><a href="blog.html">📝 Blog</a><a href="contact.html">📬 Contact</a><a href="dashboard.html">🎛️ Dashboard</a></nav>
+    <div class="drawer-icons"><button class="nav-icon-btn theme-toggle"><svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg></button><button class="nav-icon-btn rtl-toggle"><svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12"/></svg><svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 5H9"/></svg></button></div>
+    <div class="drawer-ctas"><a href="login.html" class="btn btn-secondary">Login</a><a href="contact.html" class="btn btn-primary">Book a Call</a></div>
+  </div>
+
+  <!-- S1: CAMPAIGN HERO -->
+  <section class="camp-hero"><div class="orb orb-1"></div><div class="orb orb-2"></div>
+    <div class="container">
+      <div class="grid-2" style="gap:3rem;align-items:center;">
+        <div class="reveal">
+          <a href="portfolio.html" style="color:rgba(255,255,255,0.6);font-size:0.85rem;display:inline-flex;align-items:center;gap:6px;margin-bottom:1.5rem;">← Back to Portfolio</a>
+          <span class="badge badge-primary" style="margin-bottom:1rem;display:inline-block;">Lifestyle Creator</span>
+          <h1 style="font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1rem;">@StyleWithSarah<br><span class="text-gradient">0 → 83K in 45 Days</span></h1>
+          <p style="color:rgba(255,255,255,0.7);line-height:1.8;margin-bottom:2rem;">A lifestyle creator with zero presence. One campaign. 45 days. 83K loyal followers and a viral hit with 1.2M views.</p>
+          <div class="flex gap-3" style="flex-wrap:wrap;">
+            <div style="text-align:center;"><div style="font-family:var(--font-primary);font-size:1.8rem;font-weight:900;color:#FF2D55;">83K</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.6);">New Followers</div></div>
+            <div style="text-align:center;"><div style="font-family:var(--font-primary);font-size:1.8rem;font-weight:900;color:#00F2EA;">1.2M</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.6);">Total Views</div></div>
+            <div style="text-align:center;"><div style="font-family:var(--font-primary);font-size:1.8rem;font-weight:900;color:#7B2FBE;">9.8%</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.6);">Engagement Rate</div></div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <img src="../assets/images/creator_recording.png" alt="@StyleWithSarah Campaign" style="width:100%;border-radius:20px;aspect-ratio:4/3;object-fit:cover;box-shadow:0 0 60px rgba(255,45,85,0.2);" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S2: CAMPAIGN OBJECTIVES -->
+  <section style="background:var(--clr-bg);">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">The Brief</div><h2 class="section-title">Campaign <span class="text-gradient">Objectives</span></h2></div>
+      <div class="grid-3 mt-4">
+        <div class="card reveal"><div style="font-size:1.5rem;margin-bottom:0.75rem;">🎯</div><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.5rem;">Primary Goal</h3><p style="color:var(--clr-text-muted);font-size:0.875rem;">Grow from 1,200 to 50,000 followers within 45 days using purely organic methods.</p></div>
+        <div class="card reveal reveal-delay-1"><div style="font-size:1.5rem;margin-bottom:0.75rem;">📊</div><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.5rem;">Secondary Goal</h3><p style="color:var(--clr-text-muted);font-size:0.875rem;">Achieve at least 5% engagement rate and generate 1 viral video (500K+ views).</p></div>
+        <div class="card reveal reveal-delay-2"><div style="font-size:1.5rem;margin-bottom:0.75rem;">💰</div><h3 style="font-size:1rem;font-weight:700;margin-bottom:0.5rem;">Business Goal</h3><p style="color:var(--clr-text-muted);font-size:0.875rem;">Build enough audience trust to launch a paid product to followers within 60 days.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3: STRATEGY BREAKDOWN -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">Strategy</div><h2 class="section-title">How We <span class="text-gradient">Cracked the Algorithm</span></h2></div>
+      <div class="grid-2 mt-4" style="gap:3rem;align-items:start;">
+        <div class="reveal">
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.25rem;">Core Strategy Pillars</h3>
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div class="card" style="padding:1.25rem;display:flex;gap:1rem;"><div style="background:rgba(255,45,85,0.1);color:var(--clr-primary);border-radius:8px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;">🎪</div><div><h4 style="font-size:0.9rem;margin-bottom:4px;">Trend-Jacking Protocol</h4><p style="font-size:0.8rem;color:var(--clr-text-muted);">Daily trend monitoring with 48-hour execution turnaround for maximum early-mover advantage.</p></div></div>
+            <div class="card" style="padding:1.25rem;display:flex;gap:1rem;"><div style="background:rgba(0,242,234,0.1);color:var(--clr-secondary-dark);border-radius:8px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;">🎭</div><div><h4 style="font-size:0.9rem;margin-bottom:4px;">3-Second Hook System</h4><p style="font-size:0.8rem;color:var(--clr-text-muted);">Every video opened with a curiosity-gap hook, tested against 5 variations for maximum CTR.</p></div></div>
+            <div class="card" style="padding:1.25rem;display:flex;gap:1rem;"><div style="background:rgba(123,47,190,0.1);color:var(--clr-purple);border-radius:8px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;">🔁</div><div><h4 style="font-size:0.9rem;margin-bottom:4px;">Watch Loop Engineering</h4><p style="font-size:0.8rem;color:var(--clr-text-muted);">Videos were structured to naturally loop, increasing rewatch rate and boosting algorithmic ranking.</p></div></div>
+            <div class="card" style="padding:1.25rem;display:flex;gap:1rem;"><div style="background:rgba(255,107,53,0.1);color:var(--clr-accent);border-radius:8px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;">🎵</div><div><h4 style="font-size:0.9rem;margin-bottom:4px;">Audio Trend Alignment</h4><p style="font-size:0.8rem;color:var(--clr-text-muted);">Every post used trending audio scouted 48–72 hours before it peaked on the FYP.</p></div></div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <img src="../assets/images/content_planning.png" alt="Campaign Strategy" style="width:100%;border-radius:var(--border-radius-xl);aspect-ratio:1;object-fit:cover;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4: CONTENT PLAN -->
+  <section style="background:var(--clr-bg);">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">Execution</div><h2 class="section-title">6-Week <span class="text-gradient">Content Plan</span></h2></div>
+      <div class="mt-4" style="display:flex;flex-direction:column;gap:0.75rem;">
+        <div class="content-plan-card reveal"><span class="cp-week">Week 1</span><div><h4 style="font-size:0.9rem;margin-bottom:4px;">Brand Introduction &amp; Niche Anchoring</h4><p style="color:var(--clr-text-muted);font-size:0.8rem;">7 videos introducing the creator, establishing visual aesthetic. Focus: identity hooks and curiosity gaps. Result: 12K impressions.</p></div></div>
+        <div class="content-plan-card reveal"><span class="cp-week">Week 2</span><div><h4 style="font-size:0.9rem;margin-bottom:4px;">Trend Integration &amp; First FYP Push</h4><p style="color:var(--clr-text-muted);font-size:0.8rem;">5 trend-jacked videos + 2 original. First FYP breakthrough. Best video: 84K views. Gained 8,200 followers.</p></div></div>
+        <div class="content-plan-card reveal"><span class="cp-week">Week 3</span><div><h4 style="font-size:0.9rem;margin-bottom:4px;">Viral Launch &amp; Duet Strategy</h4><p style="color:var(--clr-text-muted);font-size:0.8rem;">Launched strategic duet collaboration. One video hit 1.2M views. Account grew by 34K followers in 4 days.</p></div></div>
+        <div class="content-plan-card reveal"><span class="cp-week">Week 4–5</span><div><h4 style="font-size:0.9rem;margin-bottom:4px;">Momentum Capitalization</h4><p style="color:var(--clr-text-muted);font-size:0.8rem;">Rode algorithm boost with daily content aligned to new audience profile. Maintained 8–12% engagement.</p></div></div>
+        <div class="content-plan-card reveal"><span class="cp-week">Week 6</span><div><h4 style="font-size:0.9rem;margin-bottom:4px;">Optimization &amp; Handoff</h4><p style="color:var(--clr-text-muted);font-size:0.8rem;">Final analytics review, content template handoff, and 90-day self-sustaining content calendar delivered.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S5: RESULTS ANALYTICS -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">Results</div><h2 class="section-title">The Numbers That <span class="text-gradient">Tell the Story</span></h2></div>
+      <div class="grid-4 mt-4">
+        <div class="result-metric reveal"><div class="result-val"><span class="counter-value" data-target="83" data-suffix="K">0</span></div><div class="result-label">New Followers</div></div>
+        <div class="result-metric reveal reveal-delay-1" style="background:linear-gradient(135deg,#00F2EA,#00A8E8);"><div class="result-val"><span class="counter-value" data-target="1.2" data-suffix="M">0</span></div><div class="result-label">Total Views</div></div>
+        <div class="result-metric reveal reveal-delay-2" style="background:linear-gradient(135deg,#7B2FBE,#5B1FA0);"><div class="result-val"><span class="counter-value" data-target="9.8" data-suffix="%">0</span></div><div class="result-label">Engagement Rate</div></div>
+        <div class="result-metric reveal reveal-delay-3" style="background:linear-gradient(135deg,#FF6B35,#FF3B00);"><div class="result-val"><span class="counter-value" data-target="72" data-suffix="%">0</span></div><div class="result-label">Watch-Through Rate</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6: TIMELINE -->
+  <section style="background:var(--clr-bg);">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">Journey</div><h2 class="section-title">Campaign <span class="text-gradient">Timeline</span></h2></div>
+      <div class="grid-2 mt-4" style="gap:4rem;align-items:start;">
+        <div class="reveal">
+          <div class="timeline-camp">
+            <div class="tc-item"><div class="tc-dot"></div><div class="tc-phase">Day 1 · Strategy Launch</div><h4 style="margin:4px 0;">Full Account Setup &amp; Content System</h4><p style="color:var(--clr-text-muted);font-size:0.8rem;">Profile optimized, 30 hook templates written, 7-day content batch filmed.</p></div>
+            <div class="tc-item"><div class="tc-dot"></div><div class="tc-phase">Day 8 · First FYP Hit</div><h4 style="margin:4px 0;">84K Views on Single Video</h4><p style="color:var(--clr-text-muted);font-size:0.8rem;">Trend-jacked lifestyle video hit FYP. First major spike. 3.2K new followers in 24h.</p></div>
+            <div class="tc-item"><div class="tc-dot"></div><div class="tc-phase">Day 18 · Viral Breakthrough</div><h4 style="margin:4px 0;">1.2M View Video Goes Viral</h4><p style="color:var(--clr-text-muted);font-size:0.8rem;">Duet collaboration with trending creator. Published at 6pm. Hit 500K by midnight. 34K followers in 4 days.</p></div>
+            <div class="tc-item"><div class="tc-dot"></div><div class="tc-phase">Day 30 · Milestone</div><h4 style="margin:4px 0;">51K Followers Reached</h4><p style="color:var(--clr-text-muted);font-size:0.8rem;">Crossed 50K ahead of schedule. Campaign enters optimization phase with sustained daily content.</p></div>
+            <div class="tc-item"><div class="tc-dot" style="background:var(--clr-secondary);"></div><div class="tc-phase">Day 45 · Campaign End</div><h4 style="margin:4px 0;">83K Followers · Goal Exceeded by 66%</h4><p style="color:var(--clr-text-muted);font-size:0.8rem;">Final reports delivered. Self-sustaining content calendar handed off. Creator continued growing independently.</p></div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <img src="../assets/images/analytics_dashboard.png" alt="Campaign Results" style="width:100%;border-radius:var(--border-radius-xl);aspect-ratio:1;object-fit:cover;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7: LESSONS LEARNED -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">Key Learnings</div><h2 class="section-title">What This Campaign <span class="text-gradient">Taught Us</span></h2></div>
+      <div class="grid-2 mt-4" style="gap:1rem;">
+        <div class="lesson-card reveal"><h4 style="font-size:0.95rem;font-weight:700;margin-bottom:6px;">Duets outperform original content by 3x in early growth</h4><p style="color:var(--clr-text-muted);font-size:0.875rem;">Partnering with creators in adjacent niches immediately borrows their trust and audience signal.</p></div>
+        <div class="lesson-card reveal reveal-delay-1"><h4 style="font-size:0.95rem;font-weight:700;margin-bottom:6px;">9am and 6pm posts drove 40% more FYP distribution</h4><p style="color:var(--clr-text-muted);font-size:0.875rem;">Posting timing matters. Peak algorithm windows align with peak audience activity hours.</p></div>
+        <div class="lesson-card reveal"><h4 style="font-size:0.95rem;font-weight:700;margin-bottom:6px;">Hook A/B tested in week 1 improved watch time by 58%</h4><p style="color:var(--clr-text-muted);font-size:0.875rem;">Testing 5 variations of the first 3 seconds gave data to optimize every future video's opening.</p></div>
+        <div class="lesson-card reveal reveal-delay-1"><h4 style="font-size:0.95rem;font-weight:700;margin-bottom:6px;">Trend alignment needs to happen BEFORE the trend peaks</h4><p style="color:var(--clr-text-muted);font-size:0.875rem;">Posting on a trend that's already peaked results in half the reach. Timing is the differentiator.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S8: MORE CAMPAIGNS -->
+  <section style="background:var(--clr-bg);padding-bottom:5rem;">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">More Work</div><h2 class="section-title">Other Successful <span class="text-gradient">Campaigns</span></h2></div>
+      <div class="grid-3 mt-4">
+        <div class="card reveal" style="overflow:hidden;padding:0;"><img src="../assets/images/audience_growth.png" alt="FitLife" style="width:100%;aspect-ratio:16/9;object-fit:cover;" /><div style="padding:1.25rem;"><div class="badge badge-secondary" style="margin-bottom:8px;">Brand</div><h3 style="font-size:0.9rem;font-weight:700;">FitLife Nutrition · 1.2M Views</h3><a href="campaign.html" class="btn btn-outline-primary btn-sm mt-2">View Campaign</a></div></div>
+        <div class="card reveal reveal-delay-1" style="overflow:hidden;padding:0;"><img src="../assets/images/hook_writing.png" alt="BeatsByKira" style="width:100%;aspect-ratio:16/9;object-fit:cover;" /><div style="padding:1.25rem;"><div class="badge badge-purple" style="margin-bottom:8px;">Music</div><h3 style="font-size:0.9rem;font-weight:700;">@BeatsByKira · 4.7M Views</h3><a href="campaign.html" class="btn btn-outline-primary btn-sm mt-2">View Campaign</a></div></div>
+        <div class="card reveal reveal-delay-2" style="overflow:hidden;padding:0;"><img src="../assets/images/content_planning.png" alt="FinanceWithTom" style="width:100%;aspect-ratio:16/9;object-fit:cover;" /><div style="padding:1.25rem;"><div class="badge badge-success" style="margin-bottom:8px;">Education</div><h3 style="font-size:0.9rem;font-weight:700;">FinanceWithTom · 0→97K</h3><a href="campaign.html" class="btn btn-outline-primary btn-sm mt-2">View Campaign</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container">
+    <div class="footer-grid"><div class="footer-brand"><a href="../index.html" class="nav-logo" style="display:flex;margin-bottom:.75rem;"><div class="logo-icon">V</div><span>ViralPro<span style="color:var(--clr-primary);">Studio</span></span></a><p>Expert TikTok organic growth for serious creators.</p><div class="footer-socials"><a href="#" class="social-btn">𝕋</a><a href="#" class="social-btn">𝕀</a><a href="#" class="social-btn">𝕐</a><a href="#" class="social-btn">𝕏</a></div></div>
+    <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="services.html">All Services</a></li><li><a href="services.html">Hook Writing</a></li></ul></div>
+    <div class="footer-col"><h4>Pages</h4><ul class="footer-links"><li><a href="portfolio.html">Portfolio</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Account</h4><ul class="footer-links"><li><a href="pricing.html">Pricing</a></li><li><a href="login.html">Login</a></li><li><a href="register.html">Register</a></li></ul></div></div>
+    <div class="footer-bottom"><span>© 2026 ViralPro Studio.</span><span>All rights reserved.</span></div>
+  </div></footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

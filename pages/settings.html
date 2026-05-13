@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings | ViralPro Studio Dashboard</title>
+  <meta name="description" content="Manage your ViralPro Studio account settings, notifications, preferences, and security." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/dashboard.css" />
+  <style>
+    .settings-nav{display:flex;gap:2px;background:var(--dash-card);border:1px solid var(--dash-card-border);border-radius:var(--border-radius-lg);padding:6px;margin-bottom:2rem;overflow-x:auto;}
+    .settings-tab{padding:9px 20px;border-radius:10px;font-size:0.85rem;font-weight:600;cursor:pointer;transition:var(--transition-fast);white-space:nowrap;color:rgba(255,255,255,0.5);border:none;background:transparent;}
+    .settings-tab.active{background:var(--gradient-primary);color:#fff;}
+    .settings-section{display:none;}
+    .settings-section.active{display:block;}
+    .settings-card{background:var(--dash-card);border:1px solid var(--dash-card-border);border-radius:var(--border-radius-xl);padding:2rem;margin-bottom:1.5rem;}
+    .settings-card h3{font-size:1rem;font-weight:700;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--dash-card-border);}
+    .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:1.25rem;}
+    .form-group label{font-size:0.85rem;font-weight:600;color:rgba(255,255,255,0.7);}
+    .form-input,.form-select,.form-textarea{width:100%;padding:11px 14px;border:1.5px solid var(--dash-card-border);border-radius:var(--border-radius);background:var(--dash-bg);color:rgba(255,255,255,0.9);font-size:0.875rem;font-family:var(--font-secondary);transition:var(--transition-fast);}
+    .form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--clr-primary);box-shadow:0 0 0 3px rgba(255,45,85,0.12);}
+    .form-textarea{resize:vertical;min-height:100px;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    .toggle-row{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--dash-card-border);}
+    .toggle-row:last-child{border-bottom:none;}
+    .toggle-info h4{font-size:0.875rem;font-weight:600;margin-bottom:2px;}
+    .toggle-info p{font-size:0.78rem;color:rgba(255,255,255,0.45);}
+    .toggle-switch-ui{width:44px;height:24px;border-radius:100px;background:var(--dash-card-border);cursor:pointer;transition:background 0.3s ease;position:relative;flex-shrink:0;}
+    .toggle-switch-ui.on{background:var(--clr-primary);}
+    .toggle-knob-ui{position:absolute;width:18px;height:18px;background:#fff;border-radius:50%;top:3px;left:3px;transition:left 0.25s ease;}
+    .toggle-switch-ui.on .toggle-knob-ui{left:23px;}
+    .avatar-upload{width:90px;height:90px;border-radius:50%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;font-family:var(--font-primary);font-weight:900;font-size:2rem;color:#fff;cursor:pointer;position:relative;overflow:hidden;}
+    .avatar-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;font-size:0.7rem;opacity:0;transition:0.2s ease;color:#fff;font-weight:700;}
+    .avatar-upload:hover .avatar-overlay{opacity:1;}
+    .plan-badge{background:var(--gradient-primary);color:#fff;padding:4px 14px;border-radius:100px;font-size:0.8rem;font-weight:700;}
+    .danger-card{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.25);border-radius:var(--border-radius-xl);padding:2rem;margin-bottom:1.5rem;}
+    .danger-card h3{color:#EF4444;font-size:1rem;font-weight:700;margin-bottom:1.5rem;}
+    .danger-action{display:flex;justify-content:space-between;align-items:center;padding:0.75rem 0;border-bottom:1px solid rgba(239,68,68,0.15);}
+    .danger-action:last-child{border-bottom:none;}
+    .save-bar{position:sticky;bottom:0;background:var(--dash-card);border-top:1px solid var(--dash-card-border);padding:1rem 2rem;display:flex;justify-content:flex-end;gap:1rem;z-index:10;}
+    @media(max-width:768px){.form-row{grid-template-columns:1fr;}.settings-nav{padding:4px;}.settings-tab{padding:8px 12px;font-size:0.8rem;}}
+  </style>
+</head>
+<body class="dashboard-body">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="../index.html" class="sidebar-logo"><div class="logo-icon" style="width:30px;height:30px;font-size:0.8rem;">V</div><span class="sidebar-logo-text">ViralPro<span style="color:var(--clr-primary);">Studio</span></span></a>
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Overview</div>
+      <a href="dashboard.html" class="sidebar-link"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Overview</span></a>
+      <a href="dashboard.html" class="sidebar-link"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg><span>Analytics</span></a>
+      <div class="sidebar-section-label">Content</div>
+      <a href="dashboard.html" class="sidebar-link"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Content Calendar</span></a>
+      <a href="dashboard.html" class="sidebar-link"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg><span>Hook Scripts</span></a>
+      <a href="dashboard.html" class="sidebar-link"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg><span>Trending Audio</span></a>
+      <div class="sidebar-section-label">Account</div>
+      <a href="settings.html" class="sidebar-link active"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg><span>Settings</span></a>
+      <a href="../index.html" class="sidebar-link"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg><span>Back to Site</span></a>
+    </nav>
+  </aside>
+
+  <div class="dashboard-main" id="dashboardMain">
+    <div class="dashboard-topbar">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button class="topbar-toggle" id="topbarSidebarToggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <div><h1 class="topbar-title">Settings</h1><p class="topbar-subtitle">Manage your account preferences</p></div>
+      </div>
+      <div class="topbar-actions">
+        <button class="nav-icon-btn theme-toggle">
+          <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg>
+        </button>
+        <div class="topbar-profile"><div class="profile-avatar">AR</div><span class="profile-name">Alex Rivera</span></div>
+      </div>
+    </div>
+
+    <div class="dashboard-content">
+      <!-- SETTINGS TAB NAV -->
+      <div class="settings-nav">
+        <button class="settings-tab active" data-tab="profile">👤 Profile</button>
+        <button class="settings-tab" data-tab="account">🔑 Account & Security</button>
+        <button class="settings-tab" data-tab="notifications">🔔 Notifications</button>
+        <button class="settings-tab" data-tab="preferences">⚙️ Preferences</button>
+        <button class="settings-tab" data-tab="billing">💳 Billing</button>
+        <button class="settings-tab" data-tab="danger">⚠️ Danger Zone</button>
+      </div>
+
+      <!-- PROFILE TAB -->
+      <div class="settings-section active" id="tab-profile">
+        <div class="settings-card">
+          <h3>Profile Information</h3>
+          <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem;">
+            <div class="avatar-upload"><span>AR</span><div class="avatar-overlay">Change</div></div>
+            <div><h4 style="margin-bottom:4px;">Alex Rivera</h4><p style="color:rgba(255,255,255,0.45);font-size:0.85rem;margin-bottom:8px;">alex@viralprostudio.com</p><span class="plan-badge">Growth Pro</span></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" class="form-input" value="Alex" /></div>
+            <div class="form-group"><label>Last Name</label><input type="text" class="form-input" value="Rivera" /></div>
+          </div>
+          <div class="form-group"><label>Bio / Description</label><textarea class="form-textarea">TikTok Organic Growth Strategist | 185K+ followers grown | Creator of ViralPro Studio frameworks</textarea></div>
+          <div class="form-row">
+            <div class="form-group"><label>Location</label><input type="text" class="form-input" placeholder="New York, USA" value="Remote / Global" /></div>
+            <div class="form-group"><label>Website</label><input type="url" class="form-input" value="https://viralprostudio.com" /></div>
+          </div>
+        </div>
+        <div class="settings-card">
+          <h3>TikTok Profile Connection</h3>
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+            <div style="display:flex;align-items:center;gap:12px;"><div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#FF2D55,#00F2EA);display:flex;align-items:center;justify-content:center;font-size:1.3rem;">🎵</div><div><div style="font-weight:700;">@alexrivera_viral</div><div style="font-size:0.8rem;color:rgba(255,255,255,0.45);">Connected · 83.2K followers</div></div></div>
+            <button class="btn btn-secondary btn-sm">Disconnect</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACCOUNT & SECURITY TAB -->
+      <div class="settings-section" id="tab-account">
+        <div class="settings-card">
+          <h3>Account Details</h3>
+          <div class="form-group"><label>Email Address</label><input type="email" class="form-input" value="alex@viralprostudio.com" /></div>
+          <div class="form-group"><label>Username</label><input type="text" class="form-input" value="alexrivera" /></div>
+        </div>
+        <div class="settings-card">
+          <h3>Change Password</h3>
+          <div class="form-group"><label>Current Password</label><input type="password" class="form-input" placeholder="••••••••" /></div>
+          <div class="form-row">
+            <div class="form-group"><label>New Password</label><input type="password" class="form-input" placeholder="Create strong password" /></div>
+            <div class="form-group"><label>Confirm Password</label><input type="password" class="form-input" placeholder="Repeat password" /></div>
+          </div>
+          <button class="btn btn-primary">Update Password</button>
+        </div>
+        <div class="settings-card">
+          <h3>Two-Factor Authentication</h3>
+          <div class="toggle-row"><div class="toggle-info"><h4>Enable 2FA</h4><p>Secure your account with an authenticator app or SMS code.</p></div><div class="toggle-switch-ui" onclick="this.classList.toggle('on')"><div class="toggle-knob-ui"></div></div></div>
+          <div class="toggle-row"><div class="toggle-info"><h4>Login Notifications</h4><p>Get notified each time a new device logs into your account.</p></div><div class="toggle-switch-ui on" onclick="this.classList.toggle('on')"><div class="toggle-knob-ui"></div></div></div>
+        </div>
+      </div>
+
+      <!-- NOTIFICATIONS TAB -->
+      <div class="settings-section" id="tab-notifications">
+        <div class="settings-card">
+          <h3>Email Notifications</h3>
+          <div class="toggle-row"><div class="toggle-info"><h4>Weekly Growth Report</h4><p>Receive your follower growth and engagement summary every Monday morning.</p></div><div class="toggle-switch-ui on" onclick="this.classList.toggle('on')"><div class="toggle-knob-ui"></div></div></div>
+          <div class="toggle-row"><div class="toggle-info"><h4>New Hook Scripts Ready</h4><p>Get notified when your strategist uploads new hook scripts for approval.</p></div><div class="toggle-switch-ui on" onclick="this.classList.toggle('on')"><div class="toggle-knob-ui"></div></div></div>
+          <div class="toggle-row"><div class="toggle-info"><h4>Trending Audio Alerts</h4><p>Get alerts when time-sensitive trending audio is identified for your niche.</p></div><div class="toggle-switch-ui on" onclick="this.classList.toggle('on')"><div class="toggle-knob-ui"></div></div></div>
+          <div class="toggle-row"><div class="toggle-info"><h4>Content Calendar Reminders</h4><p>Daily reminders for scheduled content publishing days.</p></div><div class="toggle-switch-ui" onclick="this.classList.toggle('on')"><div class="toggle-knob-ui"></div></div></div>
+          <div class="toggle-row"><div class="toggle-info"><h4>Billing Notifications</h4><p>Invoices, renewals, and payment confirmations.</p></div><div class="toggle-switch-ui on" onclick="this.classList.toggle('on')"><div class="toggle-knob-ui"></div></div></div>
+        </div>
+      </div>
+
+      <!-- PREFERENCES TAB -->
+      <div class="settings-section" id="tab-preferences">
+        <div class="settings-card">
+          <h3>Display Preferences</h3>
+          <div class="toggle-row"><div class="toggle-info"><h4>Dark Mode</h4><p>Toggle between dark and light theme for the dashboard.</p></div><div class="toggle-switch-ui on theme-toggle-ui" onclick="document.documentElement.dataset.theme = this.classList.toggle('on') ? 'dark' : 'light'"><div class="toggle-knob-ui"></div></div></div>
+          <div class="toggle-row"><div class="toggle-info"><h4>RTL Layout</h4><p>Switch dashboard to right-to-left text direction.</p></div><div class="toggle-switch-ui rtl-toggle-ui" onclick="document.documentElement.dir = this.classList.toggle('on') ? 'rtl' : 'ltr'"><div class="toggle-knob-ui"></div></div></div>
+        </div>
+        <div class="settings-card">
+          <h3>Dashboard Preferences</h3>
+          <div class="form-group"><label>Default Date Range for Analytics</label>
+            <select class="form-select"><option>Last 7 Days</option><option selected>Last 30 Days</option><option>Last 90 Days</option><option>Last 6 Months</option></select>
+          </div>
+          <div class="form-group"><label>Timezone</label>
+            <select class="form-select"><option>UTC-5 (Eastern US)</option><option>UTC-8 (Pacific US)</option><option selected>UTC+0 (London)</option><option>UTC+3 (Dubai)</option><option>UTC+8 (Singapore)</option></select>
+          </div>
+          <div class="form-group"><label>Language</label>
+            <select class="form-select"><option selected>English</option><option>Arabic (العربية)</option><option>Spanish (Español)</option><option>French (Français)</option></select>
+          </div>
+        </div>
+      </div>
+
+      <!-- BILLING TAB -->
+      <div class="settings-section" id="tab-billing">
+        <div class="settings-card">
+          <h3>Current Plan</h3>
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;">
+            <div><div style="font-size:1.3rem;font-weight:800;margin-bottom:4px;">Growth Pro</div><div style="color:rgba(255,255,255,0.5);font-size:0.85rem;">$997/month · Next billing: Jun 10, 2026</div></div>
+            <a href="pricing.html" class="btn btn-outline-primary btn-sm">Upgrade to Enterprise</a>
+          </div>
+          <div style="background:var(--dash-bg);border-radius:12px;padding:1rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;text-align:center;">
+            <div><div style="font-size:1.5rem;font-weight:900;color:var(--clr-primary);">20</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.45);">Hooks/Month</div></div>
+            <div><div style="font-size:1.5rem;font-weight:900;color:var(--clr-secondary-dark);">5</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.45);">Scripts/Month</div></div>
+            <div><div style="font-size:1.5rem;font-weight:900;color:var(--clr-purple);">∞</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.45);">Dashboard Access</div></div>
+          </div>
+        </div>
+        <div class="settings-card">
+          <h3>Payment Method</h3>
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+            <div style="display:flex;align-items:center;gap:12px;"><div style="background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:10px 16px;font-size:0.85rem;letter-spacing:2px;">•••• •••• •••• 4242</div><div><div style="font-size:0.85rem;">Visa · Expires 08/28</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">Primary card</div></div></div>
+            <button class="btn btn-secondary btn-sm">Update</button>
+          </div>
+        </div>
+        <div class="settings-card">
+          <h3>Invoice History</h3>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem;border-radius:10px;background:var(--dash-bg);"><div><div style="font-size:0.875rem;font-weight:600;">May 2026 · Growth Pro</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">May 10, 2026</div></div><div style="display:flex;gap:8px;align-items:center;"><span class="kpi-change positive" style="font-size:0.8rem;">Paid</span><a href="#" style="color:var(--clr-primary);font-size:0.8rem;">PDF</a></div></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem;border-radius:10px;background:var(--dash-bg);"><div><div style="font-size:0.875rem;font-weight:600;">Apr 2026 · Growth Pro</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">Apr 10, 2026</div></div><div style="display:flex;gap:8px;align-items:center;"><span class="kpi-change positive" style="font-size:0.8rem;">Paid</span><a href="#" style="color:var(--clr-primary);font-size:0.8rem;">PDF</a></div></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem;border-radius:10px;background:var(--dash-bg);"><div><div style="font-size:0.875rem;font-weight:600;">Mar 2026 · Starter</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">Mar 10, 2026</div></div><div style="display:flex;gap:8px;align-items:center;"><span class="kpi-change positive" style="font-size:0.8rem;">Paid</span><a href="#" style="color:var(--clr-primary);font-size:0.8rem;">PDF</a></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DANGER ZONE TAB -->
+      <div class="settings-section" id="tab-danger">
+        <div class="danger-card">
+          <h3>⚠️ Danger Zone</h3>
+          <div class="danger-action">
+            <div><h4 style="font-size:0.875rem;margin-bottom:3px;">Pause Subscription</h4><p style="font-size:0.8rem;color:rgba(255,255,255,0.4);">Pause your current plan. You can resume at any time.</p></div>
+            <button class="btn btn-secondary btn-sm">Pause Plan</button>
+          </div>
+          <div class="danger-action">
+            <div><h4 style="font-size:0.875rem;margin-bottom:3px;">Export Account Data</h4><p style="font-size:0.8rem;color:rgba(255,255,255,0.4);">Download all your analytics, scripts, and calendars as a ZIP.</p></div>
+            <button class="btn btn-secondary btn-sm">Export Data</button>
+          </div>
+          <div class="danger-action">
+            <div><h4 style="font-size:0.875rem;margin-bottom:3px;color:#EF4444;">Cancel Subscription</h4><p style="font-size:0.8rem;color:rgba(255,255,255,0.4);">Cancel your plan at end of billing period. Data retained for 30 days.</p></div>
+            <button class="btn btn-sm" style="background:rgba(239,68,68,0.15);color:#EF4444;border:1px solid rgba(239,68,68,0.3);">Cancel Plan</button>
+          </div>
+          <div class="danger-action" style="border:none;">
+            <div><h4 style="font-size:0.875rem;margin-bottom:3px;color:#EF4444;">Delete Account Permanently</h4><p style="font-size:0.8rem;color:rgba(255,255,255,0.4);">This will permanently delete all data. This action cannot be undone.</p></div>
+            <button class="btn btn-sm" style="background:rgba(239,68,68,0.9);color:#fff;">Delete Account</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SAVE BAR -->
+      <div class="save-bar">
+        <button class="btn btn-secondary">Discard Changes</button>
+        <button class="btn btn-primary" onclick="this.textContent='Saved!';setTimeout(()=>this.textContent='Save Changes',1800)">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Settings tabs
+    document.querySelectorAll('.settings-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.settings-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.settings-section').forEach(s => s.classList.remove('active'));
+        this.classList.add('active');
+        const target = document.getElementById('tab-' + this.dataset.tab);
+        if (target) target.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing | ViralPro Studio</title>
+  <meta name="description" content="Transparent TikTok growth strategy pricing — Starter, Growth Pro, and Enterprise plans for creators and brands." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .pricing-hero{background:var(--gradient-hero);min-height:40vh;display:flex;align-items:center;padding-top:var(--nav-height);position:relative;overflow:hidden;}
+    .pricing-table{background:var(--clr-card);border:1px solid var(--clr-card-border);border-radius:var(--border-radius-xl);overflow:hidden;}
+    .pt-head{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--clr-card-border);}
+    .pt-head-cell{padding:1.5rem 1rem;text-align:center;font-weight:700;}
+    .pt-head-cell.featured{background:var(--gradient-primary);color:#fff;}
+    .pt-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border-bottom:1px solid var(--clr-card-border);}
+    .pt-row:last-child{border-bottom:none;}
+    .pt-cell{padding:1rem;display:flex;align-items:center;justify-content:center;font-size:0.875rem;}
+    .pt-cell:first-child{justify-content:flex-start;color:var(--clr-text-2);padding-left:1.5rem;}
+    .pt-cell.featured{background:rgba(255,45,85,0.04);}
+    .check-yes{color:#10B981;font-size:1.1rem;}
+    .check-no{color:var(--clr-text-muted);font-size:1.1rem;}
+    .addon-card{background:var(--clr-card);border:1px solid var(--clr-card-border);border-radius:var(--border-radius-lg);padding:1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:var(--transition);}
+    .addon-card:hover{border-color:var(--clr-primary);transform:translateX(4px);}
+    .guarantee-badge{background:linear-gradient(135deg,var(--clr-secondary-dark) 0%,var(--clr-secondary) 100%);color:#fff;border-radius:var(--border-radius-xl);padding:2.5rem;text-align:center;}
+    .billing-toggle{display:flex;align-items:center;gap:1rem;justify-content:center;margin-bottom:2.5rem;}
+    .toggle-switch{position:relative;width:52px;height:28px;background:var(--gradient-primary);border-radius:100px;cursor:pointer;transition:var(--transition);}
+    .toggle-knob{position:absolute;width:22px;height:22px;background:#fff;border-radius:50%;top:3px;left:3px;transition:0.3s ease;}
+    .toggle-switch.annual .toggle-knob{left:27px;}
+    @media(max-width:768px){.pt-head,.pt-row{display:flex;flex-direction:column;}.pt-head-cell{border-bottom:1px solid var(--clr-card-border);}.pt-cell:first-child{font-weight:600;padding:.875rem 1rem;background:var(--clr-bg-2);}}
+  </style>
+</head>
+<body>
+  <nav class="navbar"><div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><div class="logo-icon">V</div><span>ViralPro<span style="color:var(--clr-primary);">Studio</span></span></a>
+    <ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="home2.html">Home 2</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="pricing.html" class="active">Pricing</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="dashboard.html">Dashboard</a></li></ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn theme-toggle"><svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg></button>
+      <button class="nav-icon-btn rtl-toggle"><svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg><svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" /></svg></button>
+      <a href="login.html" class="btn btn-secondary btn-sm">Login</a><a href="contact.html" class="btn btn-primary btn-sm">Book a Call</a>
+      <button class="hamburger" id="hamburgerBtn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div></nav>
+  <div id="drawerOverlay" class="drawer-overlay"></div>
+  <div id="mobileDrawer" class="mobile-drawer">
+    <div class="drawer-header"><a href="../index.html" class="nav-logo"><div class="logo-icon">V</div>ViralPro<span style="color:var(--clr-primary);">Studio</span></a><button id="drawerClose" class="drawer-close"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
+    <nav class="drawer-nav"><a href="../index.html">🏠 Home</a><a href="home2.html">🚀 Home 2</a><a href="about.html">👤 About</a><a href="services.html">⚡ Services</a><a href="portfolio.html">📊 Portfolio</a><a href="case-studies.html">📋 Case Studies</a><a href="pricing.html">💎 Pricing</a><a href="blog.html">📝 Blog</a><a href="contact.html">📬 Contact</a><a href="dashboard.html">🎛️ Dashboard</a></nav>
+    <div class="drawer-icons"><button class="nav-icon-btn theme-toggle"><svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg></button><button class="nav-icon-btn rtl-toggle"><svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg><svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" /></svg></button></div>
+    <div class="drawer-ctas"><a href="login.html" class="btn btn-secondary">Login</a><a href="contact.html" class="btn btn-primary">Book a Call</a></div>
+  </div>
+
+  <!-- S1: HERO -->
+  <section class="pricing-hero"><div class="orb orb-1"></div><div class="orb orb-2"></div>
+    <div class="container"><div class="section-center reveal" style="max-width:640px;margin:0 auto;">
+      <div class="section-label" style="background:rgba(255,45,85,0.15);color:#FF6B8A;">Investment</div>
+      <h1 style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1rem;">Growth That Pays <span class="text-gradient">For Itself</span></h1>
+      <p style="color:rgba(255,255,255,0.7);max-width:500px;margin:0 auto;">Transparent pricing. No hidden fees. Cancel anytime. Every plan includes a 30-day growth guarantee.</p>
+    </div></div>
+  </section>
+
+  <!-- S2: BILLING + PRICING CARDS -->
+  <section style="background:var(--clr-bg);">
+    <div class="container">
+      <div class="billing-toggle reveal">
+        <span style="font-weight:600;font-size:0.9rem;">Monthly</span>
+        <div class="toggle-switch" id="billingToggle"><div class="toggle-knob"></div></div>
+        <span style="font-weight:600;font-size:0.9rem;">Annual <span class="badge badge-success" style="margin-left:4px;font-size:0.7rem;">Save 20%</span></span>
+      </div>
+      <div class="grid-3" style="align-items:start;">
+        <div class="card reveal">
+          <div class="pricing-name">Starter</div>
+          <div class="pricing-price monthly-price">$497</div>
+          <div class="pricing-price annual-price" style="display:none;">$397</div>
+          <div class="pricing-period">/month</div>
+          <p style="color:var(--clr-text-muted);font-size:0.85rem;margin:1rem 0;">Perfect for new creators and personal brands ready to start growing organically.</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.5rem;">
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><span class="check-yes">✓</span>90-Day Growth Strategy</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><span class="check-yes">✓</span>10 Custom Hooks/Month</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><span class="check-yes">✓</span>Weekly Trend Report</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><span class="check-yes">✓</span>30-Day Content Calendar</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><span class="check-yes">✓</span>Hashtag Cluster Pack</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;color:var(--clr-text-muted);"><span class="check-no">✗</span>Analytics Dashboard Access</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;color:var(--clr-text-muted);"><span class="check-no">✗</span>Collab Strategy</li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary w-full" style="justify-content:center;">Get Started</a>
+        </div>
+        <div class="pricing-card featured reveal reveal-delay-1" style="transform:scale(1.03);">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-name">Growth Pro</div>
+          <div class="pricing-price monthly-price" style="color:#fff;">$997</div>
+          <div class="pricing-price annual-price" style="display:none;color:#fff;">$797</div>
+          <div class="pricing-period" style="color:rgba(255,255,255,0.7);">/month</div>
+          <p style="color:rgba(255,255,255,0.75);font-size:0.85rem;margin:1rem 0;">For serious creators scaling to 100K+ with a proven system and weekly support.</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.5rem;">
+            <li style="display:flex;gap:8px;font-size:0.85rem;color:#fff;"><span style="color:#4ade80;">✓</span>Everything in Starter</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;color:#fff;"><span style="color:#4ade80;">✓</span>20 Custom Hooks/Month</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;color:#fff;"><span style="color:#4ade80;">✓</span>Weekly Strategy Calls</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;color:#fff;"><span style="color:#4ade80;">✓</span>Full Analytics Dashboard</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;color:#fff;"><span style="color:#4ade80;">✓</span>Collab Strategy</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;color:#fff;"><span style="color:#4ade80;">✓</span>Script Writing (5 videos)</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.5);"><span style="color:rgba(255,255,255,0.3);">✗</span>Dedicated Strategist</li>
+          </ul>
+          <a href="contact.html" class="btn btn-white w-full" style="justify-content:center;">Get Started</a>
+        </div>
+        <div class="card reveal reveal-delay-2">
+          <div class="pricing-name">Enterprise</div>
+          <div class="pricing-price monthly-price">$2,497</div>
+          <div class="pricing-price annual-price" style="display:none;">$1,997</div>
+          <div class="pricing-period">/month</div>
+          <p style="color:var(--clr-text-muted);font-size:0.85rem;margin:1rem 0;">For brands and agencies ready to build a dominant TikTok presence across multiple accounts.</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.5rem;">
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><span class="check-yes">✓</span>Everything in Growth Pro</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><span class="check-yes">✓</span>Unlimited Hooks & Scripts</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><span class="check-yes">✓</span>Dedicated Strategist</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><span class="check-yes">✓</span>Influencer Network Access</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><span class="check-yes">✓</span>Multi-Account Management</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><span class="check-yes">✓</span>Custom Hashtag Research</li>
+            <li style="display:flex;gap:8px;font-size:0.85rem;"><span class="check-yes">✓</span>Priority Support 24/7</li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary w-full" style="justify-content:center;">Contact for Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3: COMPARISON TABLE -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">Compare</div><h2 class="section-title">Feature <span class="text-gradient">Comparison</span></h2></div>
+      <div class="pricing-table mt-4 reveal">
+        <div class="pt-head">
+          <div class="pt-head-cell" style="text-align:left;padding-left:1.5rem;">Feature</div>
+          <div class="pt-head-cell">Starter</div>
+          <div class="pt-head-cell featured">Growth Pro</div>
+          <div class="pt-head-cell">Enterprise</div>
+        </div>
+        <div class="pt-row"><div class="pt-cell">Growth Strategy Document</div><div class="pt-cell"><span class="check-yes">✓</span></div><div class="pt-cell featured"><span class="check-yes">✓</span></div><div class="pt-cell"><span class="check-yes">✓</span></div></div>
+        <div class="pt-row"><div class="pt-cell">Monthly Hooks</div><div class="pt-cell">10</div><div class="pt-cell featured">20</div><div class="pt-cell">Unlimited</div></div>
+        <div class="pt-row"><div class="pt-cell">Analytics Dashboard</div><div class="pt-cell"><span class="check-no">✗</span></div><div class="pt-cell featured"><span class="check-yes">✓</span></div><div class="pt-cell"><span class="check-yes">✓</span></div></div>
+        <div class="pt-row"><div class="pt-cell">Weekly Strategy Calls</div><div class="pt-cell"><span class="check-no">✗</span></div><div class="pt-cell featured"><span class="check-yes">✓</span></div><div class="pt-cell"><span class="check-yes">✓</span></div></div>
+        <div class="pt-row"><div class="pt-cell">Script Writing</div><div class="pt-cell"><span class="check-no">✗</span></div><div class="pt-cell featured">5/month</div><div class="pt-cell">Unlimited</div></div>
+        <div class="pt-row"><div class="pt-cell">Dedicated Strategist</div><div class="pt-cell"><span class="check-no">✗</span></div><div class="pt-cell featured"><span class="check-no">✗</span></div><div class="pt-cell"><span class="check-yes">✓</span></div></div>
+        <div class="pt-row"><div class="pt-cell">Support Level</div><div class="pt-cell">Email</div><div class="pt-cell featured">Email + Slack</div><div class="pt-cell">Priority 24/7</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4: ADD-ONS -->
+  <section style="background:var(--clr-bg);">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">Add-Ons</div><h2 class="section-title">Enhance Your <span class="text-gradient">Plan</span></h2></div>
+      <div class="mt-4" style="display:flex;flex-direction:column;gap:0.75rem;">
+        <div class="addon-card reveal"><div><h4 style="font-size:0.9rem;font-weight:700;margin-bottom:4px;">Hook Writing Pack (Extra 20)</h4><p style="font-size:0.8rem;color:var(--clr-text-muted);">20 additional custom hooks beyond your monthly plan.</p></div><div style="text-align:right;flex-shrink:0;"><div style="font-family:var(--font-primary);font-size:1.2rem;font-weight:800;color:var(--clr-primary);">$197</div><a href="contact.html" class="btn btn-outline-primary btn-sm mt-1">Add</a></div></div>
+        <div class="addon-card reveal"><div><h4 style="font-size:0.9rem;font-weight:700;margin-bottom:4px;">Full Video Script (per video)</h4><p style="font-size:0.8rem;color:var(--clr-text-muted);">Complete script with hook, body, and CTA for a single video.</p></div><div style="text-align:right;flex-shrink:0;"><div style="font-family:var(--font-primary);font-size:1.2rem;font-weight:800;color:var(--clr-primary);">$97</div><a href="contact.html" class="btn btn-outline-primary btn-sm mt-1">Add</a></div></div>
+        <div class="addon-card reveal"><div><h4 style="font-size:0.9rem;font-weight:700;margin-bottom:4px;">Hashtag Cluster Research (Deep Dive)</h4><p style="font-size:0.8rem;color:var(--clr-text-muted);">Custom 50-cluster hashtag research report for any niche.</p></div><div style="text-align:right;flex-shrink:0;"><div style="font-family:var(--font-primary);font-size:1.2rem;font-weight:800;color:var(--clr-primary);">$147</div><a href="contact.html" class="btn btn-outline-primary btn-sm mt-1">Add</a></div></div>
+        <div class="addon-card reveal"><div><h4 style="font-size:0.9rem;font-weight:700;margin-bottom:4px;">Competitor Analysis Report</h4><p style="font-size:0.8rem;color:var(--clr-text-muted);">Deep analysis of 5 top competitors in your niche with actionable gap strategy.</p></div><div style="text-align:right;flex-shrink:0;"><div style="font-family:var(--font-primary);font-size:1.2rem;font-weight:800;color:var(--clr-primary);">$247</div><a href="contact.html" class="btn btn-outline-primary btn-sm mt-1">Add</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S5: GUARANTEE -->
+  <section class="section-dark">
+    <div class="container" style="max-width:700px;">
+      <div class="guarantee-badge reveal">
+        <div style="font-size:3rem;margin-bottom:1rem;">🛡️</div>
+        <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:1rem;">30-Day Growth Guarantee</h2>
+        <p style="opacity:0.85;max-width:500px;margin:0 auto;">If you don't see measurable growth in your first 30 days, I'll extend your plan for free until you do. Your results are my reputation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6: TESTIMONIALS -->
+  <section style="background:var(--clr-bg);">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">Client Voices</div><h2 class="section-title">Worth Every <span class="text-gradient">Dollar</span></h2></div>
+      <div class="grid-3 mt-4">
+        <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"$997/month sounds like a lot until you're getting 83K followers in 45 days. The ROI is literally 100x."</p><div class="testimonial-author"><div class="testimonial-avatar">SM</div><div><div class="testimonial-name">@StyleWithSarah</div><div class="testimonial-role">Growth Pro Plan</div></div></div></div>
+        <div class="testimonial-card reveal reveal-delay-1"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"The Enterprise plan paid for itself in week 2. 1.2M views and our website traffic tripled. No brainer."</p><div class="testimonial-author"><div class="testimonial-avatar">FL</div><div><div class="testimonial-name">FitLife Nutrition</div><div class="testimonial-role">Enterprise Plan</div></div></div></div>
+        <div class="testimonial-card reveal reveal-delay-2"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Started with the Starter plan and upgraded to Growth Pro within 30 days. The results made it an easy choice."</p><div class="testimonial-author"><div class="testimonial-avatar">FT</div><div><div class="testimonial-name">FinanceWithTom</div><div class="testimonial-role">Starter → Growth Pro</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7: FAQ -->
+  <section class="section-dark">
+    <div class="container" style="max-width:720px;">
+      <div class="section-center reveal"><div class="section-label">FAQ</div><h2 class="section-title">Pricing <span class="text-gradient">Questions</span></h2></div>
+      <div class="mt-4 reveal">
+        <div class="faq-item"><button class="faq-question">Can I cancel anytime?<svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — all plans are month-to-month by default. No long-term contracts required, though annual plans offer 20% savings.</div></div></div>
+        <div class="faq-item"><button class="faq-question">Do you offer a free trial?<svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">We offer a free 30-minute strategy call where I audit your account and outline a growth plan — no obligation to purchase.</div></div></div>
+        <div class="faq-item"><button class="faq-question">What if I need a custom plan?<svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Absolutely — contact me for a custom quote if none of the plans match your exact needs. I work with agencies managing multiple creator accounts.</div></div></div>
+        <div class="faq-item"><button class="faq-question">Is there a setup fee?<svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">No setup fees. The first month includes a full account audit and strategy build at no extra cost.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S8: CTA -->
+  <section style="background:var(--clr-bg);padding:3rem 0 5rem;">
+    <div class="container reveal"><div class="cta-banner"><h2>Ready to Invest in Real Growth?</h2><p>Book your free strategy call. I'll tell you exactly which plan fits your goals and current stage.</p><div class="flex-center gap-3" style="flex-wrap:wrap;"><a href="contact.html" class="btn btn-white btn-lg">Book Free Strategy Call</a><a href="case-studies.html" class="btn btn-white-outline btn-lg">See Results First</a></div></div></div>
+  </section>
+
+  <footer class="footer"><div class="container">
+    <div class="footer-grid"><div class="footer-brand"><a href="../index.html" class="nav-logo" style="display:flex;margin-bottom:.75rem;"><div class="logo-icon">V</div><span>ViralPro<span style="color:var(--clr-primary);">Studio</span></span></a><p>Premium TikTok growth. Transparent pricing.</p><div class="footer-socials">
+      <a href="#" class="social-btn" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+      <a href="#" class="social-btn" aria-label="Google"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path><path d="M12 7v10m-5-5h10"></path></svg></a>
+      <a href="#" class="social-btn" aria-label="Apple"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 20.94c1.88 0 3.39-.66 4.47-1.67 1.09-1.02 1.75-2.45 1.75-4.21 0-3.32-2.31-5.06-4.94-5.06-1.12 0-2.18.29-3.03.82-.85-.53-1.91-.82-3.03-.82-2.63 0-4.94 1.74-4.94 5.06 0 1.76.66 3.19 1.75 4.21 1.08 1.01 2.59 1.67 4.47 1.67.92 0 1.83-.16 2.51-.48.68.32 1.59.48 2.51.48zM12 8c.39-1.36 1.41-2.43 2.65-2.83-1.06-.11-2.15.22-2.92.89-.77-.67-1.86-1-2.92-.89 1.24.4 2.26 1.47 2.65 2.83z"></path></svg></a>
+      <a href="#" class="social-btn" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+    </div></div>
+    <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="services.html">All Services</a></li><li><a href="services.html">Hook Writing</a></li></ul></div>
+    <div class="footer-col"><h4>Pages</h4><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Account</h4><ul class="footer-links"><li><a href="login.html">Login</a></li><li><a href="register.html">Sign Up</a></li><li><a href="dashboard.html">Dashboard</a></li></ul></div></div>
+    <div class="footer-bottom"><span>© 2026 ViralPro Studio.</span><span>All rights reserved.</span></div>
+  </div></footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    const billingToggle = document.getElementById('billingToggle');
+    billingToggle.addEventListener('click', function() {
+      this.classList.toggle('annual');
+      const isAnnual = this.classList.contains('annual');
+      document.querySelectorAll('.monthly-price').forEach(el => el.style.display = isAnnual ? 'none' : '');
+      document.querySelectorAll('.annual-price').forEach(el => el.style.display = isAnnual ? '' : 'none');
+    });
+  </script>
+</body>
+</html>

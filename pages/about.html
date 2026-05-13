@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | ViralPro Studio – TikTok Growth Strategist</title>
+  <meta name="description" content="Meet the TikTok organic growth strategist behind 185K+ followers grown, 50+ viral campaigns, and industry-leading engagement rates." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .about-hero{background:var(--gradient-hero);min-height:50vh;display:flex;align-items:center;padding-top:var(--nav-height);position:relative;overflow:hidden;}
+    .timeline{position:relative;padding-left:2rem;}
+    .timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:var(--gradient-primary);}
+    [dir=rtl] .timeline{padding-left:0;padding-right:2rem;}
+    [dir=rtl] .timeline::before{left:auto;right:20px;}
+    .timeline-item{position:relative;padding-bottom:2.5rem;}
+    .timeline-dot{position:absolute;left:-2rem;top:4px;width:16px;height:16px;border-radius:50%;background:var(--gradient-primary);box-shadow:0 0 0 4px rgba(255,45,85,0.15);}
+    [dir=rtl] .timeline-dot{left:auto;right:-2rem;}
+    .timeline-year{font-size:0.75rem;font-weight:700;color:var(--clr-primary);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;}
+    .skill-bar{margin-bottom:1.25rem;}
+    .skill-label{display:flex;justify-content:space-between;font-size:0.85rem;font-weight:600;margin-bottom:6px;}
+    .skill-track{height:8px;background:var(--clr-bg-3);border-radius:4px;overflow:hidden;}
+    .skill-fill{height:100%;background:var(--gradient-primary);border-radius:4px;width:0;transition:width 1.2s ease;}
+    .philosophy-card{background:var(--gradient-primary);border-radius:var(--border-radius-xl);padding:2.5rem;color:#fff;position:relative;overflow:hidden;}
+    .philosophy-card::before{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.06);top:-100px;right:-80px;}
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="mainNav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon">V</div>
+        <span>ViralPro<span style="color:var(--clr-primary);">Studio</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="home2.html">Home 2</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn theme-toggle" title="Toggle Dark Mode" aria-label="Toggle theme">
+          <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="nav-icon-btn rtl-toggle" title="Toggle RTL" aria-label="Toggle RTL">
+          <svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+          <svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" /></svg>
+        </button>
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div id="drawerOverlay" class="drawer-overlay"></div>
+  <div id="mobileDrawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <a href="../index.html" class="nav-logo"><div class="logo-icon">V</div>ViralPro<span style="color:var(--clr-primary);">Studio</span></a>
+      <button id="drawerClose" class="drawer-close" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="../index.html">🏠 Home</a>
+      <a href="home2.html">🚀 Home 2</a>
+      <a href="about.html" class="active">👤 About</a>
+      <a href="services.html">⚡ Services</a>
+      <a href="portfolio.html">📊 Portfolio</a>
+      <a href="case-studies.html">📋 Case Studies</a>
+      <a href="pricing.html">💎 Pricing</a>
+      <a href="blog.html">📝 Blog</a>
+      <a href="contact.html">📬 Contact</a>
+      <a href="dashboard.html">🎛️ Dashboard</a>
+    </nav>
+    <div class="drawer-icons">
+      <button class="nav-icon-btn theme-toggle" aria-label="Toggle theme">
+        <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg>
+      </button>
+      <button class="nav-icon-btn rtl-toggle" aria-label="Toggle RTL">
+        <svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+        <svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" /></svg>
+      </button>
+    </div>
+    <div class="drawer-ctas">
+      <a href="login.html" class="btn btn-secondary">Login</a>
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+    </div>
+  </div>
+
+  <!-- S1: HERO BIO -->
+  <section class="about-hero"><div class="orb orb-1"></div><div class="orb orb-2"></div>
+    <div class="container">
+      <div class="grid-2" style="gap:4rem;align-items:center;">
+        <div class="reveal">
+          <div class="section-label" style="background:rgba(255,45,85,0.15);color:#FF6B8A;">About Me</div>
+          <h1 style="font-size:clamp(2rem,5vw,3.4rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1.25rem;">Hi, I'm Alex Rivera<br><span class="text-gradient">TikTok Growth Strategist</span></h1>
+          <p style="color:rgba(255,255,255,0.7);font-size:1.05rem;line-height:1.8;max-width:520px;margin-bottom:2rem;">5+ years architecting viral growth systems for creators and brands. I've grown accounts from 0 to 6-figures and managed campaigns that hit millions of views — all organically.</p>
+          <div class="flex gap-2" style="flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-primary btn-lg">Work With Me</a>
+            <a href="portfolio.html" class="btn btn-white-outline btn-lg">See My Work</a>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div class="img-frame"><img src="../assets/images/hero_strategist.png" alt="Alex Rivera – Strategist" style="width:100%;aspect-ratio:4/5;object-fit:cover;" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S2: STORY & JOURNEY -->
+  <section style="background:var(--clr-bg);">
+    <div class="container">
+      <div class="grid-2" style="gap:4rem;align-items:center;">
+        <div class="reveal">
+          <img src="../assets/images/creator_recording.png" alt="Creator Journey" style="width:100%;border-radius:var(--border-radius-xl);aspect-ratio:4/3;object-fit:cover;" />
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div class="section-label">My Story</div>
+          <h2 class="section-title" style="text-align:left;">From Creator to <span class="text-gradient">Viral Architect</span></h2>
+          <p style="color:var(--clr-text-muted);line-height:1.8;margin-bottom:1.25rem;">I started as a creator myself — posting content that got zero views, spending hours on ideas that went nowhere. But instead of quitting, I obsessed over the algorithm. I studied thousands of viral videos, A/B tested posting times, hook structures, and content formats.</p>
+          <p style="color:var(--clr-text-muted);line-height:1.8;margin-bottom:1.25rem;">After growing my own account to 47K followers organically, other creators started asking for help. That's when ViralPro Studio was born — a systematic approach to TikTok growth that removes the guesswork.</p>
+          <p style="color:var(--clr-text-muted);line-height:1.8;margin-bottom:2rem;">Today I work with creators across lifestyle, fitness, finance, music, and e-commerce to build loyal audiences that actually convert into customers and fans.</p>
+          <div class="grid-2" style="gap:1rem;">
+            <div class="stat-card"><div class="stat-value"><span class="counter-value" data-target="5" data-suffix="+ Yrs">0</span></div><div class="stat-label">Industry Experience</div></div>
+            <div class="stat-card"><div class="stat-value"><span class="counter-value" data-target="50" data-suffix="+ Clients">0</span></div><div class="stat-label">Helped Grow</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3: SKILLS & TOOLS -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">Expertise</div><h2 class="section-title">Skills That Drive <span class="text-gradient">Real Growth</span></h2></div>
+      <div class="grid-2 mt-4" style="gap:4rem;align-items:start;">
+        <div class="reveal">
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;">Core Competencies</h3>
+          <div class="skill-bar"><div class="skill-label"><span>TikTok Algorithm Mastery</span><span>96%</span></div><div class="skill-track"><div class="skill-fill" data-width="96"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Hook & Script Writing</span><span>94%</span></div><div class="skill-track"><div class="skill-fill" data-width="94"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Trend Forecasting</span><span>91%</span></div><div class="skill-track"><div class="skill-fill" data-width="91"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Content Strategy</span><span>93%</span></div><div class="skill-track"><div class="skill-fill" data-width="93"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Analytics & Data Interpretation</span><span>89%</span></div><div class="skill-track"><div class="skill-fill" data-width="89"></div></div></div>
+          <div class="skill-bar"><div class="skill-label"><span>Creator Collaborations</span><span>87%</span></div><div class="skill-track"><div class="skill-fill" data-width="87"></div></div></div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;">Tools & Platforms</h3>
+          <div class="grid-3" style="gap:0.75rem;">
+            <div class="card" style="text-align:center;padding:1rem;"><div style="font-size:1.5rem;margin-bottom:6px;">📊</div><div style="font-size:0.78rem;font-weight:600;">TikTok Analytics</div></div>
+            <div class="card" style="text-align:center;padding:1rem;"><div style="font-size:1.5rem;margin-bottom:6px;">🎵</div><div style="font-size:0.78rem;font-weight:600;">TrendTok</div></div>
+            <div class="card" style="text-align:center;padding:1rem;"><div style="font-size:1.5rem;margin-bottom:6px;">📅</div><div style="font-size:0.78rem;font-weight:600;">Notion</div></div>
+            <div class="card" style="text-align:center;padding:1rem;"><div style="font-size:1.5rem;margin-bottom:6px;">📈</div><div style="font-size:0.78rem;font-weight:600;">Social Blade</div></div>
+            <div class="card" style="text-align:center;padding:1rem;"><div style="font-size:1.5rem;margin-bottom:6px;">🎬</div><div style="font-size:0.78rem;font-weight:600;">CapCut</div></div>
+            <div class="card" style="text-align:center;padding:1rem;"><div style="font-size:1.5rem;margin-bottom:6px;">🔮</div><div style="font-size:0.78rem;font-weight:600;">SparkToro</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4: ACHIEVEMENTS TIMELINE -->
+  <section style="background:var(--clr-bg);">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">Journey</div><h2 class="section-title">5 Years of <span class="text-gradient">Building Viral Systems</span></h2></div>
+      <div class="grid-2 mt-4" style="gap:4rem;">
+        <div class="reveal">
+          <div class="timeline">
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2021</div><h4 style="margin-bottom:4px;">Started as a Creator</h4><p style="color:var(--clr-text-muted);font-size:0.875rem;">Built first personal TikTok account from scratch, reaching 47K followers organically in 8 months.</p></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2022</div><h4 style="margin-bottom:4px;">First Client Campaigns</h4><p style="color:var(--clr-text-muted);font-size:0.875rem;">Helped 10 creators grow their accounts, generating a combined 500K+ new followers across all niches.</p></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2023</div><h4 style="margin-bottom:4px;">ViralPro Studio Launch</h4><p style="color:var(--clr-text-muted);font-size:0.875rem;">Officially launched the studio with a full growth methodology, hook framework, and content system.</p></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2024</div><h4 style="margin-bottom:4px;">Brand Partnerships</h4><p style="color:var(--clr-text-muted);font-size:0.875rem;">Expanded to brand accounts. FitLife campaign: 1.2M views in week 1. Multiple 7-figure brand clients.</p></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2025–26</div><h4 style="margin-bottom:4px;">185K+ Total Growth</h4><p style="color:var(--clr-text-muted);font-size:0.875rem;">Crossed milestone of 185K followers grown for clients. 50+ campaigns. 2.4M total views generated.</p></div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <img src="../assets/images/analytics_dashboard.png" alt="Analytics Journey" style="width:100%;border-radius:var(--border-radius-xl);aspect-ratio:1;object-fit:cover;" />
+          <div class="grid-2 mt-3" style="gap:1rem;">
+            <div class="stat-card"><div class="stat-value"><span class="counter-value" data-target="185" data-suffix="K+">0</span></div><div class="stat-label">Followers Grown</div></div>
+            <div class="stat-card"><div class="stat-value"><span class="counter-value" data-target="2.4" data-suffix="M+">0</span></div><div class="stat-label">Total Views</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S5: PHILOSOPHY -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">Philosophy</div><h2 class="section-title">The Beliefs Behind <span class="text-gradient">Every Campaign</span></h2></div>
+      <div class="grid-3 mt-4">
+        <div class="card card-glow reveal">
+          <div style="font-size:2rem;margin-bottom:1rem;">🧠</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.5rem;">Data Over Gut Feeling</h3>
+          <p style="color:var(--clr-text-muted);font-size:0.875rem;line-height:1.7;">Every decision is backed by analytics. Content timing, hook length, hashtag selection — all data-driven.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-1">
+          <div style="font-size:2rem;margin-bottom:1rem;">🎯</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.5rem;">Quality Over Quantity</h3>
+          <p style="color:var(--clr-text-muted);font-size:0.875rem;line-height:1.7;">One perfectly optimized video beats 10 rushed posts. Strategy beats volume every single time.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-2">
+          <div style="font-size:2rem;margin-bottom:1rem;">🤝</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.5rem;">Partnership Mindset</h3>
+          <p style="color:var(--clr-text-muted);font-size:0.875rem;line-height:1.7;">I treat every client's account like my own. Your growth is my reputation, and I take that seriously.</p>
+        </div>
+      </div>
+      <div class="mt-4 reveal">
+        <div class="philosophy-card">
+          <h3 style="font-size:1.5rem;font-weight:800;margin-bottom:1rem;position:relative;z-index:1;">"Virality isn't luck — it's engineered."</h3>
+          <p style="opacity:0.85;max-width:600px;position:relative;z-index:1;">Every viral video follows a pattern. Once you understand the pattern — the hook, the emotional journey, the loop mechanism — you can engineer virality on demand. That's what I teach and build for every client.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6: CTA -->
+  <section style="background:var(--clr-bg);padding:3rem 0 5rem;">
+    <div class="container reveal">
+      <div class="cta-banner">
+        <h2>Ready to Work Together?</h2>
+        <p>Let's build a custom TikTok growth strategy that matches your voice, goals, and audience.</p>
+        <div class="flex-center gap-3" style="flex-wrap:wrap;"><a href="contact.html" class="btn btn-white btn-lg">Book a Free Strategy Call</a><a href="services.html" class="btn btn-white-outline btn-lg">Explore Services</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo" style="margin-bottom:0.75rem;display:flex;">
+            <div class="logo-icon">V</div>
+            <span>ViralPro<span style="color:var(--clr-primary);">Studio</span></span>
+          </a>
+          <p>Expert TikTok organic growth strategy for creators and brands ready to build real audiences.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="#" class="social-btn" aria-label="Google"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path><path d="M12 7v10m-5-5h10"></path></svg></a>
+            <a href="#" class="social-btn" aria-label="Apple"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 20.94c1.88 0 3.39-.66 4.47-1.67 1.09-1.02 1.75-2.45 1.75-4.21 0-3.32-2.31-5.06-4.94-5.06-1.12 0-2.18.29-3.03.82-.85-.53-1.91-.82-3.03-.82-2.63 0-4.94 1.74-4.94 5.06 0 1.76.66 3.19 1.75 4.21 1.08 1.01 2.59 1.67 4.47 1.67.92 0 1.83-.16 2.51-.48.68.32 1.59.48 2.51.48zM12 8c.39-1.36 1.41-2.43 2.65-2.83-1.06-.11-2.15.22-2.92.89-.77-.67-1.86-1-2.92-.89 1.24.4 2.26 1.47 2.65 2.83z"></path></svg></a>
+            <a href="#" class="social-btn" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Organic Growth</a></li>
+            <li><a href="services.html">Hook Writing</a></li>
+            <li><a href="services.html">Trend Research</a></li>
+            <li><a href="services.html">Content Calendar</a></li>
+            <li><a href="services.html">Analytics Reports</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Started</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="contact.html">Free Consultation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ViralPro Studio. All rights reserved.</span>
+        <span>Built for creators who want to go viral organically.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Skill bars animation
+    const skillObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.querySelectorAll('.skill-fill').forEach(b => { b.style.width = b.dataset.width + '%'; }); skillObs.unobserve(e.target); }});
+    }, {threshold:0.3});
+    document.querySelectorAll('.skill-bar').forEach(el => skillObs.observe(el.closest('div') || el));
+    document.querySelectorAll('.skill-fill').forEach(b => {
+      const obs = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting){ b.style.width = b.dataset.width + '%'; obs.unobserve(b); }}); }, {threshold:0.5});
+      obs.observe(b);
+    });
+  </script>
+</body>
+</html>

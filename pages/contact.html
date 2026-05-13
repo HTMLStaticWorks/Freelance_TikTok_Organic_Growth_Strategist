@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | ViralPro Studio</title>
+  <meta name="description" content="Book a free TikTok strategy call or send a message to ViralPro Studio. Let's build your growth system." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .contact-hero{background:var(--gradient-hero);min-height:38vh;display:flex;align-items:center;padding-top:var(--nav-height);position:relative;overflow:hidden;}
+    .form-card{background:var(--clr-card);border:1px solid var(--clr-card-border);border-radius:var(--border-radius-xl);padding:2.5rem;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:1.25rem;}
+    .form-group label{font-size:0.875rem;font-weight:600;color:var(--clr-text-2);}
+    .form-input,.form-select,.form-textarea{width:100%;padding:12px 14px;border:1.5px solid var(--clr-card-border);border-radius:var(--border-radius);background:var(--clr-bg);color:var(--clr-text);font-size:0.9rem;font-family:var(--font-secondary);transition:var(--transition-fast);}
+    .form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--clr-primary);box-shadow:0 0 0 3px rgba(255,45,85,0.1);}
+    .form-textarea{resize:vertical;min-height:140px;}
+    .contact-info-card{background:var(--gradient-primary);border-radius:var(--border-radius-xl);padding:2.5rem;color:#fff;height:100%;}
+    .ci-item{display:flex;gap:1rem;align-items:flex-start;margin-bottom:2rem;}
+    .ci-icon{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;}
+    .calendar-slot{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem;text-align:center;cursor:pointer;transition:var(--transition-fast);}
+    .calendar-slot:hover,.calendar-slot.selected{background:rgba(255,45,85,0.15);border-color:var(--clr-primary);}
+    .calendar-slot.selected .slot-time{color:var(--clr-primary);font-weight:700;}
+    .slot-day{font-size:0.7rem;color:var(--clr-text-muted);margin-bottom:4px;}
+    .slot-time{font-size:0.9rem;font-weight:600;}
+    .faq-mini .faq-item{border-bottom:1px solid var(--clr-card-border);}
+    @media(max-width:768px){.form-row{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+  <nav class="navbar"><div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><div class="logo-icon">V</div><span>ViralPro<span style="color:var(--clr-primary);">Studio</span></span></a>
+    <ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html" class="active">Contact</a></li><li><a href="dashboard.html" class="nav-icon-link" title="Dashboard"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg></a></li></ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn theme-toggle"><svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg></button>
+      <button class="nav-icon-btn rtl-toggle"><svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016 11l-1.414 2.828A4.3 4.3 0 006 16.3V21M12 5h3a3 3 0 010 6h-3m0 0v10"/></svg><svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 5H9M15 3v2"/></svg></button>
+      <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+      <button class="hamburger" id="hamburgerBtn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div></nav>
+  <div id="drawerOverlay" class="drawer-overlay"></div>
+  <div id="mobileDrawer" class="mobile-drawer">
+    <div class="drawer-header"><a href="../index.html" class="nav-logo"><div class="logo-icon">V</div>ViralPro<span style="color:var(--clr-primary);">Studio</span></a><button id="drawerClose" class="drawer-close"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
+    <nav class="drawer-nav"><a href="../index.html">🏠 Home</a><a href="about.html">👤 About</a><a href="services.html">⚡ Services</a><a href="portfolio.html">📊 Portfolio</a><a href="case-studies.html">📋 Case Studies</a><a href="pricing.html">💎 Pricing</a><a href="blog.html">📝 Blog</a><a href="contact.html">📬 Contact</a><a href="dashboard.html">🎛️ Dashboard</a></nav>
+    <div class="drawer-icons"><button class="nav-icon-btn theme-toggle"><svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg></button><button class="nav-icon-btn rtl-toggle"><svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12"/></svg><svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 5H9"/></svg></button></div>
+    <div class="drawer-ctas"><a href="login.html" class="btn btn-secondary">Login</a></div>
+  </div>
+
+  <!-- S1: HERO -->
+  <section class="contact-hero"><div class="orb orb-1"></div><div class="orb orb-2"></div>
+    <div class="container"><div class="section-center reveal">
+      <div class="section-label" style="background:rgba(255,45,85,0.15);color:#FF6B8A;">Let's Talk</div>
+      <h1 style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1rem;">Book Your <span class="text-gradient">Free Strategy Call</span></h1>
+      <p style="color:rgba(255,255,255,0.7);max-width:500px;margin:0 auto;">30 minutes. Zero obligation. I'll audit your TikTok live and outline exactly what needs to change.</p>
+    </div></div>
+  </section>
+
+  <!-- S2: FORM + INFO SIDE-BY-SIDE -->
+  <section style="background:var(--clr-bg);">
+    <div class="container">
+      <div class="grid-2" style="gap:2.5rem;align-items:start;">
+        <div class="form-card reveal">
+          <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:0.5rem;">Send a Message</h2>
+          <p style="color:var(--clr-text-muted);font-size:0.875rem;margin-bottom:2rem;">Fill in the form and I'll get back within 24 hours.</p>
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group"><label for="firstName">First Name *</label><input type="text" id="firstName" class="form-input" placeholder="Alex" required /></div>
+              <div class="form-group"><label for="lastName">Last Name *</label><input type="text" id="lastName" class="form-input" placeholder="Rivera" required /></div>
+            </div>
+            <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" class="form-input" placeholder="alex@example.com" required /></div>
+            <div class="form-group"><label for="tiktok">TikTok Handle</label><input type="text" id="tiktok" class="form-input" placeholder="@yourusername" /></div>
+            <div class="form-group"><label for="service">Service Interested In *</label>
+              <select id="service" class="form-select" required>
+                <option value="">Choose a service...</option>
+                <option>Organic Growth Strategy</option>
+                <option>Hook & Script Writing</option>
+                <option>Viral Content Planning</option>
+                <option>Trend Research</option>
+                <option>Analytics Reporting</option>
+                <option>Full Growth Pro Package</option>
+                <option>Enterprise / Custom</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="followers">Current Follower Count</label>
+              <select id="followers" class="form-select">
+                <option value="">Select range...</option>
+                <option>0 – 1,000</option>
+                <option>1,000 – 10,000</option>
+                <option>10,000 – 50,000</option>
+                <option>50,000 – 100,000</option>
+                <option>100,000+</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="message">Message *</label><textarea id="message" class="form-textarea" placeholder="Tell me about your goals, current situation, and what you'd like to achieve..." required></textarea></div>
+            <button type="submit" class="btn btn-primary w-full" style="justify-content:center;" id="submitBtn">Send Message →</button>
+          </form>
+          <div id="successMsg" style="display:none;text-align:center;padding:1.5rem;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:var(--border-radius);margin-top:1rem;">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">✅</div>
+            <h3 style="font-size:1rem;font-weight:700;color:#10B981;">Message Sent!</h3>
+            <p style="font-size:0.85rem;color:var(--clr-text-muted);">I'll respond within 24 hours. Check your email.</p>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div class="contact-info-card">
+            <h3 style="font-size:1.2rem;font-weight:800;margin-bottom:1.5rem;">Contact Information</h3>
+            <div class="ci-item"><div class="ci-icon">📧</div><div><div style="font-weight:600;margin-bottom:2px;">Email</div><div style="opacity:0.8;font-size:0.875rem;">alex@viralprostudio.com</div></div></div>
+            <div class="ci-item"><div class="ci-icon">📅</div><div><div style="font-weight:600;margin-bottom:2px;">Strategy Calls</div><div style="opacity:0.8;font-size:0.875rem;">Mon–Fri · 9am–6pm EST</div></div></div>
+            <div class="ci-item"><div class="ci-icon">⚡</div><div><div style="font-weight:600;margin-bottom:2px;">Response Time</div><div style="opacity:0.8;font-size:0.875rem;">Within 24 hours</div></div></div>
+            <div class="ci-item" style="margin-bottom:0;"><div class="ci-icon">🌍</div><div><div style="font-weight:600;margin-bottom:2px;">Location</div><div style="opacity:0.8;font-size:0.875rem;">Available Worldwide · Remote Only</div></div></div>
+            <hr style="border:none;border-top:1px solid rgba(255,255,255,0.15);margin:2rem 0;" />
+            <h4 style="margin-bottom:1rem;font-size:0.95rem;">Follow for Daily Growth Tips</h4>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <a href="#" style="background:rgba(255,255,255,0.15);color:#fff;padding:8px 14px;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;">TikTok</a>
+              <a href="#" style="background:rgba(255,255,255,0.15);color:#fff;padding:8px 14px;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;">Instagram</a>
+              <a href="#" style="background:rgba(255,255,255,0.15);color:#fff;padding:8px 14px;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;">YouTube</a>
+              <a href="#" style="background:rgba(255,255,255,0.15);color:#fff;padding:8px 14px;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;">X / Twitter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3: AVAILABILITY CALENDAR PREVIEW -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">Book a Call</div><h2 class="section-title">Available <span class="text-gradient">This Week</span></h2><p class="section-desc">Choose a time that works for you. 30-minute strategy session, no obligation, completely free.</p></div>
+      <div class="grid-7 mt-4 reveal" style="display:grid;grid-template-columns:repeat(7,1fr);gap:10px;">
+        <div class="calendar-slot selected"><div class="slot-day">MON</div><div class="slot-time">9:00 AM</div></div>
+        <div class="calendar-slot"><div class="slot-day">MON</div><div class="slot-time">2:00 PM</div></div>
+        <div class="calendar-slot"><div class="slot-day">TUE</div><div class="slot-time">10:00 AM</div></div>
+        <div class="calendar-slot"><div class="slot-day">TUE</div><div class="slot-time">4:00 PM</div></div>
+        <div class="calendar-slot"><div class="slot-day">THU</div><div class="slot-time">11:00 AM</div></div>
+        <div class="calendar-slot"><div class="slot-day">FRI</div><div class="slot-time">9:00 AM</div></div>
+        <div class="calendar-slot"><div class="slot-day">FRI</div><div class="slot-time">3:00 PM</div></div>
+      </div>
+      <div class="text-center mt-3 reveal"><a href="#contactForm" class="btn btn-primary btn-lg">Book Selected Slot</a></div>
+    </div>
+  </section>
+
+  <!-- S4: WHAT HAPPENS NEXT -->
+  <section style="background:var(--clr-bg);">
+    <div class="container">
+      <div class="section-center reveal"><div class="section-label">The Process</div><h2 class="section-title">What Happens <span class="text-gradient">After You Reach Out</span></h2></div>
+      <div class="grid-4 mt-4">
+        <div class="card reveal" style="text-align:center;">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--gradient-primary);color:#fff;font-weight:800;font-size:1.1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">1</div>
+          <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:6px;">You Message</h3>
+          <p style="font-size:0.8rem;color:var(--clr-text-muted);">Fill in your details and send. Takes 2 minutes.</p>
+        </div>
+        <div class="card reveal reveal-delay-1" style="text-align:center;">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--gradient-primary);color:#fff;font-weight:800;font-size:1.1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">2</div>
+          <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:6px;">I Review</h3>
+          <p style="font-size:0.8rem;color:var(--clr-text-muted);">I review your message and TikTok account within 24h.</p>
+        </div>
+        <div class="card reveal reveal-delay-2" style="text-align:center;">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--gradient-primary);color:#fff;font-weight:800;font-size:1.1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">3</div>
+          <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:6px;">Strategy Call</h3>
+          <p style="font-size:0.8rem;color:var(--clr-text-muted);">30-min call. I audit your account and outline your growth plan live.</p>
+        </div>
+        <div class="card reveal reveal-delay-3" style="text-align:center;">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--gradient-primary);color:#fff;font-weight:800;font-size:1.1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">4</div>
+          <h3 style="font-size:0.9rem;font-weight:700;margin-bottom:6px;">Growth Starts</h3>
+          <p style="font-size:0.8rem;color:var(--clr-text-muted);">If it's a fit, we launch your campaign within 5 business days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S5: FAQ -->
+  <section class="section-dark">
+    <div class="container" style="max-width:680px;">
+      <div class="section-center reveal"><div class="section-label">FAQ</div><h2 class="section-title">Before You <span class="text-gradient">Reach Out</span></h2></div>
+      <div class="mt-4 faq-mini reveal">
+        <div class="faq-item"><button class="faq-question">Is the strategy call really free?<svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">100% free, no strings attached. The 30-minute call is a chance for both of us to see if we're a good fit. No sales pressure.</div></div></div>
+        <div class="faq-item"><button class="faq-question">How fast can we start?<svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">If you're ready to commit after the call, I can have your strategy document and first content batch ready within 5 business days.</div></div></div>
+        <div class="faq-item"><button class="faq-question">Do you work with brands as well as creators?<svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Yes — I work with both individual creators and brand accounts across all niches. The Enterprise plan is built specifically for brand campaigns.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container">
+    <div class="footer-grid"><div class="footer-brand"><a href="../index.html" class="nav-logo" style="display:flex;margin-bottom:.75rem;"><div class="logo-icon">V</div><span>ViralPro<span style="color:var(--clr-primary);">Studio</span></span></a><p>Let's build your TikTok growth system.</p><div class="footer-socials"><a href="#" class="social-btn">𝕋</a><a href="#" class="social-btn">𝕀</a><a href="#" class="social-btn">𝕐</a><a href="#" class="social-btn">𝕏</a></div></div>
+    <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="services.html">All Services</a></li><li><a href="services.html">Hook Writing</a></li></ul></div>
+    <div class="footer-col"><h4>Pages</h4><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+    <div class="footer-col"><h4>Account</h4><ul class="footer-links"><li><a href="pricing.html">Pricing</a></li><li><a href="login.html">Login</a></li><li><a href="register.html">Register</a></li></ul></div></div>
+    <div class="footer-bottom"><span>© 2026 ViralPro Studio.</span><span>All rights reserved.</span></div>
+  </div></footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.querySelectorAll('.calendar-slot').forEach(slot => {
+      slot.addEventListener('click', function() {
+        document.querySelectorAll('.calendar-slot').forEach(s => s.classList.remove('selected'));
+        this.classList.add('selected');
+      });
+    });
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      setTimeout(() => {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      }, 1200);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ViralPro Studio | Premium Viral Version – TikTok Growth Strategist</title>
+  <meta name="description" content="Premium TikTok organic growth strategies for creators ready to dominate. Viral-first content systems, hook writing, and data-driven growth." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    /* Home 2 – Premium Viral Version */
+    .hero-2 {
+      min-height: 100vh;
+      background: #030310;
+      display: flex; align-items: center;
+      padding-top: var(--nav-height);
+      position: relative; overflow: hidden;
+    }
+    .hero-2-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .metric-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px); border-radius: 100px;
+      padding: 8px 18px; font-size: 0.875rem; color: rgba(255,255,255,0.85);
+      margin-bottom: 1.5rem;
+    }
+    .metric-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: #00F2EA; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.5;transform:scale(1.3);} }
+
+    .viral-counter-section { background: #030310; padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .viral-counters { display: grid; grid-template-columns: repeat(5,1fr); gap: 1px; }
+    .vc-item { padding: 2rem; text-align: center; position: relative; }
+    .vc-item::after { content:''; position:absolute; right:0; top:20%; height:60%; width:1px; background:rgba(255,255,255,0.08); }
+    .vc-item:last-child::after { display:none; }
+    .vc-val { font-family:var(--font-primary); font-size:2.5rem; font-weight:900; background:var(--gradient-primary); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .vc-label { font-size:0.8rem; color:rgba(255,255,255,0.5); margin-top:4px; }
+
+    .case-feature { background: linear-gradient(135deg,rgba(255,45,85,0.05),rgba(123,47,190,0.05)); border:1px solid rgba(255,45,85,0.15); border-radius:var(--border-radius-xl); padding:3rem; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+    .toolkit-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+    .toolkit-item { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:var(--border-radius); padding:1.5rem 1rem; text-align:center; transition:var(--transition); }
+    .toolkit-item:hover { background:rgba(255,45,85,0.08); border-color:rgba(255,45,85,0.3); transform:translateY(-4px); }
+    .toolkit-icon { font-size:2rem; margin-bottom:0.75rem; }
+    .toolkit-name { font-size:0.8rem; font-weight:700; color:rgba(255,255,255,0.85); }
+
+    .social-proof-wall { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background:rgba(255,255,255,0.06); border-radius:var(--border-radius-xl); overflow:hidden; }
+    .sp-cell { background:#030310; padding:2rem; text-align:center; transition:background 0.3s ease; }
+    .sp-cell:hover { background:rgba(255,45,85,0.07); }
+    .sp-val { font-family:var(--font-primary); font-size:2rem; font-weight:900; color:#fff; }
+    .sp-label { font-size:0.78rem; color:rgba(255,255,255,0.5); margin-top:4px; }
+    .sp-change { font-size:0.75rem; color:#10B981; font-weight:600; margin-top:6px; }
+
+    .trending-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
+    .trend-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:var(--border-radius-lg); overflow:hidden; display:flex; gap:1.25rem; align-items:center; padding:1.25rem; transition:var(--transition); }
+    .trend-card:hover { background:rgba(255,45,85,0.06); border-color:rgba(255,45,85,0.2); }
+    .trend-img { width:80px; height:80px; border-radius:10px; object-fit:cover; flex-shrink:0; }
+    .trend-rank { font-family:var(--font-primary); font-size:2rem; font-weight:900; background:var(--gradient-primary); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; flex-shrink:0; width:36px; }
+
+    @media(max-width:768px) {
+      .hero-2-grid { grid-template-columns:1fr; }
+      .viral-counters { grid-template-columns:repeat(2,1fr); }
+      .toolkit-grid { grid-template-columns:repeat(2,1fr); }
+      .social-proof-wall { grid-template-columns:1fr 1fr; }
+      .trending-grid { grid-template-columns:1fr; }
+      .case-feature { grid-template-columns:1fr; }
+    }
+    @media(max-width:480px){.viral-counters{grid-template-columns:1fr 1fr;}.vc-item::after{display:none;}}
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="mainNav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon">V</div>
+        <span>ViralPro<span style="color:var(--clr-primary);">Studio</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="home2.html" class="active">Home 2</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn theme-toggle" title="Toggle Dark Mode" aria-label="Toggle theme">
+          <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="nav-icon-btn rtl-toggle" title="Toggle RTL" aria-label="Toggle RTL">
+          <svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+          <svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" /></svg>
+        </button>
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div id="drawerOverlay" class="drawer-overlay"></div>
+  <div id="mobileDrawer" class="mobile-drawer">
+    <div class="drawer-header">
+      <a href="../index.html" class="nav-logo"><div class="logo-icon">V</div>ViralPro<span style="color:var(--clr-primary);">Studio</span></a>
+      <button id="drawerClose" class="drawer-close" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="../index.html">🏠 Home</a>
+      <a href="home2.html" class="active">🚀 Home 2</a>
+      <a href="about.html">👤 About</a>
+      <a href="services.html">⚡ Services</a>
+      <a href="portfolio.html">📊 Portfolio</a>
+      <a href="case-studies.html">📋 Case Studies</a>
+      <a href="pricing.html">💎 Pricing</a>
+      <a href="blog.html">📝 Blog</a>
+      <a href="contact.html">📬 Contact</a>
+      <a href="dashboard.html">🎛️ Dashboard</a>
+    </nav>
+    <div class="drawer-icons">
+      <button class="nav-icon-btn theme-toggle" aria-label="Toggle theme">
+        <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg>
+      </button>
+      <button class="nav-icon-btn rtl-toggle" aria-label="Toggle RTL">
+        <svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+        <svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" /></svg>
+      </button>
+    </div>
+    <div class="drawer-ctas">
+      <a href="login.html" class="btn btn-secondary">Login</a>
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+    </div>
+  </div>
+
+  <!-- SECTION 1: CINEMATIC HERO -->
+  <section class="hero-2" id="home">
+    <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+    <div class="container">
+      <div class="hero-2-grid">
+        <div class="reveal">
+          <div class="metric-pill">
+            <span class="dot"></span>
+            Live right now · 3 campaigns active
+          </div>
+          <h1 style="font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:900;line-height:1.05;color:#fff;margin-bottom:1.5rem;letter-spacing:-0.02em;">
+            The Only <span class="text-gradient">Viral TikTok</span><br>
+            Growth System<br>
+            You'll Ever Need
+          </h1>
+          <p style="color:rgba(255,255,255,0.6);font-size:1.05rem;max-width:520px;line-height:1.8;margin-bottom:2.5rem;">
+            Premium, data-engineered growth strategies that combine algorithm intelligence, viral psychology, and creator-economy expertise to build audiences that convert.
+          </p>
+          <div class="flex gap-2" style="flex-wrap:wrap;margin-bottom:2.5rem;">
+            <a href="contact.html" class="btn btn-primary btn-lg">Start Growing →</a>
+            <a href="portfolio.html" class="btn" style="background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:14px 28px;font-size:1rem;font-weight:600;">See Results</a>
+          </div>
+          <div class="flex gap-3" style="flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);font-size:0.85rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#10B981" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              No paid ads needed
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);font-size:0.85rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#10B981" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              100% organic methods
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);font-size:0.85rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#10B981" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Proven 3x growth average
+            </div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2" style="position:relative;">
+          <div style="position:relative;">
+            <img src="../assets/images/hero_strategist.png" alt="Premium TikTok Strategist" style="width:100%;border-radius:24px;aspect-ratio:3/4;object-fit:cover;box-shadow:0 0 80px rgba(255,45,85,0.2);" />
+            <!-- Floating Cards -->
+            <div style="position:absolute;top:24px;right:-20px;background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:14px 18px;min-width:160px;">
+              <div style="font-size:0.7rem;color:rgba(255,255,255,0.6);margin-bottom:6px;">📈 Viral Score</div>
+              <div style="font-size:1.8rem;font-weight:900;font-family:var(--font-primary);background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">9.4/10</div>
+              <div style="font-size:0.72rem;color:#10B981;font-weight:600;">↑ +1.2 this month</div>
+            </div>
+            <div style="position:absolute;bottom:24px;left:-20px;background:rgba(0,10,20,0.85);backdrop-filter:blur(20px);border:1px solid rgba(0,242,234,0.2);border-radius:14px;padding:14px 18px;min-width:170px;">
+              <div style="font-size:0.7rem;color:rgba(255,255,255,0.6);margin-bottom:6px;">👥 New Followers</div>
+              <div style="font-size:1.8rem;font-weight:900;font-family:var(--font-primary);color:#00F2EA;">+12,847</div>
+              <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);">Last 7 days · Organic</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: VIRAL METRICS COUNTERS -->
+  <div class="viral-counter-section">
+    <div class="container">
+      <div class="viral-counters">
+        <div class="vc-item reveal"><div class="vc-val"><span class="counter-value" data-target="185" data-suffix="K+">0</span></div><div class="vc-label">Followers Grown</div></div>
+        <div class="vc-item reveal reveal-delay-1"><div class="vc-val"><span class="counter-value" data-target="2.4" data-suffix="M">0</span></div><div class="vc-label">Total Views</div></div>
+        <div class="vc-item reveal reveal-delay-2"><div class="vc-val"><span class="counter-value" data-target="50" data-suffix="+">0</span></div><div class="vc-label">Campaigns Won</div></div>
+        <div class="vc-item reveal reveal-delay-3"><div class="vc-val"><span class="counter-value" data-target="8.7" data-suffix="%">0</span></div><div class="vc-label">Avg Engagement</div></div>
+        <div class="vc-item reveal reveal-delay-4"><div class="vc-val"><span class="counter-value" data-target="98" data-suffix="%">0</span></div><div class="vc-label">Client Satisfaction</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: FEATURED CASE STUDY -->
+  <section style="background:#030310;padding:5rem 0;">
+    <div class="container">
+      <div class="section-center reveal" style="margin-bottom:3rem;">
+        <div class="section-label">Featured Win</div>
+        <h2 class="section-title" style="color:#fff;">The Campaign That <span class="text-gradient">Broke Records</span></h2>
+      </div>
+      <div class="case-feature reveal">
+        <div>
+          <span class="badge badge-primary" style="margin-bottom:1rem;">Lifestyle Brand</span>
+          <h3 style="font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:1rem;">0 → 82K Followers<br>in 45 Days</h3>
+          <p style="color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:2rem;">A lifestyle brand came to us with 0 followers and a 90-day goal. We deployed a systematic content cadence with trend-jacking, viral hook frameworks, and strategic duets. The result shattered their expectations.</p>
+          <div class="grid-2" style="gap:1rem;margin-bottom:2rem;">
+            <div style="background:rgba(255,255,255,0.04);border-radius:10px;padding:1rem;text-align:center;">
+              <div style="font-size:1.5rem;font-weight:900;font-family:var(--font-primary);color:#FF2D55;">4.7M</div>
+              <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);">Total Views</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border-radius:10px;padding:1rem;text-align:center;">
+              <div style="font-size:1.5rem;font-weight:900;font-family:var(--font-primary);color:#00F2EA;">11.2%</div>
+              <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);">Avg Engagement</div>
+            </div>
+          </div>
+          <a href="case-studies.html" class="btn btn-primary">Full Case Study →</a>
+        </div>
+        <div>
+          <img src="../assets/images/audience_growth.png" alt="Case Study Results" style="width:100%;border-radius:16px;aspect-ratio:4/3;object-fit:cover;border:1px solid rgba(255,45,85,0.2);" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CREATOR TOOLKIT -->
+  <section style="background:#030310;padding:5rem 0;">
+    <div class="container">
+      <div class="section-center reveal">
+        <div class="section-label">Your Toolkit</div>
+        <h2 class="section-title" style="color:#fff;">Everything You Need to <span class="text-gradient">Dominate TikTok</span></h2>
+        <p class="section-desc" style="color:rgba(255,255,255,0.5);">A complete arsenal of viral growth weapons, delivered systematically.</p>
+      </div>
+      <div class="toolkit-grid mt-4">
+        <div class="toolkit-item reveal"><div class="toolkit-icon">🎯</div><div class="toolkit-name">Hook Engine</div></div>
+        <div class="toolkit-item reveal reveal-delay-1"><div class="toolkit-icon">📊</div><div class="toolkit-name">Analytics Intel</div></div>
+        <div class="toolkit-item reveal reveal-delay-2"><div class="toolkit-icon">🔥</div><div class="toolkit-name">Trend Radar</div></div>
+        <div class="toolkit-item reveal reveal-delay-3"><div class="toolkit-icon">🎵</div><div class="toolkit-name">Audio Scout</div></div>
+        <div class="toolkit-item reveal"><div class="toolkit-icon">📅</div><div class="toolkit-name">Content Calendar</div></div>
+        <div class="toolkit-item reveal reveal-delay-1"><div class="toolkit-icon">🏷️</div><div class="toolkit-name">Hashtag Clusters</div></div>
+        <div class="toolkit-item reveal reveal-delay-2"><div class="toolkit-icon">🤝</div><div class="toolkit-name">Collab Network</div></div>
+        <div class="toolkit-item reveal reveal-delay-3"><div class="toolkit-icon">🚀</div><div class="toolkit-name">Launch Protocol</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: SOCIAL PROOF WALL -->
+  <section style="background:#030310;padding:5rem 0;">
+    <div class="container">
+      <div class="section-center reveal">
+        <div class="section-label">Proof of Work</div>
+        <h2 class="section-title" style="color:#fff;">Numbers That <span class="text-gradient">Don't Lie</span></h2>
+      </div>
+      <div class="social-proof-wall mt-4 reveal">
+        <div class="sp-cell"><div class="sp-val">82K</div><div class="sp-label">Peak Campaign Growth</div><div class="sp-change">↑ in 45 days</div></div>
+        <div class="sp-cell"><div class="sp-val">4.7M</div><div class="sp-label">Single Video Views</div><div class="sp-change">↑ organic reach</div></div>
+        <div class="sp-cell"><div class="sp-val">11.2%</div><div class="sp-label">Peak Engagement Rate</div><div class="sp-change">↑ 3x industry avg</div></div>
+        <div class="sp-cell"><div class="sp-val">72h</div><div class="sp-label">Trend Lead Time</div><div class="sp-change">↑ ahead of  curve</div></div>
+        <div class="sp-cell"><div class="sp-val">50+</div><div class="sp-label">Successful Campaigns</div><div class="sp-change">↑ across all niches</div></div>
+        <div class="sp-cell"><div class="sp-val">3.2x</div><div class="sp-label">Avg Growth Multiplier</div><div class="sp-change">↑ per client avg</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: TRENDING CONTENT SHOWCASE -->
+  <section style="background:#030310;padding:5rem 0;">
+    <div class="container">
+      <div class="grid-2" style="gap:4rem;align-items:center;">
+        <div class="reveal">
+          <div class="section-label">Trend Intelligence</div>
+          <h2 class="section-title" style="color:#fff;text-align:left;">Content That's <span class="text-gradient">Trending Right Now</span></h2>
+          <p style="color:rgba(255,255,255,0.55);line-height:1.8;margin:1.25rem 0 2rem;">My trend radar identifies viral opportunities 72 hours before they peak, giving you a massive first-mover advantage on every wave.</p>
+          <div class="trending-grid">
+            <div class="trend-card"><div class="trend-rank">01</div><div><div style="font-size:0.85rem;font-weight:700;color:#fff;">POV Storytelling</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:2px;">+340% this week</div></div></div>
+            <div class="trend-card"><div class="trend-rank">02</div><div><div style="font-size:0.85rem;font-weight:700;color:#fff;">Day-in-my-life</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:2px;">+218% engagement</div></div></div>
+            <div class="trend-card"><div class="trend-rank">03</div><div><div style="font-size:0.85rem;font-weight:700;color:#fff;">Rapid Transitions</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:2px;">Peak in 36h</div></div></div>
+            <div class="trend-card"><div class="trend-rank">04</div><div><div style="font-size:0.85rem;font-weight:700;color:#fff;">Green Screen Facts</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:2px;">Rising fast</div></div></div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <img src="../assets/images/content_planning.png" alt="Trending Content" style="width:100%;border-radius:20px;aspect-ratio:1;object-fit:cover;border:1px solid rgba(255,255,255,0.08);" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: PRICING TEASER -->
+  <section style="background:#030310;padding:5rem 0;">
+    <div class="container">
+      <div class="section-center reveal">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title" style="color:#fff;">Investment That <span class="text-gradient">Pays Itself Back</span></h2>
+        <p class="section-desc" style="color:rgba(255,255,255,0.5);">Three tiers designed for every stage of your creator journey.</p>
+      </div>
+      <div class="grid-3 mt-4" style="align-items:center;">
+        <div class="card reveal" style="text-align:center;background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);">
+          <div class="pricing-name" style="color:rgba(255,255,255,0.8);">Starter</div>
+          <div class="pricing-price" style="color:#fff;">$497</div>
+          <div class="pricing-period" style="color:rgba(255,255,255,0.4);">/month</div>
+          <a href="pricing.html" class="btn btn-secondary w-full" style="justify-content:center;">Learn More</a>
+        </div>
+        <div class="card reveal reveal-delay-1" style="text-align:center;background:var(--gradient-primary);border:none;box-shadow:var(--shadow-primary);transform:scale(1.05);">
+          <div class="badge" style="background:rgba(255,255,255,0.2);color:#fff;margin-bottom:0.5rem;">Most Popular</div>
+          <div class="pricing-name" style="color:#fff;">Growth Pro</div>
+          <div class="pricing-price" style="color:#fff;">$997</div>
+          <div class="pricing-period" style="color:rgba(255,255,255,0.7);">/month</div>
+          <a href="pricing.html" class="btn btn-white w-full" style="justify-content:center;">Get Started</a>
+        </div>
+        <div class="card reveal reveal-delay-2" style="text-align:center;background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);">
+          <div class="pricing-name" style="color:rgba(255,255,255,0.8);">Enterprise</div>
+          <div class="pricing-price" style="color:#fff;">$2,497</div>
+          <div class="pricing-period" style="color:rgba(255,255,255,0.4);">/month</div>
+          <a href="pricing.html" class="btn btn-secondary w-full" style="justify-content:center;">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: FINAL CTA -->
+  <section style="background:#030310;padding:3rem 0 6rem;">
+    <div class="container reveal">
+      <div class="cta-banner">
+        <h2>Your Viral Era Starts Today</h2>
+        <p>Join 50+ creators and brands who've transformed their TikTok presence with data-driven organic growth strategy.</p>
+        <div class="flex-center gap-3" style="flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-white btn-lg">Book Free Strategy Call</a>
+          <a href="case-studies.html" class="btn btn-white-outline btn-lg">View All Results</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo" style="margin-bottom:0.75rem;display:flex;">
+            <div class="logo-icon">V</div>
+            <span>ViralPro<span style="color:var(--clr-primary);">Studio</span></span>
+          </a>
+          <p>Expert TikTok organic growth strategy for creators and brands ready to build real audiences.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="#" class="social-btn" aria-label="Google"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path><path d="M12 7v10m-5-5h10"></path></svg></a>
+            <a href="#" class="social-btn" aria-label="Apple"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 20.94c1.88 0 3.39-.66 4.47-1.67 1.09-1.02 1.75-2.45 1.75-4.21 0-3.32-2.31-5.06-4.94-5.06-1.12 0-2.18.29-3.03.82-.85-.53-1.91-.82-3.03-.82-2.63 0-4.94 1.74-4.94 5.06 0 1.76.66 3.19 1.75 4.21 1.08 1.01 2.59 1.67 4.47 1.67.92 0 1.83-.16 2.51-.48.68.32 1.59.48 2.51.48zM12 8c.39-1.36 1.41-2.43 2.65-2.83-1.06-.11-2.15.22-2.92.89-.77-.67-1.86-1-2.92-.89 1.24.4 2.26 1.47 2.65 2.83z"></path></svg></a>
+            <a href="#" class="social-btn" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Organic Growth</a></li>
+            <li><a href="services.html">Hook Writing</a></li>
+            <li><a href="services.html">Trend Research</a></li>
+            <li><a href="services.html">Content Calendar</a></li>
+            <li><a href="services.html">Analytics Reports</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Started</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="contact.html">Free Consultation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ViralPro Studio. All rights reserved.</span>
+        <span>Built for creators who want to go viral organically.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
