@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ViralPro Studio | TikTok Organic Growth Strategist</title>
-  <meta name="description" content="Expert TikTok organic growth strategies, viral content planning, hook writing, and creator branding. Grow your audience to millions." />
+  <meta name="description"
+    content="Expert TikTok organic growth strategies, viral content planning, hook writing, and creator branding. Grow your audience to millions." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
     /* Home 1 Specific */
@@ -21,14 +25,48 @@
       position: relative;
       overflow: hidden;
     }
-    .hero-1 .hero-badge { background: rgba(255,45,85,0.2); color: #FF6B8A; border: 1px solid rgba(255,45,85,0.3); }
-    .hero-stats { display: flex; gap: 2rem; margin-top: 2.5rem; flex-wrap: wrap; }
-    .hero-stat { text-align: center; }
-    .hero-stat .val { font-family: var(--font-primary); font-size: 1.75rem; font-weight: 900; color: #fff; }
-    .hero-stat .lbl { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 2px; }
-    .hero-stat .divider-v { width: 1px; height: 40px; background: rgba(255,255,255,0.15); align-self: center; }
 
-    .about-img-wrap { position: relative; }
+    .hero-1 .hero-badge {
+      background: rgba(255, 45, 85, 0.2);
+      color: #FF6B8A;
+      border: 1px solid rgba(255, 45, 85, 0.3);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat .val {
+      font-family: var(--font-primary);
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .hero-stat .lbl {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 2px;
+    }
+
+    .hero-stat .divider-v {
+      width: 1px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.15);
+      align-self: center;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+
     .about-img-wrap::after {
       content: '';
       position: absolute;
@@ -38,26 +76,140 @@
       z-index: -1;
       opacity: 0.3;
     }
-    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-    .portfolio-card { position: relative; border-radius: var(--border-radius-lg); overflow: hidden; }
-    .portfolio-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 0.4s ease; }
-    .portfolio-card:hover img { transform: scale(1.05); }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--clr-card);
+      border: 1px solid var(--clr-card-border);
+      border-radius: 20px;
+      padding: 0;
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .service-card::before {
+      display: none;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-image-wrap {
+      width: 100%;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+    }
+
+    .service-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-image-wrap img {
+      transform: scale(1.1);
+    }
+
+    .service-card-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .service-card .service-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 992px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .portfolio-card {
+      position: relative;
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .portfolio-card:hover img {
+      transform: scale(1.05);
+    }
+
     .portfolio-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
-      display: flex; flex-direction: column; justify-content: flex-end;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       padding: 1.5rem;
     }
-    .portfolio-overlay h3 { color: #fff; font-size: 1rem; font-weight: 700; }
-    .portfolio-overlay p { color: rgba(255,255,255,0.75); font-size: 0.78rem; margin-top: 4px; }
 
-    .process-line { display: flex; flex-direction: column; gap: 1.5rem; }
-    .neon-border { box-shadow: 0 0 0 1px rgba(255,45,85,0.15), 0 0 30px rgba(255,45,85,0.08); }
+    .portfolio-overlay h3 {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+    }
 
-    @media(max-width:768px) { .service-grid { grid-template-columns: 1fr; } .hero-stats { gap: 1.25rem; } }
-    @media(max-width:480px) { .hero-stat .val { font-size: 1.25rem; } }
+    .portfolio-overlay p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.78rem;
+      margin-top: 4px;
+    }
+
+    .process-line {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .neon-border {
+      box-shadow: 0 0 0 1px rgba(255, 45, 85, 0.15), 0 0 30px rgba(255, 45, 85, 0.08);
+    }
+
+    @media(max-width:768px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        gap: 1.25rem;
+      }
+    }
+
+    @media(max-width:480px) {
+      .hero-stat .val {
+        font-size: 1.25rem;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <!-- ========== NAVBAR ========== -->
@@ -80,16 +232,40 @@
       </ul>
       <div class="nav-actions">
         <button class="nav-icon-btn theme-toggle" title="Toggle Dark Mode" aria-label="Toggle theme">
-          <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-          <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+          <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
         </button>
         <button class="nav-icon-btn rtl-toggle" title="Toggle RTL" aria-label="Toggle RTL">
-          <svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
-          <svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" /></svg>
+          <svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+          <svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" />
+          </svg>
         </button>
         <a href="pages/login.html" class="btn btn-secondary btn-sm">Login</a>
         <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
         </button>
       </div>
     </div>
@@ -99,9 +275,14 @@
   <div id="drawerOverlay" class="drawer-overlay"></div>
   <div id="mobileDrawer" class="mobile-drawer">
     <div class="drawer-header">
-      <a href="index.html" class="nav-logo"><div class="logo-icon">V</div>ViralPro<span style="color:var(--clr-primary);">Studio</span></a>
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">V</div>ViralPro<span style="color:var(--clr-primary);">Studio</span>
+      </a>
       <button id="drawerClose" class="drawer-close" aria-label="Close menu">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+          width="18" height="18">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
       </button>
     </div>
     <nav class="drawer-nav">
@@ -118,12 +299,24 @@
     </nav>
     <div class="drawer-icons">
       <button class="nav-icon-btn theme-toggle" aria-label="Toggle theme">
-        <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-        <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg>
+        <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+        </svg>
+        <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5" />
+        </svg>
       </button>
       <button class="nav-icon-btn rtl-toggle" aria-label="Toggle RTL">
-        <svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
-        <svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" /></svg>
+        <svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+        </svg>
+        <svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" />
+        </svg>
       </button>
     </div>
     <div class="drawer-ctas">
@@ -140,19 +333,29 @@
       <div class="grid-2" style="gap:4rem; align-items:center;">
         <div class="hero-content reveal">
           <div class="section-label hero-badge" style="margin-bottom:1.25rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
             #1 TikTok Growth Strategist
           </div>
-          <h1 style="font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.1;color:#fff;margin-bottom:1.25rem;">
+          <h1
+            style="font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.1;color:#fff;margin-bottom:1.25rem;">
             Turn Your TikTok Into a<br>
-            <span class="typewriter-text text-gradient" data-words="Viral Machine|Growth Engine|Revenue Stream|Brand Empire">Viral Machine</span>
+            <span class="typewriter-text text-gradient"
+              data-words="Viral Machine|Growth Engine|Revenue Stream|Brand Empire">Viral Machine</span>
           </h1>
           <p style="font-size:1.1rem;color:rgba(255,255,255,0.75);max-width:540px;line-height:1.75;margin-bottom:2rem;">
-            I architect data-driven organic growth strategies that transform creator accounts into viral powerhouses. 185,000+ followers grown. 50+ campaigns launched.
+            I architect data-driven organic growth strategies that transform creator accounts into viral powerhouses.
+            185,000+ followers grown. 50+ campaigns launched.
           </p>
           <div class="flex gap-2" style="flex-wrap:wrap;">
             <a href="pages/contact.html" class="btn btn-primary btn-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
               Book Strategy Call
             </a>
             <a href="pages/case-studies.html" class="btn btn-white-outline btn-lg">View Case Studies</a>
@@ -169,7 +372,8 @@
             </div>
             <div class="divider-v"></div>
             <div class="hero-stat">
-              <div class="val"><span class="counter-value" data-target="8.7" data-suffix="%" data-duration="1500">0</span></div>
+              <div class="val"><span class="counter-value" data-target="8.7" data-suffix="%"
+                  data-duration="1500">0</span></div>
               <div class="lbl">Avg Engagement</div>
             </div>
             <div class="divider-v"></div>
@@ -181,11 +385,14 @@
         </div>
         <div class="reveal reveal-delay-2">
           <div class="img-frame">
-            <img src="assets/images/hero_strategist.png" alt="TikTok Growth Strategist" style="width:100%;aspect-ratio:4/5;object-fit:cover;" />
+            <img src="assets/images/hero_strategist.png" alt="TikTok Growth Strategist"
+              style="width:100%;aspect-ratio:4/5;object-fit:cover;" />
           </div>
           <!-- Floating metric card -->
-          <div class="card" style="position:absolute;bottom:-20px;left:-20px;padding:1rem 1.25rem;max-width:200px;z-index:10;">
-            <div style="font-size:0.72rem;color:var(--clr-primary);font-weight:700;margin-bottom:4px;">🔥 Latest Campaign</div>
+          <div class="card"
+            style="position:absolute;bottom:-20px;left:-20px;padding:1rem 1.25rem;max-width:200px;z-index:10;">
+            <div style="font-size:0.72rem;color:var(--clr-primary);font-weight:700;margin-bottom:4px;">🔥 Latest
+              Campaign</div>
             <div style="font-size:1.25rem;font-weight:900;font-family:var(--font-primary);">+47K</div>
             <div style="font-size:0.75rem;color:var(--clr-text-muted);">New followers in 30 days</div>
           </div>
@@ -211,22 +418,30 @@
       <div class="grid-2" style="gap:4rem;align-items:center;">
         <div class="reveal">
           <div class="img-frame about-img-wrap" style="position:relative;">
-            <img src="assets/images/analytics_dashboard.png" alt="Analytics Dashboard" class="img-cover" style="aspect-ratio:1;"/>
+            <img src="assets/images/analytics_dashboard.png" alt="Analytics Dashboard" class="img-cover"
+              style="aspect-ratio:1;" />
           </div>
         </div>
         <div class="reveal reveal-delay-2">
           <div class="section-label">About Me</div>
-          <h2 class="section-title" style="text-align:left;">The Strategist Behind <span class="text-gradient">Viral Brands</span></h2>
+          <h2 class="section-title" style="text-align:left;">The Strategist Behind <span class="text-gradient">Viral
+              Brands</span></h2>
           <p style="color:var(--clr-text-muted);line-height:1.8;margin-bottom:1.5rem;">
-            With 5+ years immersed in the creator economy, I've cracked the TikTok algorithm for dozens of brands and personal creators. My data-first approach combines trend intelligence, psychological hook writing, and precision content timing.
+            With 5+ years immersed in the creator economy, I've cracked the TikTok algorithm for dozens of brands and
+            personal creators. My data-first approach combines trend intelligence, psychological hook writing, and
+            precision content timing.
           </p>
           <div class="grid-2" style="gap:1rem;margin-bottom:2rem;">
             <div class="card" style="padding:1rem;">
-              <div style="font-size:1.5rem;font-weight:900;font-family:var(--font-primary);background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">98%</div>
+              <div
+                style="font-size:1.5rem;font-weight:900;font-family:var(--font-primary);background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+                98%</div>
               <div style="font-size:0.8rem;color:var(--clr-text-muted);">Client Satisfaction Rate</div>
             </div>
             <div class="card" style="padding:1rem;">
-              <div style="font-size:1.5rem;font-weight:900;font-family:var(--font-primary);background:var(--gradient-secondary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">3.2x</div>
+              <div
+                style="font-size:1.5rem;font-weight:900;font-family:var(--font-primary);background:var(--gradient-secondary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+                3.2x</div>
               <div style="font-size:0.8rem;color:var(--clr-text-muted);">Avg Growth Multiplier</div>
             </div>
           </div>
@@ -242,44 +457,90 @@
       <div class="section-center reveal">
         <div class="section-label">What I Do</div>
         <h2 class="section-title">Growth Services That <span class="text-gradient">Actually Work</span></h2>
-        <p class="section-desc">Every service is custom-built around your brand voice, audience psychology, and platform algorithm signals.</p>
+        <p class="section-desc">Every service is custom-built around your brand voice, audience psychology, and platform
+          algorithm signals.</p>
       </div>
       <div class="service-grid mt-4">
+        <!-- Service 1 -->
         <div class="service-card reveal">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
-          <h3 class="service-title">Organic Growth Strategy</h3>
-          <p class="service-desc">Full-funnel TikTok strategy tailored to your niche, audience, and business goals.</p>
-          <div class="flex gap-1 flex-wrap"><span class="badge badge-primary">0→100K</span><span class="badge badge-secondary">Algorithm-Aligned</span></div>
+          <div class="service-image-wrap">
+            <img src="images/Organic Growth Strategy.png" alt="Organic Growth Strategy">
+          </div>
+          <div class="service-card-body">
+            <h3 class="service-title">Organic Growth Strategy</h3>
+            <p class="service-desc">Full-funnel TikTok strategy tailored to your niche, audience, and business goals.</p>
+            <div class="flex gap-1 flex-wrap"><span class="badge badge-primary">0→100K</span><span
+                class="badge badge-secondary">Algorithm-Aligned</span></div>
+          </div>
         </div>
+
+        <!-- Service 2 -->
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></div>
-          <h3 class="service-title">Hook & Script Writing</h3>
-          <p class="service-desc">Psychologically engineered hooks and scripts designed to stop scrollers dead in their tracks.</p>
-          <div class="flex gap-1 flex-wrap"><span class="badge badge-primary">High Retention</span><span class="badge badge-purple">Viral Hooks</span></div>
+          <div class="service-image-wrap">
+            <img src="images/Hook & Script Writing.png" alt="Hook & Script Writing">
+          </div>
+          <div class="service-card-body">
+            <h3 class="service-title">Hook & Script Writing</h3>
+            <p class="service-desc">Psychologically engineered hooks and scripts designed to stop scrollers dead in their
+              tracks.</p>
+            <div class="flex gap-1 flex-wrap"><span class="badge badge-primary">High Retention</span><span
+                class="badge badge-purple">Viral Hooks</span></div>
+          </div>
         </div>
+
+        <!-- Service 3 -->
         <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
-          <h3 class="service-title">Trend Research</h3>
-          <p class="service-desc">Real-time trend analysis and early adoption strategy so you ride waves before they peak.</p>
-          <div class="flex gap-1 flex-wrap"><span class="badge badge-secondary">72h Ahead</span><span class="badge badge-success">Proven ROI</span></div>
+          <div class="service-image-wrap">
+            <img src="images/Trend Research.png" alt="Trend Research">
+          </div>
+          <div class="service-card-body">
+            <h3 class="service-title">Trend Research</h3>
+            <p class="service-desc">Real-time trend analysis and early adoption strategy so you ride waves before they
+              peak.</p>
+            <div class="flex gap-1 flex-wrap"><span class="badge badge-secondary">72h Ahead</span><span
+                class="badge badge-success">Proven ROI</span></div>
+          </div>
         </div>
+
+        <!-- Service 4 -->
         <div class="service-card reveal">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg></div>
-          <h3 class="service-title">TikTok SEO & Hashtags</h3>
-          <p class="service-desc">Data-backed hashtag clustering and caption optimization for maximum discoverability.</p>
-          <div class="flex gap-1 flex-wrap"><span class="badge badge-primary">FYP Optimized</span><span class="badge badge-secondary">SEO Driven</span></div>
+          <div class="service-image-wrap">
+            <img src="images/TikTok SEO & Hashtags.png" alt="TikTok SEO & Hashtags">
+          </div>
+          <div class="service-card-body">
+            <h3 class="service-title">TikTok SEO & Hashtags</h3>
+            <p class="service-desc">Data-backed hashtag clustering and caption optimization for maximum discoverability.
+            </p>
+            <div class="flex gap-1 flex-wrap"><span class="badge badge-primary">FYP Optimized</span><span
+                class="badge badge-secondary">SEO Driven</span></div>
+          </div>
         </div>
+
+        <!-- Service 5 -->
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
-          <h3 class="service-title">Content Calendar</h3>
-          <p class="service-desc">30/60/90-day content roadmaps aligned with platform momentum and campaign goals.</p>
-          <div class="flex gap-1 flex-wrap"><span class="badge badge-purple">Monthly Plans</span><span class="badge badge-success">Batch Created</span></div>
+          <div class="service-image-wrap">
+            <img src="images/Content Calendar.png" alt="Content Calendar">
+          </div>
+          <div class="service-card-body">
+            <h3 class="service-title">Content Calendar</h3>
+            <p class="service-desc">30/60/90-day content roadmaps aligned with platform momentum and campaign goals.</p>
+            <div class="flex gap-1 flex-wrap"><span class="badge badge-purple">Monthly Plans</span><span
+                class="badge badge-success">Batch Created</span></div>
+          </div>
         </div>
+
+        <!-- Service 6 -->
         <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
-          <h3 class="service-title">Analytics & Reporting</h3>
-          <p class="service-desc">Weekly performance reports with actionable insights, A/B test results, and next-step recommendations.</p>
-          <div class="flex gap-1 flex-wrap"><span class="badge badge-primary">Weekly Reports</span><span class="badge badge-secondary">Data-First</span></div>
+          <div class="service-image-wrap">
+            <img src="images/Analytics & Reporting.png" alt="Analytics & Reporting">
+          </div>
+          <div class="service-card-body">
+            <h3 class="service-title">Analytics & Reporting</h3>
+            <p class="service-desc">Weekly performance reports with actionable insights, A/B test results, and next-step
+              recommendations.</p>
+            <div class="flex gap-1 flex-wrap"><span class="badge badge-primary">Weekly Reports</span><span
+                class="badge badge-secondary">Data-First</span></div>
+          </div>
         </div>
       </div>
       <div class="text-center mt-4 reveal">
@@ -294,7 +555,8 @@
       <div class="section-center reveal">
         <div class="section-label">Portfolio</div>
         <h2 class="section-title">Campaign Results That <span class="text-gradient">Speak Loudly</span></h2>
-        <p class="section-desc">Real accounts. Real growth. Real impact. Browse my most successful organic growth campaigns.</p>
+        <p class="section-desc">Real accounts. Real growth. Real impact. Browse my most successful organic growth
+          campaigns.</p>
       </div>
       <div class="grid-3 mt-4">
         <div class="portfolio-card reveal">
@@ -338,26 +600,38 @@
       <div class="grid-3 mt-4">
         <div class="testimonial-card reveal">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"In 6 weeks my account went from 3K to 67K followers. The hook scripts alone changed everything — my average watch time tripled."</p>
+          <p class="testimonial-text">"In 6 weeks my account went from 3K to 67K followers. The hook scripts alone
+            changed everything — my average watch time tripled."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">SM</div>
-            <div><div class="testimonial-name">Sarah Martinez</div><div class="testimonial-role">Lifestyle Creator · 67K followers</div></div>
+            <div>
+              <div class="testimonial-name">Sarah Martinez</div>
+              <div class="testimonial-role">Lifestyle Creator · 67K followers</div>
+            </div>
           </div>
         </div>
         <div class="testimonial-card reveal reveal-delay-1">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"The trend research service is unreal. We jumped on 3 trends before they peaked and each one drove 500K+ views. Pure ROI."</p>
+          <p class="testimonial-text">"The trend research service is unreal. We jumped on 3 trends before they peaked
+            and each one drove 500K+ views. Pure ROI."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">JK</div>
-            <div><div class="testimonial-name">Jake Kwan</div><div class="testimonial-role">E-commerce Brand Founder</div></div>
+            <div>
+              <div class="testimonial-name">Jake Kwan</div>
+              <div class="testimonial-role">E-commerce Brand Founder</div>
+            </div>
           </div>
         </div>
         <div class="testimonial-card reveal reveal-delay-2">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Most strategists give you generic advice. This strategist gave us a custom playbook that fit our brand voice perfectly. 10x better than anyone else."</p>
+          <p class="testimonial-text">"Most strategists give you generic advice. This strategist gave us a custom
+            playbook that fit our brand voice perfectly. 10x better than anyone else."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">AL</div>
-            <div><div class="testimonial-name">Aisha Lawson</div><div class="testimonial-role">Music Artist · @beatbyaisha</div></div>
+            <div>
+              <div class="testimonial-name">Aisha Lawson</div>
+              <div class="testimonial-role">Music Artist · @beatbyaisha</div>
+            </div>
           </div>
         </div>
       </div>
@@ -370,29 +644,48 @@
       <div class="grid-2" style="gap:4rem;align-items:center;">
         <div class="reveal">
           <div class="section-label">My Process</div>
-          <h2 class="section-title" style="text-align:left;">The 4-Step <span class="text-gradient">Growth System</span></h2>
-          <p style="color:var(--clr-text-muted);margin-bottom:2.5rem;">Every client goes through my proven framework built on 5 years of algorithm research and creator analytics.</p>
+          <h2 class="section-title" style="text-align:left;">The 4-Step <span class="text-gradient">Growth System</span>
+          </h2>
+          <p style="color:var(--clr-text-muted);margin-bottom:2.5rem;">Every client goes through my proven framework
+            built on 5 years of algorithm research and creator analytics.</p>
           <div class="process-line">
             <div class="process-step reveal">
               <div class="step-num">1</div>
-              <div><h4 style="margin-bottom:4px;">Deep Audit & Strategy Sprint</h4><p style="color:var(--clr-text-muted);font-size:0.875rem;">Full account analysis, niche positioning, competitor teardown, and 90-day roadmap creation.</p></div>
+              <div>
+                <h4 style="margin-bottom:4px;">Deep Audit & Strategy Sprint</h4>
+                <p style="color:var(--clr-text-muted);font-size:0.875rem;">Full account analysis, niche positioning,
+                  competitor teardown, and 90-day roadmap creation.</p>
+              </div>
             </div>
             <div class="process-step reveal reveal-delay-1">
               <div class="step-num">2</div>
-              <div><h4 style="margin-bottom:4px;">Content System Build</h4><p style="color:var(--clr-text-muted);font-size:0.875rem;">Hook library, content pillars, posting schedule, and template creation for consistent output.</p></div>
+              <div>
+                <h4 style="margin-bottom:4px;">Content System Build</h4>
+                <p style="color:var(--clr-text-muted);font-size:0.875rem;">Hook library, content pillars, posting
+                  schedule, and template creation for consistent output.</p>
+              </div>
             </div>
             <div class="process-step reveal reveal-delay-2">
               <div class="step-num">3</div>
-              <div><h4 style="margin-bottom:4px;">Launch & Trend Align</h4><p style="color:var(--clr-text-muted);font-size:0.875rem;">Strategic content launch timed with trending audio and hashtag momentum windows.</p></div>
+              <div>
+                <h4 style="margin-bottom:4px;">Launch & Trend Align</h4>
+                <p style="color:var(--clr-text-muted);font-size:0.875rem;">Strategic content launch timed with trending
+                  audio and hashtag momentum windows.</p>
+              </div>
             </div>
             <div class="process-step reveal reveal-delay-3">
               <div class="step-num">4</div>
-              <div><h4 style="margin-bottom:4px;">Optimize & Scale</h4><p style="color:var(--clr-text-muted);font-size:0.875rem;">Weekly analytics review, A/B testing, and iterative optimization to compound growth.</p></div>
+              <div>
+                <h4 style="margin-bottom:4px;">Optimize & Scale</h4>
+                <p style="color:var(--clr-text-muted);font-size:0.875rem;">Weekly analytics review, A/B testing, and
+                  iterative optimization to compound growth.</p>
+              </div>
             </div>
           </div>
         </div>
         <div class="reveal reveal-delay-2">
-          <img src="assets/images/content_planning.png" alt="Growth Process" class="img-frame" style="width:100%;aspect-ratio:1;object-fit:cover;" />
+          <img src="assets/images/content_planning.png" alt="Growth Process" class="img-frame"
+            style="width:100%;aspect-ratio:1;object-fit:cover;" />
         </div>
       </div>
     </div>
@@ -411,7 +704,8 @@
           <div class="blog-body">
             <div class="blog-category">Hook Writing</div>
             <h3 class="blog-title">7 Hook Frameworks That Drive 80% Watch-Through on TikTok</h3>
-            <p class="blog-excerpt">The first 3 seconds are everything. Here are the psychological patterns that keep viewers glued.</p>
+            <p class="blog-excerpt">The first 3 seconds are everything. Here are the psychological patterns that keep
+              viewers glued.</p>
             <div class="blog-meta"><span>May 10, 2026</span><span>8 min read</span></div>
           </div>
         </div>
@@ -420,7 +714,8 @@
           <div class="blog-body">
             <div class="blog-category">Algorithm</div>
             <h3 class="blog-title">TikTok Algorithm 2026: What Changed and How to Win</h3>
-            <p class="blog-excerpt">The algorithm shifted again. Here's exactly what's working now based on 50+ account experiments.</p>
+            <p class="blog-excerpt">The algorithm shifted again. Here's exactly what's working now based on 50+ account
+              experiments.</p>
             <div class="blog-meta"><span>May 5, 2026</span><span>12 min read</span></div>
           </div>
         </div>
@@ -429,12 +724,14 @@
           <div class="blog-body">
             <div class="blog-category">Hashtags</div>
             <h3 class="blog-title">The Dead Hashtag Strategy Is Dead: What to Do Instead</h3>
-            <p class="blog-excerpt">Stop using random hashtags. Start using contextual clusters that signal your content to the right FYP.</p>
+            <p class="blog-excerpt">Stop using random hashtags. Start using contextual clusters that signal your content
+              to the right FYP.</p>
             <div class="blog-meta"><span>Apr 28, 2026</span><span>6 min read</span></div>
           </div>
         </div>
       </div>
-      <div class="text-center mt-4 reveal"><a href="pages/blog.html" class="btn btn-outline-primary btn-lg">Read All Articles</a></div>
+      <div class="text-center mt-4 reveal"><a href="pages/blog.html" class="btn btn-outline-primary btn-lg">Read All
+          Articles</a></div>
     </div>
   </section>
 
@@ -443,7 +740,8 @@
     <div class="container reveal">
       <div class="cta-banner">
         <h2>Ready to Go Viral?</h2>
-        <p>Let's build a custom growth strategy for your TikTok account. No cookie-cutter plans — just results-driven strategy built for your brand.</p>
+        <p>Let's build a custom growth strategy for your TikTok account. No cookie-cutter plans — just results-driven
+          strategy built for your brand.</p>
         <div class="flex-center gap-3" style="flex-wrap:wrap;">
           <a href="pages/contact.html" class="btn btn-white btn-lg">Book Strategy Call</a>
           <a href="pages/case-studies.html" class="btn btn-white-outline btn-lg">See Proof of Results</a>
@@ -463,10 +761,31 @@
           </a>
           <p>Expert TikTok organic growth strategy for creators and brands ready to build real audiences.</p>
           <div class="footer-socials">
-            <a href="#" class="social-btn" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-            <a href="#" class="social-btn" aria-label="Google"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path><path d="M12 7v10m-5-5h10"></path></svg></a>
-            <a href="#" class="social-btn" aria-label="Apple"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 20.94c1.88 0 3.39-.66 4.47-1.67 1.09-1.02 1.75-2.45 1.75-4.21 0-3.32-2.31-5.06-4.94-5.06-1.12 0-2.18.29-3.03.82-.85-.53-1.91-.82-3.03-.82-2.63 0-4.94 1.74-4.94 5.06 0 1.76.66 3.19 1.75 4.21 1.08 1.01 2.59 1.67 4.47 1.67.92 0 1.83-.16 2.51-.48.68.32 1.59.48 2.51.48zM12 8c.39-1.36 1.41-2.43 2.65-2.83-1.06-.11-2.15.22-2.92.89-.77-.67-1.86-1-2.92-.89 1.24.4 2.26 1.47 2.65 2.83z"></path></svg></a>
-            <a href="#" class="social-btn" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg></a>
+            <a href="#" class="social-btn" aria-label="Google"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z">
+                </path>
+                <path d="M12 7v10m-5-5h10"></path>
+              </svg></a>
+            <a href="#" class="social-btn" aria-label="Apple"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 20.94c1.88 0 3.39-.66 4.47-1.67 1.09-1.02 1.75-2.45 1.75-4.21 0-3.32-2.31-5.06-4.94-5.06-1.12 0-2.18.29-3.03.82-.85-.53-1.91-.82-3.03-.82-2.63 0-4.94 1.74-4.94 5.06 0 1.76.66 3.19 1.75 4.21 1.08 1.01 2.59 1.67 4.47 1.67.92 0 1.83-.16 2.51-.48.68.32 1.59.48 2.51.48zM12 8c.39-1.36 1.41-2.43 2.65-2.83-1.06-.11-2.15.22-2.92.89-.77-.67-1.86-1-2.92-.89 1.24.4 2.26 1.47 2.65 2.83z">
+                </path>
+              </svg></a>
+            <a href="#" class="social-btn" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg></a>
           </div>
         </div>
         <div class="footer-col">
@@ -511,4 +830,5 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

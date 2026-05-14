@@ -8,14 +8,18 @@
   <link rel="stylesheet" href="../assets/css/style.css" />
   <style>
     .services-hero{background:var(--gradient-hero);min-height:45vh;display:flex;align-items:center;padding-top:var(--nav-height);position:relative;overflow:hidden;}
-    .service-detail-card{background:var(--clr-card);border:1px solid var(--clr-card-border);border-radius:var(--border-radius-xl);padding:2.5rem;position:relative;overflow:hidden;transition:var(--transition);}
-    .service-detail-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
-    .service-detail-card::after{content:'';position:absolute;top:0;right:0;width:100px;height:100px;border-radius:50%;background:rgba(255,45,85,0.04);transition:var(--transition);}
-    .service-detail-card:hover::after{transform:scale(3);}
+    .grid-auto { gap: 1.5rem; margin-top: 2.5rem; }
+    .service-detail-card{background:var(--clr-card);border:1px solid var(--clr-card-border);border-radius:24px;padding:0;position:relative;overflow:hidden;transition:var(--transition);display:flex;flex-direction:column;height:100%;}
+    .service-detail-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
+    .service-image-wrap { width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+    .service-image-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .service-detail-card:hover .service-image-wrap img { transform: scale(1.1); }
+    .service-detail-body { padding: 1.75rem; flex-grow: 1; display: flex; flex-direction: column; }
+    .service-detail-card::after{display:none;}
     .deliverable-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin:1rem 0;}
     .deliverable-list li{display:flex;align-items:center;gap:8px;font-size:0.875rem;color:var(--clr-text-2);}
     .deliverable-list li::before{content:'✓';color:var(--clr-primary);font-weight:700;flex-shrink:0;}
-    .service-outcome{background:rgba(255,45,85,0.05);border:1px solid rgba(255,45,85,0.1);border-radius:8px;padding:0.75rem 1rem;font-size:0.8rem;color:var(--clr-primary);font-weight:600;margin-top:1rem;}
+    .service-outcome{background:rgba(255,45,85,0.05);border:1px solid rgba(255,45,85,0.1);border-radius:8px;padding:0.75rem 1rem;font-size:0.8rem;color:var(--clr-primary);font-weight:600;margin-top:auto;}
     .process-visual{display:flex;gap:0;align-items:stretch;flex-wrap:nowrap;overflow-x:auto;}
     .pv-step{flex:1;min-width:160px;background:var(--clr-card);border:1px solid var(--clr-card-border);border-radius:0;padding:1.75rem 1.25rem;text-align:center;position:relative;}
     .pv-step:first-child{border-radius:var(--border-radius) 0 0 var(--border-radius);}
@@ -117,86 +121,145 @@
   <section style="background:var(--clr-bg);">
     <div class="container">
       <div class="section-center reveal"><div class="section-label">Services</div><h2 class="section-title">Complete <span class="text-gradient">Growth Arsenal</span></h2></div>
-      <div class="grid-auto mt-4">
+      <div class="grid-auto">
+        <!-- Service 1 -->
         <div class="service-detail-card reveal">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
-          <h3 class="service-title" style="font-size:1.1rem;">TikTok Organic Growth Strategy</h3>
-          <p class="service-desc">A full-funnel growth plan built specifically for your niche, objectives, and audience psychology.</p>
-          <ul class="deliverable-list"><li>90-day growth roadmap</li><li>Niche & competitor analysis</li><li>Algorithm alignment strategy</li><li>Weekly optimization reviews</li></ul>
-          <div class="service-outcome">📈 Expected: 3–5x follower growth in 90 days</div>
-          <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          <div class="service-image-wrap">
+            <img src="../images/TikTok Organic Growth Strategy.png" alt="TikTok Organic Growth Strategy">
+          </div>
+          <div class="service-detail-body">
+            <h3 class="service-title" style="font-size:1.1rem;">TikTok Organic Growth Strategy</h3>
+            <p class="service-desc">A full-funnel growth plan built specifically for your niche, objectives, and audience psychology.</p>
+            <ul class="deliverable-list"><li>90-day growth roadmap</li><li>Niche & competitor analysis</li><li>Algorithm alignment strategy</li><li>Weekly optimization reviews</li></ul>
+            <div class="service-outcome">📈 Expected: 3–5x follower growth in 90 days</div>
+            <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          </div>
         </div>
+
+        <!-- Service 2 -->
         <div class="service-detail-card reveal">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M3 8h18M5 8v12a2 2 0 002 2h10a2 2 0 002-2V8"/></svg></div>
-          <h3 class="service-title" style="font-size:1.1rem;">Viral Content Planning</h3>
-          <p class="service-desc">Strategic content architecture designed around trending formats, viral patterns, and audience triggers.</p>
-          <ul class="deliverable-list"><li>Monthly content blueprints</li><li>Format + structure templates</li><li>Trend-aligned video concepts</li><li>Batch content frameworks</li></ul>
-          <div class="service-outcome">🔥 Expected: 2–4 viral videos per month</div>
-          <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          <div class="service-image-wrap">
+            <img src="../images/Viral Content Planning.png" alt="Viral Content Planning">
+          </div>
+          <div class="service-detail-body">
+            <h3 class="service-title" style="font-size:1.1rem;">Viral Content Planning</h3>
+            <p class="service-desc">Strategic content architecture designed around trending formats, viral patterns, and audience triggers.</p>
+            <ul class="deliverable-list"><li>Monthly content blueprints</li><li>Format + structure templates</li><li>Trend-aligned video concepts</li><li>Batch content frameworks</li></ul>
+            <div class="service-outcome">🔥 Expected: 2–4 viral videos per month</div>
+            <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          </div>
         </div>
+
+        <!-- Service 3 -->
         <div class="service-detail-card reveal">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></div>
-          <h3 class="service-title" style="font-size:1.1rem;">Hook & Script Writing</h3>
-          <p class="service-desc">Psychologically engineered hooks and full video scripts optimized for watch time and shares.</p>
-          <ul class="deliverable-list"><li>20 custom hooks per month</li><li>Full script writing (optional)</li><li>Hook A/B testing framework</li><li>Pattern interrupt techniques</li></ul>
-          <div class="service-outcome">⏱ Expected: 70%+ hook retention rate</div>
-          <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          <div class="service-image-wrap">
+            <img src="../images/Hook & Script Writing.png" alt="Hook & Script Writing">
+          </div>
+          <div class="service-detail-body">
+            <h3 class="service-title" style="font-size:1.1rem;">Hook & Script Writing</h3>
+            <p class="service-desc">Psychologically engineered hooks and full video scripts optimized for watch time and shares.</p>
+            <ul class="deliverable-list"><li>20 custom hooks per month</li><li>Full script writing (optional)</li><li>Hook A/B testing framework</li><li>Pattern interrupt techniques</li></ul>
+            <div class="service-outcome">⏱ Expected: 70%+ hook retention rate</div>
+            <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          </div>
         </div>
+
+        <!-- Service 4 -->
         <div class="service-detail-card reveal">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
-          <h3 class="service-title" style="font-size:1.1rem;">Trend Research</h3>
-          <p class="service-desc">Real-time intelligence that puts you 72 hours ahead of trends before they peak on the FYP.</p>
-          <ul class="deliverable-list"><li>Weekly trend report</li><li>Audio trend scouting</li><li>Early-mover opportunities</li><li>Competitor trend mapping</li></ul>
-          <div class="service-outcome">🎵 Expected: 3x reach on trend-aligned content</div>
-          <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          <div class="service-image-wrap">
+            <img src="../images/Trend Research.png" alt="Trend Research">
+          </div>
+          <div class="service-detail-body">
+            <h3 class="service-title" style="font-size:1.1rem;">Trend Research</h3>
+            <p class="service-desc">Real-time intelligence that puts you 72 hours ahead of trends before they peak on the FYP.</p>
+            <ul class="deliverable-list"><li>Weekly trend report</li><li>Audio trend scouting</li><li>Early-mover opportunities</li><li>Competitor trend mapping</li></ul>
+            <div class="service-outcome">🎵 Expected: 3x reach on trend-aligned content</div>
+            <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          </div>
         </div>
+
+        <!-- Service 5 -->
         <div class="service-detail-card reveal">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg></div>
-          <h3 class="service-title" style="font-size:1.1rem;">TikTok SEO & Hashtags</h3>
-          <p class="service-desc">Data-backed hashtag clustering and caption optimization for maximum FYP discoverability.</p>
-          <ul class="deliverable-list"><li>Custom hashtag clusters</li><li>Caption SEO frameworks</li><li>Keyword research</li><li>Monthly cluster refresh</li></ul>
-          <div class="service-outcome">📍 Expected: 40% increase in FYP distribution</div>
-          <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          <div class="service-image-wrap">
+            <img src="../images/TikTok SEO & Hashtags.png" alt="TikTok SEO & Hashtags">
+          </div>
+          <div class="service-detail-body">
+            <h3 class="service-title" style="font-size:1.1rem;">TikTok SEO & Hashtags</h3>
+            <p class="service-desc">Data-backed hashtag clustering and caption optimization for maximum FYP discoverability.</p>
+            <ul class="deliverable-list"><li>Custom hashtag clusters</li><li>Caption SEO frameworks</li><li>Keyword research</li><li>Monthly cluster refresh</li></ul>
+            <div class="service-outcome">📍 Expected: 40% increase in FYP distribution</div>
+            <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          </div>
         </div>
+
+        <!-- Service 6 -->
         <div class="service-detail-card reveal">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
-          <h3 class="service-title" style="font-size:1.1rem;">Content Calendar Management</h3>
-          <p class="service-desc">Done-for-you monthly content roadmaps with posting times, formats, and topic clusters.</p>
-          <ul class="deliverable-list"><li>30/60/90-day calendars</li><li>Optimal posting time slots</li><li>Content type balance</li><li>Campaign milestone mapping</li></ul>
-          <div class="service-outcome">📅 Expected: 3x consistency improvement</div>
-          <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          <div class="service-image-wrap">
+            <img src="../images/Content Calendar Management.png" alt="Content Calendar Management">
+          </div>
+          <div class="service-detail-body">
+            <h3 class="service-title" style="font-size:1.1rem;">Content Calendar Management</h3>
+            <p class="service-desc">Done-for-you monthly content roadmaps with posting times, formats, and topic clusters.</p>
+            <ul class="deliverable-list"><li>30/60/90-day calendars</li><li>Optimal posting time slots</li><li>Content type balance</li><li>Campaign milestone mapping</li></ul>
+            <div class="service-outcome">📅 Expected: 3x consistency improvement</div>
+            <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          </div>
         </div>
+
+        <!-- Service 7 -->
         <div class="service-detail-card reveal">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg></div>
-          <h3 class="service-title" style="font-size:1.1rem;">Audience Growth Optimization</h3>
-          <p class="service-desc">Targeted strategies to attract and retain your ideal audience niche at scale.</p>
-          <ul class="deliverable-list"><li>Audience persona mapping</li><li>Engagement loop design</li><li>Comment strategy</li><li>Profile optimization</li></ul>
-          <div class="service-outcome">👥 Expected: 40% better audience fit</div>
-          <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          <div class="service-image-wrap">
+            <img src="../images/Audience Growth Optimization.png" alt="Audience Growth Optimization">
+          </div>
+          <div class="service-detail-body">
+            <h3 class="service-title" style="font-size:1.1rem;">Audience Growth Optimization</h3>
+            <p class="service-desc">Targeted strategies to attract and retain your ideal audience niche at scale.</p>
+            <ul class="deliverable-list"><li>Audience persona mapping</li><li>Engagement loop design</li><li>Comment strategy</li><li>Profile optimization</li></ul>
+            <div class="service-outcome">👥 Expected: 40% better audience fit</div>
+            <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          </div>
         </div>
+
+        <!-- Service 8 -->
         <div class="service-detail-card reveal">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3l14 9-14 9V3z"/></svg></div>
-          <h3 class="service-title" style="font-size:1.1rem;">Creator Branding Strategy</h3>
-          <p class="service-desc">A cohesive brand identity system for your TikTok presence — visual, vocal, and strategic.</p>
-          <ul class="deliverable-list"><li>Brand voice guide</li><li>Visual identity framework</li><li>Bio & profile optimization</li><li>Cross-platform alignment</li></ul>
-          <div class="service-outcome">🎨 Expected: 2x brand recall improvement</div>
-          <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          <div class="service-image-wrap">
+            <img src="../images/Creator Branding Strategy.png" alt="Creator Branding Strategy">
+          </div>
+          <div class="service-detail-body">
+            <h3 class="service-title" style="font-size:1.1rem;">Creator Branding Strategy</h3>
+            <p class="service-desc">A cohesive brand identity system for your TikTok presence — visual, vocal, and strategic.</p>
+            <ul class="deliverable-list"><li>Brand voice guide</li><li>Visual identity framework</li><li>Bio & profile optimization</li><li>Cross-platform alignment</li></ul>
+            <div class="service-outcome">🎨 Expected: 2x brand recall improvement</div>
+            <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          </div>
         </div>
+
+        <!-- Service 9 -->
         <div class="service-detail-card reveal">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
-          <h3 class="service-title" style="font-size:1.1rem;">Analytics & Performance Reporting</h3>
-          <p class="service-desc">Weekly data-rich reports with clear growth insights and actionable next steps.</p>
-          <ul class="deliverable-list"><li>Weekly performance report</li><li>KPI tracking dashboard</li><li>A/B test analysis</li><li>Growth recommendations</li></ul>
-          <div class="service-outcome">📊 Expected: Clarity on what actually works</div>
-          <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          <div class="service-image-wrap">
+            <img src="../images/Analytics & Performance Reporting.png" alt="Analytics & Performance Reporting">
+          </div>
+          <div class="service-detail-body">
+            <h3 class="service-title" style="font-size:1.1rem;">Analytics & Performance Reporting</h3>
+            <p class="service-desc">Weekly data-rich reports with clear growth insights and actionable next steps.</p>
+            <ul class="deliverable-list"><li>Weekly performance report</li><li>KPI tracking dashboard</li><li>A/B test analysis</li><li>Growth recommendations</li></ul>
+            <div class="service-outcome">📊 Expected: Clarity on what actually works</div>
+            <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          </div>
         </div>
+
+        <!-- Service 10 -->
         <div class="service-detail-card reveal">
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div>
-          <h3 class="service-title" style="font-size:1.1rem;">TikTok Profile Optimization</h3>
-          <p class="service-desc">Full profile audit and redesign to maximize first-impression conversion and follower trust.</p>
-          <ul class="deliverable-list"><li>Bio rewrite & SEO</li><li>Profile photo guidance</li><li>Highlight pinning strategy</li><li>Link-in-bio optimization</li></ul>
-          <div class="service-outcome">✨ Expected: 25% higher follow-through rate</div>
-          <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          <div class="service-image-wrap">
+            <img src="../images/TikTok Profile Optimization.png" alt="TikTok Profile Optimization">
+          </div>
+          <div class="service-detail-body">
+            <h3 class="service-title" style="font-size:1.1rem;">TikTok Profile Optimization</h3>
+            <p class="service-desc">Full profile audit and redesign to maximize first-impression conversion and follower trust.</p>
+            <ul class="deliverable-list"><li>Bio rewrite & SEO</li><li>Profile photo guidance</li><li>Highlight pinning strategy</li><li>Link-in-bio optimization</li></ul>
+            <div class="service-outcome">✨ Expected: 25% higher follow-through rate</div>
+            <a href="contact.html" class="btn btn-outline-primary btn-sm mt-3">Get Started</a>
+          </div>
         </div>
       </div>
     </div>
