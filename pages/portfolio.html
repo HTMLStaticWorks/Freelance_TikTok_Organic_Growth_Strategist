@@ -1,41 +1,208 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
+
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | ViralPro Studio – TikTok Growth Results</title>
-  <meta name="description" content="TikTok organic growth portfolio — before/after analytics, viral campaigns, creator collaborations, and hashtag challenge results." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | ViralPro – TikTok Growth Results</title>
+  <meta name="description"
+    content="TikTok organic growth portfolio — before/after analytics, viral campaigns, creator collaborations, and hashtag challenge results." />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23ff2d55'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='60' font-weight='bold' fill='white'>V</text></svg>">
   <link rel="stylesheet" href="../assets/css/style.css" />
   <style>
-    .port-hero{background:var(--gradient-hero);min-height:45vh;display:flex;align-items:center;padding-top:var(--nav-height);position:relative;overflow:hidden;}
-    .ba-card{background:var(--clr-card);border:1px solid var(--clr-card-border);border-radius:var(--border-radius-xl);overflow:hidden;transition:var(--transition);}
-    .ba-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
-    .ba-header{padding:1.5rem;border-bottom:1px solid var(--clr-card-border);display:flex;justify-content:space-between;align-items:center;}
-    .ba-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1px solid var(--clr-card-border);}
-    .ba-metric{padding:1.25rem;text-align:center;border-right:1px solid var(--clr-card-border);}
-    .ba-metric:last-child{border-right:none;}
-    .ba-before{font-size:0.85rem;color:var(--clr-text-muted);margin-bottom:2px;font-weight:500;}
-    .ba-after{font-family:var(--font-primary);font-size:1.4rem;font-weight:900;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-    .ba-body{padding:1.5rem;}
-    .collab-card{background:var(--clr-card);border:1px solid var(--clr-card-border);border-radius:var(--border-radius-lg);padding:1.5rem;display:flex;align-items:center;gap:1.25rem;transition:var(--transition);}
-    .collab-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
-    .collab-avatar{width:60px;height:60px;border-radius:50%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.1rem;flex-shrink:0;}
-    .hashtag-card{border-radius:var(--border-radius-lg);overflow:hidden;position:relative;}
-    .hashtag-card img{width:100%;aspect-ratio:3/2;object-fit:cover;}
-    .hashtag-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;}
-    .growth-timeline{position:relative;padding:1.5rem;background:var(--clr-card);border:1px solid var(--clr-card-border);border-radius:var(--border-radius-xl);}
-    .gt-bar{height:40px;background:var(--gradient-primary);border-radius:6px;display:flex;align-items:center;padding:0 12px;color:#fff;font-size:0.8rem;font-weight:600;margin-bottom:8px;transition:width 1s ease;}
-    .brands-grid{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;}
-    .brand-pill{background:var(--clr-card);border:1px solid var(--clr-card-border);border-radius:100px;padding:10px 22px;font-weight:600;font-size:0.875rem;color:var(--clr-text-2);transition:var(--transition);}
-    .brand-pill:hover{border-color:var(--clr-primary);color:var(--clr-primary);background:rgba(255,45,85,0.05);}
+    .port-hero {
+      background: var(--gradient-hero);
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      padding-top: calc(var(--nav-height) + 4rem);
+      padding-bottom: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media(max-width:991px) {
+      .port-hero {
+        padding-top: calc(var(--nav-height) + 5rem);
+      }
+    }
+
+    @media(max-width:768px) {
+      .port-hero {
+        padding-top: calc(var(--nav-height) + 6rem);
+        padding-bottom: 3rem;
+      }
+    }
+
+    .ba-card {
+      background: var(--clr-card);
+      border: 1px solid var(--clr-card-border);
+      border-radius: var(--border-radius-xl);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .ba-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .ba-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--clr-card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ba-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-bottom: 1px solid var(--clr-card-border);
+    }
+
+    .ba-metric {
+      padding: 1.25rem;
+      text-align: center;
+      border-right: 1px solid var(--clr-card-border);
+    }
+
+    .ba-metric:last-child {
+      border-right: none;
+    }
+
+    .ba-before {
+      font-size: 0.85rem;
+      color: var(--clr-text-muted);
+      margin-bottom: 2px;
+      font-weight: 500;
+    }
+
+    .ba-after {
+      font-family: var(--font-primary);
+      font-size: 1.4rem;
+      font-weight: 900;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ba-body {
+      padding: 1.5rem;
+    }
+
+    .collab-card {
+      background: var(--clr-card);
+      border: 1px solid var(--clr-card-border);
+      border-radius: var(--border-radius-lg);
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      transition: var(--transition);
+    }
+
+    .collab-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .collab-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .hashtag-card {
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hashtag-card img {
+      width: 100%;
+      aspect-ratio: 3/2;
+      object-fit: cover;
+    }
+
+    .hashtag-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+    }
+
+    .growth-timeline {
+      position: relative;
+      padding: 1.5rem;
+      background: var(--clr-card);
+      border: 1px solid var(--clr-card-border);
+      border-radius: var(--border-radius-xl);
+    }
+
+    .gt-bar {
+      height: 40px;
+      background: var(--gradient-primary);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      transition: width 1s ease;
+    }
+
+    .brands-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .brand-pill {
+      background: var(--clr-card);
+      border: 1px solid var(--clr-card-border);
+      border-radius: 100px;
+      padding: 10px 22px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--clr-text-2);
+      transition: var(--transition);
+    }
+
+    .brand-pill:hover {
+      border-color: var(--clr-primary);
+      color: var(--clr-primary);
+      background: rgba(255, 45, 85, 0.05);
+    }
   </style>
 </head>
+
 <body>
   <nav class="navbar" id="mainNav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo">
         <div class="logo-icon">V</div>
-        <span>ViralPro<span style="color:var(--clr-primary);">Studio</span></span>
+        <span>ViralPro</span>
       </a>
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
@@ -50,16 +217,55 @@
       </ul>
       <div class="nav-actions">
         <button class="nav-icon-btn theme-toggle" title="Toggle Dark Mode" aria-label="Toggle theme">
-          <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-          <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+          <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
         </button>
         <button class="nav-icon-btn rtl-toggle" title="Toggle RTL" aria-label="Toggle RTL">
-          <svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
-          <svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" /></svg>
+          <svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+          <svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" />
+          </svg>
         </button>
-        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <a href="dashboard.html" class="nav-icon-btn" title="Dashboard" aria-label="Dashboard">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+          </svg>
+        </a>
+        <a href="login.html" class="nav-icon-btn" title="Login" aria-label="Login">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </a>
         <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
         </button>
       </div>
     </div>
@@ -69,9 +275,14 @@
   <div id="drawerOverlay" class="drawer-overlay"></div>
   <div id="mobileDrawer" class="mobile-drawer">
     <div class="drawer-header">
-      <a href="../index.html" class="nav-logo"><div class="logo-icon">V</div>ViralPro<span style="color:var(--clr-primary);">Studio</span></a>
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon">V</div>ViralPro
+      </a>
       <button id="drawerClose" class="drawer-close" aria-label="Close menu">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+          width="18" height="18">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
       </button>
     </div>
     <nav class="drawer-nav">
@@ -88,12 +299,24 @@
     </nav>
     <div class="drawer-icons">
       <button class="nav-icon-btn theme-toggle" aria-label="Toggle theme">
-        <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-        <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg>
+        <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+        </svg>
+        <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5" />
+        </svg>
       </button>
       <button class="nav-icon-btn rtl-toggle" aria-label="Toggle RTL">
-        <svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
-        <svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" /></svg>
+        <svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+        </svg>
+        <svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" />
+        </svg>
       </button>
     </div>
     <div class="drawer-ctas">
@@ -103,58 +326,148 @@
   </div>
 
   <!-- S1: HERO -->
-  <section class="port-hero"><div class="orb orb-1"></div><div class="orb orb-2"></div>
-    <div class="container"><div class="section-center reveal" style="max-width:720px;margin:0 auto;">
-      <div class="section-label" style="background:rgba(255,45,85,0.15);color:#FF6B8A;">Proof of Work</div>
-      <h1 style="font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1.25rem;">Real Accounts. Real Growth. <span class="text-gradient">Real Results.</span></h1>
-      <p style="color:rgba(255,255,255,0.7);max-width:580px;margin:0 auto 2rem;">Every campaign below is a real client account with verifiable analytics and documented results.</p>
-      <div class="flex-center gap-3 flex-wrap">
-        <a href="contact.html" class="btn btn-primary btn-lg">Start Your Campaign</a>
-        <a href="case-studies.html" class="btn btn-white-outline btn-lg">Deep-Dive Case Studies</a>
+  <section class="port-hero">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="container">
+      <div class="section-center reveal" style="max-width:720px;margin:0 auto;">
+        <div class="section-label" style="background:rgba(255,45,85,0.15);color:#FF6B8A;">Proof of Work</div>
+        <h1
+          style="font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:var(--clr-hero-text);line-height:1.1;margin-bottom:1.25rem;">
+          Real Accounts. Real Growth. <span class="text-gradient">Real Results.</span></h1>
+        <p style="color:var(--clr-text-muted);max-width:580px;margin:0 auto 2rem;">Every campaign below is a real client
+          account with verifiable analytics and documented results.</p>
+        <div class="flex-center gap-3 flex-wrap">
+          <a href="contact.html" class="btn btn-primary btn-lg">Start Your Campaign</a>
+          <a href="case-studies.html" class="btn btn-white-outline btn-lg">Deep-Dive Case Studies</a>
+        </div>
       </div>
-    </div></div>
+    </div>
   </section>
 
   <!-- S2: BEFORE/AFTER ANALYTICS -->
   <section style="background:var(--clr-bg);">
     <div class="container">
-      <div class="section-center reveal"><div class="section-label">Before & After</div><h2 class="section-title">Transformation <span class="text-gradient">Analytics</span></h2></div>
+      <div class="section-center reveal">
+        <div class="section-label">Before & After</div>
+        <h2 class="section-title">Transformation <span class="text-gradient">Analytics</span></h2>
+      </div>
       <div class="grid-2 mt-4" style="gap:1.5rem;">
         <div class="ba-card reveal">
-          <div class="ba-header"><div><div style="font-weight:700;">@StyleWithSarah</div><div style="font-size:0.78rem;color:var(--clr-text-muted);">Lifestyle Creator · 45-day campaign</div></div><span class="badge badge-success">✓ Completed</span></div>
-          <div class="ba-metrics">
-            <div class="ba-metric"><div class="ba-before">Followers: 1.2K → </div><div class="ba-after">83K</div></div>
-            <div class="ba-metric"><div class="ba-before">Avg Views: 800 → </div><div class="ba-after">47K</div></div>
-            <div class="ba-metric"><div class="ba-before">Engagement: 2% → </div><div class="ba-after">9.8%</div></div>
+          <div class="ba-header">
+            <div>
+              <div style="font-weight:700;">@StyleWithSarah</div>
+              <div style="font-size:0.78rem;color:var(--clr-text-muted);">Lifestyle Creator · 45-day campaign</div>
+            </div><span class="badge badge-success">✓ Completed</span>
           </div>
-          <div class="ba-body"><p style="font-size:0.875rem;color:var(--clr-text-muted);">Used trend-jacking + hook optimization to reach FYP consistently. 1 video hit 1.2M views in week 3.</p><a href="case-studies.html" class="btn btn-outline-primary btn-sm mt-2">View Full Case Study</a></div>
+          <div class="ba-metrics">
+            <div class="ba-metric">
+              <div class="ba-before">Followers: 1.2K → </div>
+              <div class="ba-after">83K</div>
+            </div>
+            <div class="ba-metric">
+              <div class="ba-before">Avg Views: 800 → </div>
+              <div class="ba-after">47K</div>
+            </div>
+            <div class="ba-metric">
+              <div class="ba-before">Engagement: 2% → </div>
+              <div class="ba-after">9.8%</div>
+            </div>
+          </div>
+          <div class="ba-body">
+            <p style="font-size:0.875rem;color:var(--clr-text-muted);">Used trend-jacking + hook optimization to reach
+              FYP consistently. 1 video hit 1.2M views in week 3.</p>
+            <div class="flex-center mt-3">
+              <a href="case-studies.html" class="btn btn-outline-primary btn-sm">View Full Case Study</a>
+            </div>
+          </div>
         </div>
         <div class="ba-card reveal reveal-delay-1">
-          <div class="ba-header"><div><div style="font-weight:700;">FitLife Nutrition</div><div style="font-size:0.78rem;color:var(--clr-text-muted);">Brand Account · 60-day campaign</div></div><span class="badge badge-success">✓ Completed</span></div>
-          <div class="ba-metrics">
-            <div class="ba-metric"><div class="ba-before">Followers: 0 → </div><div class="ba-after">54K</div></div>
-            <div class="ba-metric"><div class="ba-before">Views: 0 → </div><div class="ba-after">1.2M</div></div>
-            <div class="ba-metric"><div class="ba-before">Engagement: 0% → </div><div class="ba-after">7.4%</div></div>
+          <div class="ba-header">
+            <div>
+              <div style="font-weight:700;">FitLife Nutrition</div>
+              <div style="font-size:0.78rem;color:var(--clr-text-muted);">Brand Account · 60-day campaign</div>
+            </div><span class="badge badge-success">✓ Completed</span>
           </div>
-          <div class="ba-body"><p style="font-size:0.875rem;color:var(--clr-text-muted);">Launched from scratch with a content pillar system. Hit 500K views in week 1 with educational content strategy.</p><a href="case-studies.html" class="btn btn-outline-primary btn-sm mt-2">View Full Case Study</a></div>
+          <div class="ba-metrics">
+            <div class="ba-metric">
+              <div class="ba-before">Followers: 0 → </div>
+              <div class="ba-after">54K</div>
+            </div>
+            <div class="ba-metric">
+              <div class="ba-before">Views: 0 → </div>
+              <div class="ba-after">1.2M</div>
+            </div>
+            <div class="ba-metric">
+              <div class="ba-before">Engagement: 0% → </div>
+              <div class="ba-after">7.4%</div>
+            </div>
+          </div>
+          <div class="ba-body">
+            <p style="font-size:0.875rem;color:var(--clr-text-muted);">Launched from scratch with a content pillar
+              system. Hit 500K views in week 1 with educational content strategy.</p>
+            <div class="flex-center mt-3">
+              <a href="case-studies.html" class="btn btn-outline-primary btn-sm">View Full Case Study</a>
+            </div>
+          </div>
         </div>
         <div class="ba-card reveal">
-          <div class="ba-header"><div><div style="font-weight:700;">@BeatsByKira</div><div style="font-size:0.78rem;color:var(--clr-text-muted);">Music Artist · 30-day campaign</div></div><span class="badge badge-success">✓ Completed</span></div>
-          <div class="ba-metrics">
-            <div class="ba-metric"><div class="ba-before">Followers: 5K → </div><div class="ba-after">41K</div></div>
-            <div class="ba-metric"><div class="ba-before">Views: 3K → </div><div class="ba-after">4.7M</div></div>
-            <div class="ba-metric"><div class="ba-before">Engagement: 1.8% → </div><div class="ba-after">11.2%</div></div>
+          <div class="ba-header">
+            <div>
+              <div style="font-weight:700;">@BeatsByKira</div>
+              <div style="font-size:0.78rem;color:var(--clr-text-muted);">Music Artist · 30-day campaign</div>
+            </div><span class="badge badge-success">✓ Completed</span>
           </div>
-          <div class="ba-body"><p style="font-size:0.875rem;color:var(--clr-text-muted);">One video went viral overnight: 4.7M views. Duet strategy + trending audio alignment drove exponential reach.</p><a href="case-studies.html" class="btn btn-outline-primary btn-sm mt-2">View Full Case Study</a></div>
+          <div class="ba-metrics">
+            <div class="ba-metric">
+              <div class="ba-before">Followers: 5K → </div>
+              <div class="ba-after">41K</div>
+            </div>
+            <div class="ba-metric">
+              <div class="ba-before">Views: 3K → </div>
+              <div class="ba-after">4.7M</div>
+            </div>
+            <div class="ba-metric">
+              <div class="ba-before">Engagement: 1.8% → </div>
+              <div class="ba-after">11.2%</div>
+            </div>
+          </div>
+          <div class="ba-body">
+            <p style="font-size:0.875rem;color:var(--clr-text-muted);">One video went viral overnight: 4.7M views. Duet
+              strategy + trending audio alignment drove exponential reach.</p>
+            <div class="flex-center mt-3">
+              <a href="case-studies.html" class="btn btn-outline-primary btn-sm">View Full Case Study</a>
+            </div>
+          </div>
         </div>
         <div class="ba-card reveal reveal-delay-1">
-          <div class="ba-header"><div><div style="font-weight:700;">FinanceWithTom</div><div style="font-size:0.78rem;color:var(--clr-text-muted);">Education Creator · 90-day campaign</div></div><span class="badge badge-success">✓ Completed</span></div>
-          <div class="ba-metrics">
-            <div class="ba-metric"><div class="ba-before">Followers: 800 → </div><div class="ba-after">97K</div></div>
-            <div class="ba-metric"><div class="ba-before">Views: 500 → </div><div class="ba-after">38K avg</div></div>
-            <div class="ba-metric"><div class="ba-before">Engagement: 3% → </div><div class="ba-after">8.6%</div></div>
+          <div class="ba-header">
+            <div>
+              <div style="font-weight:700;">FinanceWithTom</div>
+              <div style="font-size:0.78rem;color:var(--clr-text-muted);">Education Creator · 90-day campaign</div>
+            </div><span class="badge badge-success">✓ Completed</span>
           </div>
-          <div class="ba-body"><p style="font-size:0.875rem;color:var(--clr-text-muted);">Educational content combined with pattern-interrupt hooks and daily posting cadence. Broke 100K within 95 days.</p><a href="case-studies.html" class="btn btn-outline-primary btn-sm mt-2">View Full Case Study</a></div>
+          <div class="ba-metrics">
+            <div class="ba-metric">
+              <div class="ba-before">Followers: 800 → </div>
+              <div class="ba-after">97K</div>
+            </div>
+            <div class="ba-metric">
+              <div class="ba-before">Views: 500 → </div>
+              <div class="ba-after">38K avg</div>
+            </div>
+            <div class="ba-metric">
+              <div class="ba-before">Engagement: 3% → </div>
+              <div class="ba-after">8.6%</div>
+            </div>
+          </div>
+          <div class="ba-body">
+            <p style="font-size:0.875rem;color:var(--clr-text-muted);">Educational content combined with
+              pattern-interrupt hooks and daily posting cadence. Broke 100K within 95 days.</p>
+            <div class="flex-center mt-3">
+              <a href="case-studies.html" class="btn btn-outline-primary btn-sm">View Full Case Study</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -163,45 +476,70 @@
   <!-- S3: FEATURED CAMPAIGNS GRID -->
   <section class="section-dark">
     <div class="container">
-      <div class="section-center reveal"><div class="section-label">Featured Campaigns</div><h2 class="section-title">Campaign <span class="text-gradient">Showcase</span></h2></div>
+      <div class="section-center reveal">
+        <div class="section-label">Featured Campaigns</div>
+        <h2 class="section-title">Campaign <span class="text-gradient">Showcase</span></h2>
+      </div>
       <div class="grid-3 mt-4">
         <div class="card reveal" style="overflow:hidden;padding:0;">
-          <img src="../assets/images/audience_growth.png" alt="Campaign 1" style="width:100%;aspect-ratio:16/9;object-fit:cover;" />
-          <div style="padding:1.25rem;"><div class="badge badge-primary" style="margin-bottom:8px;">Lifestyle</div><h3 style="font-size:0.95rem;font-weight:700;margin-bottom:4px;">@StyleWithSarah</h3><p style="font-size:0.8rem;color:var(--clr-text-muted);">82K followers · 45 days · 9.8% engagement</p></div>
+          <img src="../assets/images/lifestyle_sarah.png" alt="Campaign 1"
+            style="width:100%;aspect-ratio:16/9;object-fit:cover;" />
+          <div style="padding:1.25rem;">
+            <div class="badge badge-primary" style="margin-bottom:8px;">Lifestyle</div>
+            <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:4px;">@StyleWithSarah</h3>
+            <p style="font-size:0.8rem;color:var(--clr-text-muted);">82K followers · 45 days · 9.8% engagement</p>
+          </div>
         </div>
         <div class="card reveal reveal-delay-1" style="overflow:hidden;padding:0;">
-          <img src="../assets/images/content_planning.png" alt="Campaign 2" style="width:100%;aspect-ratio:16/9;object-fit:cover;" />
-          <div style="padding:1.25rem;"><div class="badge badge-secondary" style="margin-bottom:8px;">Brand</div><h3 style="font-size:0.95rem;font-weight:700;margin-bottom:4px;">FitLife Nutrition</h3><p style="font-size:0.8rem;color:var(--clr-text-muted);">54K followers · 1.2M views · 60-day launch</p></div>
+          <img src="../assets/images/fitness_brand.png" alt="Campaign 2"
+            style="width:100%;aspect-ratio:16/9;object-fit:cover;" />
+          <div style="padding:1.25rem;">
+            <div class="badge badge-secondary" style="margin-bottom:8px;">Brand</div>
+            <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:4px;">FitLife Nutrition</h3>
+            <p style="font-size:0.8rem;color:var(--clr-text-muted);">54K followers · 1.2M views · 60-day launch</p>
+          </div>
         </div>
         <div class="card reveal reveal-delay-2" style="overflow:hidden;padding:0;">
-          <img src="../assets/images/hook_writing.png" alt="Campaign 3" style="width:100%;aspect-ratio:16/9;object-fit:cover;" />
-          <div style="padding:1.25rem;"><div class="badge badge-purple" style="margin-bottom:8px;">Music</div><h3 style="font-size:0.95rem;font-weight:700;margin-bottom:4px;">@BeatsByKira</h3><p style="font-size:0.8rem;color:var(--clr-text-muted);">4.7M views · viral breakthrough · 30 days</p></div>
+          <img src="../assets/images/music_kira.png" alt="Campaign 3"
+            style="width:100%;aspect-ratio:16/9;object-fit:cover;" />
+          <div style="padding:1.25rem;">
+            <div class="badge badge-purple" style="margin-bottom:8px;">Music</div>
+            <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:4px;">@BeatsByKira</h3>
+            <p style="font-size:0.8rem;color:var(--clr-text-muted);">4.7M views · viral breakthrough · 30 days</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- S4: CREATOR COLLABORATIONS -->
-  <section style="background:var(--clr-bg);">
-    <div class="container">
-      <div class="section-center reveal"><div class="section-label">Collaborations</div><h2 class="section-title">Creator <span class="text-gradient">Partnership Wins</span></h2></div>
-      <div class="grid-2 mt-4" style="gap:1rem;">
-        <div class="collab-card reveal"><div class="collab-avatar">SM</div><div><div style="font-weight:700;">@StyleWithSarah</div><div style="font-size:0.8rem;color:var(--clr-text-muted);margin-top:2px;">Lifestyle · 83K followers</div><div style="font-size:0.78rem;color:var(--clr-primary);font-weight:600;margin-top:4px;">+82K followers grown · Duet strategy</div></div></div>
-        <div class="collab-card reveal reveal-delay-1"><div class="collab-avatar">BK</div><div><div style="font-weight:700;">@BeatsByKira</div><div style="font-size:0.8rem;color:var(--clr-text-muted);margin-top:2px;">Music · 41K followers</div><div style="font-size:0.78rem;color:var(--clr-primary);font-weight:600;margin-top:4px;">4.7M views on viral hit · Audio campaign</div></div></div>
-        <div class="collab-card reveal"><div class="collab-avatar">FT</div><div><div style="font-weight:700;">FinanceWithTom</div><div style="font-size:0.8rem;color:var(--clr-text-muted);margin-top:2px;">Education · 97K followers</div><div style="font-size:0.78rem;color:var(--clr-primary);font-weight:600;margin-top:4px;">0→97K in 90 days · Full system build</div></div></div>
-        <div class="collab-card reveal reveal-delay-1"><div class="collab-avatar">FL</div><div><div style="font-weight:700;">FitLife Nutrition</div><div style="font-size:0.8rem;color:var(--clr-text-muted);margin-top:2px;">Brand · 54K followers</div><div style="font-size:0.78rem;color:var(--clr-primary);font-weight:600;margin-top:4px;">Brand launch · 1.2M views week 1</div></div></div>
-      </div>
-    </div>
-  </section>
 
   <!-- S5: HASHTAG CHALLENGE RESULTS -->
   <section class="section-dark">
     <div class="container">
-      <div class="section-center reveal"><div class="section-label">Hashtag Challenges</div><h2 class="section-title">Campaigns That <span class="text-gradient">Trended Globally</span></h2></div>
+      <div class="section-center reveal">
+        <div class="section-label">Hashtag Challenges</div>
+        <h2 class="section-title">Campaigns That <span class="text-gradient">Trended Globally</span></h2>
+      </div>
       <div class="grid-3 mt-4">
-        <div class="hashtag-card reveal"><img src="../assets/images/content_planning.png" alt="#FitChallenge" /><div class="hashtag-overlay"><div style="font-weight:700;color:#fff;font-size:1rem;">#FitLifeChallenge</div><div style="color:rgba(255,255,255,0.7);font-size:0.8rem;">2.3M uses · 14 days · Trending #2</div></div></div>
-        <div class="hashtag-card reveal reveal-delay-1"><img src="../assets/images/audience_growth.png" alt="#StyleCheck" /><div class="hashtag-overlay"><div style="font-weight:700;color:#fff;font-size:1rem;">#StyleCheck2026</div><div style="color:rgba(255,255,255,0.7);font-size:0.8rem;">876K uses · 7 days · Beauty Niche</div></div></div>
-        <div class="hashtag-card reveal reveal-delay-2"><img src="../assets/images/hook_writing.png" alt="#MoneyTok" /><div class="hashtag-overlay"><div style="font-weight:700;color:#fff;font-size:1rem;">#MoneyTokHacks</div><div style="color:rgba(255,255,255,0.7);font-size:0.8rem;">1.4M uses · 21 days · Finance Niche</div></div></div>
+        <div class="hashtag-card reveal"><img src="../assets/images/fitness_brand.png" alt="#FitChallenge" />
+          <div class="hashtag-overlay">
+            <div style="font-weight:700;color:#fff;font-size:1rem;">#FitLifeChallenge</div>
+            <div style="color:rgba(255,255,255,0.7);font-size:0.8rem;">2.3M uses · 14 days · Trending #2</div>
+          </div>
+        </div>
+        <div class="hashtag-card reveal reveal-delay-1"><img src="../assets/images/lifestyle_sarah.png"
+            alt="#StyleCheck" />
+          <div class="hashtag-overlay">
+            <div style="font-weight:700;color:#fff;font-size:1rem;">#StyleCheck2026</div>
+            <div style="color:rgba(255,255,255,0.7);font-size:0.8rem;">876K uses · 7 days · Beauty Niche</div>
+          </div>
+        </div>
+        <div class="hashtag-card reveal reveal-delay-2"><img src="../assets/images/finance_tom.png" alt="#MoneyTok" />
+          <div class="hashtag-overlay">
+            <div style="font-weight:700;color:#fff;font-size:1rem;">#MoneyTokHacks</div>
+            <div style="color:rgba(255,255,255,0.7);font-size:0.8rem;">1.4M uses · 21 days · Finance Niche</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -209,20 +547,39 @@
   <!-- S6: AUDIENCE GROWTH CHARTS (visual) -->
   <section style="background:var(--clr-bg);">
     <div class="container">
-      <div class="section-center reveal"><div class="section-label">Analytics</div><h2 class="section-title">Follower Growth <span class="text-gradient">Timelines</span></h2></div>
+      <div class="section-center reveal">
+        <div class="section-label">Analytics</div>
+        <h2 class="section-title">Follower Growth <span class="text-gradient">Timelines</span></h2>
+      </div>
       <div class="grid-2 mt-4" style="gap:2rem;align-items:center;">
         <div class="reveal">
           <div class="growth-timeline">
             <h4 style="margin-bottom:1.5rem;font-size:0.95rem;">@StyleWithSarah · 45 Days</h4>
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><span style="font-size:0.78rem;color:var(--clr-text-muted);width:50px;">Day 7</span><div class="gt-bar" style="width:15%;">1.8K</div></div>
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><span style="font-size:0.78rem;color:var(--clr-text-muted);width:50px;">Day 14</span><div class="gt-bar" style="width:28%;">9.2K</div></div>
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><span style="font-size:0.78rem;color:var(--clr-text-muted);width:50px;">Day 21</span><div class="gt-bar" style="width:45%;">24K</div></div>
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><span style="font-size:0.78rem;color:var(--clr-text-muted);width:50px;">Day 30</span><div class="gt-bar" style="width:65%;">51K</div></div>
-            <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:0.78rem;color:var(--clr-text-muted);width:50px;">Day 45</span><div class="gt-bar" style="width:100%;">83K</div></div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><span
+                style="font-size:0.78rem;color:var(--clr-text-muted);width:50px;">Day 7</span>
+              <div class="gt-bar" style="width:15%;">1.8K</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><span
+                style="font-size:0.78rem;color:var(--clr-text-muted);width:50px;">Day 14</span>
+              <div class="gt-bar" style="width:28%;">9.2K</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><span
+                style="font-size:0.78rem;color:var(--clr-text-muted);width:50px;">Day 21</span>
+              <div class="gt-bar" style="width:45%;">24K</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><span
+                style="font-size:0.78rem;color:var(--clr-text-muted);width:50px;">Day 30</span>
+              <div class="gt-bar" style="width:65%;">51K</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;"><span
+                style="font-size:0.78rem;color:var(--clr-text-muted);width:50px;">Day 45</span>
+              <div class="gt-bar" style="width:100%;">83K</div>
+            </div>
           </div>
         </div>
         <div class="reveal reveal-delay-2">
-          <img src="../assets/images/analytics_dashboard.png" alt="Analytics" style="width:100%;border-radius:var(--border-radius-xl);aspect-ratio:4/3;object-fit:cover;" />
+          <img src="../assets/images/analytics_dashboard.png" alt="Analytics"
+            style="width:100%;border-radius:var(--border-radius-xl);aspect-ratio:4/3;object-fit:cover;" />
         </div>
       </div>
     </div>
@@ -231,23 +588,68 @@
   <!-- S7: BRANDS WORKED WITH -->
   <section class="section-dark">
     <div class="container">
-      <div class="section-center reveal"><div class="section-label">Clients</div><h2 class="section-title">Brands & Creators <span class="text-gradient">I've Worked With</span></h2></div>
+      <div class="section-center reveal">
+        <div class="section-label">Clients</div>
+        <h2 class="section-title">Brands & Creators <span class="text-gradient">I've Worked With</span></h2>
+      </div>
       <div class="brands-grid mt-4 reveal">
-        <span class="brand-pill">FitLife Nutrition</span><span class="brand-pill">@StyleWithSarah</span><span class="brand-pill">FinanceWithTom</span><span class="brand-pill">@BeatsByKira</span><span class="brand-pill">LunaFashion</span><span class="brand-pill">EduTok Academy</span><span class="brand-pill">TravelWithAlex</span><span class="brand-pill">NutriFit Brand</span><span class="brand-pill">@DanceMoves</span><span class="brand-pill">TechExplained</span><span class="brand-pill">MindfulMindset</span><span class="brand-pill">ChefSpecial</span>
+        <span class="brand-pill">FitLife Nutrition</span><span class="brand-pill">@StyleWithSarah</span><span
+          class="brand-pill">FinanceWithTom</span><span class="brand-pill">@BeatsByKira</span><span
+          class="brand-pill">LunaFashion</span><span class="brand-pill">EduTok Academy</span><span
+          class="brand-pill">TravelWithAlex</span><span class="brand-pill">NutriFit Brand</span><span
+          class="brand-pill">@DanceMoves</span><span class="brand-pill">TechExplained</span><span
+          class="brand-pill">MindfulMindset</span><span class="brand-pill">ChefSpecial</span>
       </div>
     </div>
   </section>
-
   <!-- S8: TESTIMONIALS -->
   <section style="background:var(--clr-bg);padding-bottom:5rem;">
     <div class="container">
-      <div class="section-center reveal"><div class="section-label">What They Say</div><h2 class="section-title">Client <span class="text-gradient">Testimonials</span></h2></div>
-      <div class="grid-3 mt-4">
-        <div class="testimonial-card reveal"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"The analytics don't lie. 83K followers in 45 days with zero paid promotion. This strategy is the real deal."</p><div class="testimonial-author"><div class="testimonial-avatar">SM</div><div><div class="testimonial-name">@StyleWithSarah</div><div class="testimonial-role">Lifestyle Creator</div></div></div></div>
-        <div class="testimonial-card reveal reveal-delay-1"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"FitLife went from 0 to 54K in 60 days. Our first campaign hit 1.2M views. Insane ROI for an organic strategy."</p><div class="testimonial-author"><div class="testimonial-avatar">FL</div><div><div class="testimonial-name">FitLife Nutrition</div><div class="testimonial-role">Brand Founder</div></div></div></div>
-        <div class="testimonial-card reveal reveal-delay-2"><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"One video. 4.7 million views. I never thought organic could do that. The hook strategy is absolutely next-level."</p><div class="testimonial-author"><div class="testimonial-avatar">BK</div><div><div class="testimonial-name">@BeatsByKira</div><div class="testimonial-role">Music Artist</div></div></div></div>
+      <div class="section-center reveal">
+        <div class="section-label">Testimonials</div>
+        <h2 class="section-title">Creators & Brands <span class="text-gradient">Love the Results</span></h2>
       </div>
-      <div class="text-center mt-4 reveal"><a href="contact.html" class="btn btn-primary btn-lg">Join These Success Stories</a></div>
+      <div class="grid-3 mt-4">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"In 6 weeks my account went from 3K to 67K followers. The hook scripts alone changed everything."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <img src="../images/TESTMONAL/testimonial-1.jpg" alt="Sarah Martinez">
+            </div>
+            <div>
+              <div class="testimonial-name">Sarah Martinez</div>
+              <div class="testimonial-role">Lifestyle Creator · 67K followers</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The trend research service is unreal. We jumped on 3 trends before they peaked and each one drove 500K+ views. Pure ROI."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <img src="../images/TESTMONAL/testimonial-2.jpg" alt="Jake Kwan">
+            </div>
+            <div>
+              <div class="testimonial-name">Jake Kwan</div>
+              <div class="testimonial-role">E-commerce Brand Founder</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Most strategists give you generic advice. This strategist gave us a custom playbook that fit our brand voice perfectly."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <img src="../images/TESTMONAL/testimonial-3.jpg" alt="Aisha Lawson">
+            </div>
+            <div>
+              <div class="testimonial-name">Aisha Lawson</div>
+              <div class="testimonial-role">Music Artist · @beatbyaisha</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -257,14 +659,35 @@
         <div class="footer-brand">
           <a href="../index.html" class="nav-logo" style="margin-bottom:0.75rem;display:flex;">
             <div class="logo-icon">V</div>
-            <span>ViralPro<span style="color:var(--clr-primary);">Studio</span></span>
+            <span>ViralPro</span>
           </a>
           <p>Expert TikTok organic growth strategy for creators and brands ready to build real audiences.</p>
           <div class="footer-socials">
-            <a href="#" class="social-btn" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-            <a href="#" class="social-btn" aria-label="Google"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path><path d="M12 7v10m-5-5h10"></path></svg></a>
-            <a href="#" class="social-btn" aria-label="Apple"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 20.94c1.88 0 3.39-.66 4.47-1.67 1.09-1.02 1.75-2.45 1.75-4.21 0-3.32-2.31-5.06-4.94-5.06-1.12 0-2.18.29-3.03.82-.85-.53-1.91-.82-3.03-.82-2.63 0-4.94 1.74-4.94 5.06 0 1.76.66 3.19 1.75 4.21 1.08 1.01 2.59 1.67 4.47 1.67.92 0 1.83-.16 2.51-.48.68.32 1.59.48 2.51.48zM12 8c.39-1.36 1.41-2.43 2.65-2.83-1.06-.11-2.15.22-2.92.89-.77-.67-1.86-1-2.92-.89 1.24.4 2.26 1.47 2.65 2.83z"></path></svg></a>
-            <a href="#" class="social-btn" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg></a>
+            <a href="#" class="social-btn" aria-label="Google"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z">
+                </path>
+                <path d="M12 7v10m-5-5h10"></path>
+              </svg></a>
+            <a href="#" class="social-btn" aria-label="Apple"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 20.94c1.88 0 3.39-.66 4.47-1.67 1.09-1.02 1.75-2.45 1.75-4.21 0-3.32-2.31-5.06-4.94-5.06-1.12 0-2.18.29-3.03.82-.85-.53-1.91-.82-3.03-.82-2.63 0-4.94 1.74-4.94 5.06 0 1.76.66 3.19 1.75 4.21 1.08 1.01 2.59 1.67 4.47 1.67.92 0 1.83-.16 2.51-.48.68.32 1.59.48 2.51.48zM12 8c.39-1.36 1.41-2.43 2.65-2.83-1.06-.11-2.15.22-2.92.89-.77-.67-1.86-1-2.92-.89 1.24.4 2.26 1.47 2.65 2.83z">
+                </path>
+              </svg></a>
+            <a href="#" class="social-btn" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18"
+                height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg></a>
           </div>
         </div>
         <div class="footer-col">
@@ -299,7 +722,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 ViralPro Studio. All rights reserved.</span>
+        <span>© 2026 ViralPro. All rights reserved.</span>
         <span>Built for creators who want to go viral organically.</span>
       </div>
     </div>
@@ -307,4 +730,5 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
+
 </html>

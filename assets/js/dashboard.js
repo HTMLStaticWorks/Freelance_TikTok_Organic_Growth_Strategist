@@ -1,57 +1,49 @@
 /**
- * TikTok Growth Strategist — Dashboard JavaScript
- * Handles: Sidebar, Charts, Dropdowns, Calendar, Interactions
+ * ViralPro Dashboard - Premium Logic
  */
 
 $(document).ready(function () {
+  
+  // --- Sidebar Logic ---
+  const toggleSidebar = (show) => {
+    $('#sidebar').toggleClass('open', show);
+    $('#sidebarOverlay').toggleClass('open', show);
+    $('body').css('overflow', show ? 'hidden' : '');
+  };
 
-  /* ============================================================
-     Sidebar Toggle (Mobile)
-     ============================================================ */
-  $('#sidebarToggle').on('click', function () {
-    $('.sidebar').toggleClass('open');
-    $('#sidebarOverlay').toggleClass('open');
-    $('body').css('overflow', $('.sidebar').hasClass('open') ? 'hidden' : '');
+  $('#hamburgerBtn').on('click', () => toggleSidebar(true));
+  $('#sidebarClose, #sidebarOverlay').on('click', () => toggleSidebar(false));
+
+  // --- Submenu Logic ---
+  $('.sidebar-link').on('click', function (e) {
+    const parent = $(this).closest('.nav-item-wrap');
+    const hasSubmenu = parent.find('.submenu').length > 0;
+    
+    if (hasSubmenu) {
+      e.preventDefault();
+      
+      // Close other submenus if needed (optional)
+      // $('.nav-item-wrap').not(parent).removeClass('open');
+      
+      parent.toggleClass('open');
+    } else {
+      // Normal link behavior
+      $('.sidebar-link').removeClass('active');
+      $(this).addClass('active');
+      
+      // Close sidebar on mobile after clicking a link
+      if ($(window).width() <= 768) {
+        toggleSidebar(false);
+      }
+    }
   });
 
-  $('#sidebarOverlay').on('click', function () {
-    $('.sidebar').removeClass('open');
-    $(this).removeClass('open');
-    $('body').css('overflow', '');
+  // --- Logout ---
+  $('#logoutBtn').on('click', () => {
+    window.location.href = 'login.html';
   });
 
-  /* ============================================================
-     Notification Dropdown
-     ============================================================ */
-  $('#notifBtn').on('click', function (e) {
-    e.stopPropagation();
-    $('#notifDropdown').toggleClass('open');
-    $('#profileDropdown').removeClass('open');
-  });
-
-  /* ============================================================
-     Profile Dropdown
-     ============================================================ */
-  $('#profileBtn').on('click', function (e) {
-    e.stopPropagation();
-    $('#profileDropdown').toggleClass('open');
-    $('#notifDropdown').removeClass('open');
-  });
-
-  $(document).on('click', function () {
-    $('#notifDropdown, #profileDropdown').removeClass('open');
-  });
-
-  /* ============================================================
-     Logout
-     ============================================================ */
-  $('#logoutBtn').on('click', function () {
-    window.location.href = '../pages/login.html';
-  });
-
-  /* ============================================================
-     Theme Toggle (Dashboard)
-     ============================================================ */
+  // --- Theme Toggle ---
   $(document).on('click', '.theme-toggle', function () {
     const current = $('html').attr('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';
@@ -59,247 +51,204 @@ $(document).ready(function () {
     localStorage.setItem('tiktok-theme', next);
     $('.theme-icon-sun').toggle(next === 'dark');
     $('.theme-icon-moon').toggle(next !== 'dark');
+    
+    // Refresh charts if they depend on theme colors
+    updateChartsTheme();
   });
 
-  /* RTL Toggle */
-  $(document).on('click', '.rtl-toggle', function () {
-    const current = $('html').attr('dir');
-    const next = current === 'rtl' ? 'ltr' : 'rtl';
-    $('html').attr('dir', next);
-    localStorage.setItem('tiktok-rtl', next);
-    $('.rtl-icon-active').toggle(next === 'rtl');
-    $('.rtl-icon-default').toggle(next !== 'rtl');
-  });
-
-  /* Init stored preferences */
-  const savedTheme = localStorage.getItem('tiktok-theme') || 'dark';
-  $('html').attr('data-theme', savedTheme);
-  $('.theme-icon-sun').toggle(savedTheme === 'dark');
-  $('.theme-icon-moon').toggle(savedTheme !== 'dark');
-  const savedDir = localStorage.getItem('tiktok-rtl') || 'ltr';
-  $('html').attr('dir', savedDir);
-  $('.rtl-icon-active').toggle(savedDir === 'rtl');
-  $('.rtl-icon-default').toggle(savedDir !== 'rtl');
-
-  /* ============================================================
-     Active Sidebar Link
-     ============================================================ */
-  const currentPage = window.location.pathname.split('/').pop();
-  $('.sidebar-link').removeClass('active');
-  $(`.sidebar-link[href="${currentPage}"]`).addClass('active');
-
-  /* ============================================================
-     CHARTS (Chart.js)
-     ============================================================ */
+  // --- Dashboard Data & Charts ---
+  
   const isDark = () => $('html').attr('data-theme') === 'dark';
-  const gridColor = () => isDark() ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
-  const textColor = () => isDark() ? '#B0B0D0' : '#7B7B9E';
+  const getGridColor = () => isDark() ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)';
+  const getTextColor = () => isDark() ? '#94a3b8' : '#64748b';
 
-  Chart.defaults.font.family = "'Inter', sans-serif";
+  let charts = {};
 
-  /* Follower Growth Line Chart */
-  const followerCtx = document.getElementById('followerChart');
-  if (followerCtx) {
-    new Chart(followerCtx, {
-      type: 'line',
-      data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        datasets: [{
-          label: 'Followers',
-          data: [12000, 19000, 27000, 35000, 51000, 68000, 82000, 95000, 115000, 138000, 162000, 185000],
-          borderColor: '#FF2D55',
-          backgroundColor: 'rgba(255,45,85,0.05)',
-          borderWidth: 2.5,
-          fill: true,
-          tension: 0.4,
-          pointBackgroundColor: '#FF2D55',
-          pointRadius: 4,
-          pointHoverRadius: 6,
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } },
-        scales: {
-          x: { grid: { color: gridColor() }, ticks: { color: textColor(), font: { size: 11 } } },
-          y: {
-            grid: { color: gridColor() }, ticks: { color: textColor(), font: { size: 11 },
-            callback: v => (v >= 1000 ? (v/1000).toFixed(0)+'K' : v) }
+  const initCharts = () => {
+    Chart.defaults.font.family = "'Inter', sans-serif";
+    Chart.defaults.color = getTextColor();
+
+    // 1. Follower Chart
+    const followerCtx = document.getElementById('followerChart');
+    if (followerCtx) {
+      charts.follower = new Chart(followerCtx, {
+        type: 'line',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+          datasets: [{
+            label: 'Followers',
+            data: [45000, 52000, 68000, 95000, 142000, 185000],
+            borderColor: '#FF2D55',
+            backgroundColor: 'rgba(255, 45, 85, 0.1)',
+            fill: true,
+            tension: 0.4,
+            borderWidth: 3,
+            pointRadius: 0,
+            pointHoverRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { display: false } },
+            y: { grid: { color: getGridColor() }, ticks: { callback: v => (v/1000) + 'K' } }
           }
         }
-      }
-    });
-  }
-
-  /* Engagement Rate Bar Chart */
-  const engagementCtx = document.getElementById('engagementChart');
-  if (engagementCtx) {
-    new Chart(engagementCtx, {
-      type: 'bar',
-      data: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [{
-          label: 'Engagement %',
-          data: [4.2, 6.8, 5.1, 8.3, 7.5, 9.2, 6.4],
-          backgroundColor: 'rgba(0,242,234,0.7)',
-          borderColor: '#00F2EA',
-          borderWidth: 1.5,
-          borderRadius: 6,
-          borderSkipped: false,
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-          x: { grid: { color: gridColor() }, ticks: { color: textColor() } },
-          y: { grid: { color: gridColor() }, ticks: { color: textColor(), callback: v => v+'%' } }
-        }
-      }
-    });
-  }
-
-  /* Platform Split Doughnut Chart */
-  const platformCtx = document.getElementById('platformChart');
-  if (platformCtx) {
-    new Chart(platformCtx, {
-      type: 'doughnut',
-      data: {
-        labels: ['TikTok', 'Instagram', 'YouTube', 'Twitter'],
-        datasets: [{
-          data: [62, 21, 11, 6],
-          backgroundColor: ['#FF2D55','#00F2EA','#7B2FBE','#FF6B35'],
-          borderWidth: 0,
-          hoverOffset: 6,
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: '72%',
-        plugins: {
-          legend: { position: 'bottom', labels: { color: textColor(), padding: 16, font: { size: 12 } } }
-        }
-      }
-    });
-  }
-
-  /* Views Area Chart */
-  const viewsCtx = document.getElementById('viewsChart');
-  if (viewsCtx) {
-    new Chart(viewsCtx, {
-      type: 'line',
-      data: {
-        labels: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8'],
-        datasets: [{
-          label: 'Video Views',
-          data: [250000, 480000, 320000, 650000, 890000, 1200000, 980000, 1450000],
-          borderColor: '#7B2FBE',
-          backgroundColor: 'rgba(123,47,190,0.07)',
-          borderWidth: 2.5,
-          fill: true,
-          tension: 0.4,
-          pointRadius: 4,
-          pointBackgroundColor: '#7B2FBE',
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-          x: { grid: { color: gridColor() }, ticks: { color: textColor() } },
-          y: { grid: { color: gridColor() }, ticks: { color: textColor(), callback: v => (v >= 1000000 ? (v/1000000).toFixed(1)+'M' : v >= 1000 ? (v/1000).toFixed(0)+'K' : v) } }
-        }
-      }
-    });
-  }
-
-  /* Viral Score Gauge (Horizontal Bar) */
-  const viralCtx = document.getElementById('viralChart');
-  if (viralCtx) {
-    new Chart(viralCtx, {
-      type: 'bar',
-      data: {
-        labels: ['Hook Rate', 'Share Rate', 'Comment Rate', 'Save Rate', 'Watch Time'],
-        datasets: [{
-          data: [87, 72, 65, 81, 78],
-          backgroundColor: ['#FF2D55','#00F2EA','#7B2FBE','#FF6B35','#10B981'],
-          borderRadius: 6,
-          borderSkipped: false,
-        }]
-      },
-      options: {
-        indexAxis: 'y',
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-          x: { max: 100, grid: { color: gridColor() }, ticks: { color: textColor(), callback: v => v+'%' } },
-          y: { grid: { display: false }, ticks: { color: textColor() } }
-        }
-      }
-    });
-  }
-
-  /* Content Calendar */
-  function renderCalendar() {
-    const today = new Date();
-    const month = today.getMonth();
-    const year = today.getFullYear();
-    const firstDay = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const contentDays = [3, 6, 8, 10, 13, 15, 17, 20, 22, 24, 27];
-
-    const calGrid = $('#calendarGrid');
-    if (!calGrid.length) return;
-
-    const dayNames = ['Su','Mo','Tu','We','Th','Fr','Sa'];
-    let html = dayNames.map(d => `<div class="cal-day">${d}</div>`).join('');
-
-    for (let i = 0; i < firstDay; i++) html += `<div class="cal-cell empty"></div>`;
-    for (let d = 1; d <= daysInMonth; d++) {
-      const isToday = d === today.getDate();
-      const hasContent = contentDays.includes(d);
-      html += `<div class="cal-cell${isToday ? ' today' : ''}${hasContent ? ' has-content' : ''}">${d}</div>`;
+      });
     }
 
-    calGrid.html(html);
-    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-    $('#calendarMonth').text(months[month] + ' ' + year);
-  }
+    // 2. Engagement Split (Doughnut)
+    const platformCtx = document.getElementById('platformChart');
+    if (platformCtx) {
+      charts.platform = new Chart(platformCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['TikTok', 'Instagram', 'YouTube'],
+          datasets: [{
+            data: [62, 21, 11],
+            backgroundColor: ['#FF2D55', '#00F2EA', '#7B2FBE'],
+            borderWidth: 0,
+            hoverOffset: 10
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '80%',
+          plugins: { legend: { display: false } }
+        }
+      });
+    }
+
+    // 3. Weekly Engagement (Bar)
+    const engagementCtx = document.getElementById('engagementChart');
+    if (engagementCtx) {
+      charts.engagement = new Chart(engagementCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          datasets: [{
+            label: 'Engagement %',
+            data: [7.2, 8.5, 6.9, 9.4, 8.8, 11.2, 9.8],
+            backgroundColor: '#00F2EA',
+            borderRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { display: false } },
+            y: { grid: { color: getGridColor() } }
+          }
+        }
+      });
+    }
+
+    // 4. Viral Metrics (Horizontal Bar)
+    const viralCtx = document.getElementById('viralChart');
+    if (viralCtx) {
+      charts.viral = new Chart(viralCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Hook', 'Watch Time', 'Shares', 'Saves'],
+          datasets: [{
+            data: [88, 76, 92, 84],
+            backgroundColor: ['#FF2D55', '#00F2EA', '#7B2FBE', '#FF6B35'],
+            borderRadius: 10
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { max: 100, grid: { color: getGridColor() } },
+            y: { grid: { display: false } }
+          }
+        }
+      });
+    }
+  };
+
+  const updateChartsTheme = () => {
+    Object.values(charts).forEach(chart => {
+      chart.options.scales.y.grid.color = getGridColor();
+      if (chart.options.scales.x.grid) chart.options.scales.x.grid.color = getGridColor();
+      chart.options.color = getTextColor();
+      chart.update();
+    });
+  };
+
+  initCharts();
+
+  // --- Counters ---
+  const animateCounters = () => {
+    $('.kpi-value').each(function () {
+      const $this = $(this);
+      const target = parseFloat($this.data('count'));
+      const divisor = $this.data('divisor') || 1;
+      const suffix = $this.data('suffix') || '';
+      
+      let current = 0;
+      const duration = 1500;
+      const startTime = performance.now();
+
+      const update = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        current = progress * (target / divisor);
+        
+        if (divisor === 1000000) {
+          $this.text(current.toFixed(1) + suffix);
+        } else if (target % 1 !== 0) {
+          $this.text(current.toFixed(1) + suffix);
+        } else {
+          $this.text(Math.floor(current).toLocaleString() + suffix);
+        }
+
+        if (progress < 1) requestAnimationFrame(update);
+      };
+
+      requestAnimationFrame(update);
+    });
+  };
+
+  animateCounters();
+
+  // --- Calendar ---
+  const renderCalendar = () => {
+    const grid = $('#calendarGrid');
+    if (!grid.length) return;
+
+    const days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+    let html = days.map(d => `<div class="cal-day">${d}</div>`).join('');
+
+    const today = new Date();
+    const currentMonth = today.toLocaleString('default', { month: 'long', year: 'numeric' });
+    $('#calendarMonth').text(currentMonth);
+
+    // Simple fixed grid for demo
+    const startOffset = new Date(today.getFullYear(), today.getMonth(), 1).getDay();
+    const totalDays = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+
+    for (let i = 0; i < startOffset; i++) {
+      html += '<div class="cal-cell empty"></div>';
+    }
+
+    for (let i = 1; i <= totalDays; i++) {
+      const isToday = i === today.getDate();
+      const hasContent = [4, 7, 12, 15, 22, 25].includes(i);
+      html += `<div class="cal-cell${isToday ? ' today' : ''}${hasContent ? ' has-content' : ''}">${i}</div>`;
+    }
+
+    grid.html(html);
+  };
 
   renderCalendar();
-
-  /* Progress Bars animate */
-  function animateProgressBars() {
-    $('.progress-fill').each(function () {
-      const w = $(this).data('width') || 0;
-      $(this).css('width', '0%');
-      setTimeout(() => $(this).css('width', w + '%'), 300);
-    });
-  }
-  animateProgressBars();
-
-  /* Animate KPI counters */
-  function animateDashCounters() {
-    $('.kpi-value[data-count]').each(function () {
-      const el = $(this);
-      const target = parseFloat(el.data('count'));
-      const suffix = el.data('suffix') || '';
-      const prefix = el.data('prefix') || '';
-      let current = 0;
-      const steps = 40;
-      const increment = target / steps;
-      const timer = setInterval(function () {
-        current = Math.min(current + increment, target);
-        const display = Number.isInteger(target) ? Math.round(current) : current.toFixed(1);
-        el.text(prefix + display + suffix);
-        if (current >= target) clearInterval(timer);
-      }, 40);
-    });
-  }
-  animateDashCounters();
 });

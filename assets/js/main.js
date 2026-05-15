@@ -92,8 +92,12 @@ $(document).ready(function () {
       const bottom = top + $(this).outerHeight();
       if (scrollPos >= top && scrollPos < bottom) {
         const id = $(this).attr('id');
-        $('.nav-links a').removeClass('active');
-        $(`.nav-links a[href="#${id}"]`).addClass('active');
+        // Only target anchor links, don't touch page links
+        const anchorLink = $(`.nav-links a[href="#${id}"]`);
+        if (anchorLink.length) {
+          $('.nav-links a[href^="#"]').removeClass('active');
+          anchorLink.addClass('active');
+        }
       }
     });
   }
@@ -276,4 +280,23 @@ $(document).ready(function () {
     firstFaq.addClass('open');
     firstFaq.find('.faq-answer').css('max-height', firstFaq.find('.faq-answer')[0].scrollHeight + 'px');
   }
+
+  /* ============================================================
+     Back to Top
+     ============================================================ */
+  const backToTop = $('<button class="back-to-top" aria-label="Back to Top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg></button>');
+  $('body').append(backToTop);
+
+  $(window).on('scroll', function () {
+    if ($(this).scrollTop() > 400) {
+      backToTop.addClass('visible');
+    } else {
+      backToTop.removeClass('visible');
+    }
+  });
+
+  backToTop.on('click', function () {
+    $('html, body').animate({ scrollTop: 0 }, 600);
+    return false;
+  });
 });

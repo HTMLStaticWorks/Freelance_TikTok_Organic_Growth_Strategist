@@ -2,12 +2,15 @@
 <html lang="en" data-theme="light" dir="ltr">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | ViralPro Studio</title>
-  <meta name="description" content="Book a free TikTok strategy call or send a message to ViralPro Studio. Let's build your growth system." />
+  <title>Contact | ViralPro</title>
+  <meta name="description" content="Book a free TikTok strategy call or send a message to ViralPro. Let's build your growth system." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23ff2d55'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='60' font-weight='bold' fill='white'>V</text></svg>">
   <link rel="stylesheet" href="../assets/css/style.css" />
   <style>
-    .contact-hero{background:var(--gradient-hero);min-height:38vh;display:flex;align-items:center;padding-top:var(--nav-height);position:relative;overflow:hidden;}
+    .contact-hero{background:var(--gradient-hero);min-height:45vh;display:flex;align-items:center;padding-top:calc(var(--nav-height) + 4rem);padding-bottom:4rem;position:relative;overflow:hidden;}
+    @media(max-width:991px) { .contact-hero { padding-top: calc(var(--nav-height) + 5rem); } }
+    @media(max-width:768px) { .contact-hero { padding-top: calc(var(--nav-height) + 6rem); padding-bottom: 3rem; } }
     .form-card{background:var(--clr-card);border:1px solid var(--clr-card-border);border-radius:var(--border-radius-xl);padding:2.5rem;}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
     .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:1.25rem;}
@@ -18,40 +21,138 @@
     .contact-info-card{background:var(--gradient-primary);border-radius:var(--border-radius-xl);padding:2.5rem;color:#fff;height:100%;}
     .ci-item{display:flex;gap:1rem;align-items:flex-start;margin-bottom:2rem;}
     .ci-icon{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;}
-    .calendar-slot{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem;text-align:center;cursor:pointer;transition:var(--transition-fast);}
-    .calendar-slot:hover,.calendar-slot.selected{background:rgba(255,45,85,0.15);border-color:var(--clr-primary);}
-    .calendar-slot.selected .slot-time{color:var(--clr-primary);font-weight:700;}
-    .slot-day{font-size:0.7rem;color:var(--clr-text-muted);margin-bottom:4px;}
-    .slot-time{font-size:0.9rem;font-weight:600;}
     .faq-mini .faq-item{border-bottom:1px solid var(--clr-card-border);}
-    @media(max-width:768px){.form-row{grid-template-columns:1fr;}}
+    @media(max-width:768px){
+      .form-row{grid-template-columns:1fr;}
+    }
   </style>
 </head>
 <body>
-  <nav class="navbar"><div class="nav-inner">
-    <a href="../index.html" class="nav-logo"><div class="logo-icon">V</div><span>ViralPro<span style="color:var(--clr-primary);">Studio</span></span></a>
-    <ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html" class="active">Contact</a></li><li><a href="dashboard.html" class="nav-icon-link" title="Dashboard"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg></a></li></ul>
-    <div class="nav-actions">
-      <button class="nav-icon-btn theme-toggle"><svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg></button>
-      <button class="nav-icon-btn rtl-toggle"><svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016 11l-1.414 2.828A4.3 4.3 0 006 16.3V21M12 5h3a3 3 0 010 6h-3m0 0v10"/></svg><svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 5H9M15 3v2"/></svg></button>
-      <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
-      <button class="hamburger" id="hamburgerBtn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <nav class="navbar" id="mainNav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon">V</div>
+        <span>ViralPro</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="home2.html">Home 2</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn theme-toggle" title="Toggle Dark Mode" aria-label="Toggle theme">
+          <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+          <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+        </button>
+        <button class="nav-icon-btn rtl-toggle" title="Toggle RTL" aria-label="Toggle RTL">
+          <svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+          <svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" />
+          </svg>
+        </button>
+        <a href="dashboard.html" class="nav-icon-btn" title="Dashboard" aria-label="Dashboard">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" />
+          </svg>
+        </a>
+        <a href="login.html" class="nav-icon-btn" title="Login" aria-label="Login">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
-  </div></nav>
+  </nav>
+
+  <!-- Mobile Drawer -->
   <div id="drawerOverlay" class="drawer-overlay"></div>
   <div id="mobileDrawer" class="mobile-drawer">
-    <div class="drawer-header"><a href="../index.html" class="nav-logo"><div class="logo-icon">V</div>ViralPro<span style="color:var(--clr-primary);">Studio</span></a><button id="drawerClose" class="drawer-close"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
-    <nav class="drawer-nav"><a href="../index.html">🏠 Home</a><a href="about.html">👤 About</a><a href="services.html">⚡ Services</a><a href="portfolio.html">📊 Portfolio</a><a href="case-studies.html">📋 Case Studies</a><a href="pricing.html">💎 Pricing</a><a href="blog.html">📝 Blog</a><a href="contact.html">📬 Contact</a><a href="dashboard.html">🎛️ Dashboard</a></nav>
-    <div class="drawer-icons"><button class="nav-icon-btn theme-toggle"><svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg></button><button class="nav-icon-btn rtl-toggle"><svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12"/></svg><svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 5H9"/></svg></button></div>
-    <div class="drawer-ctas"><a href="login.html" class="btn btn-secondary">Login</a></div>
+    <div class="drawer-header">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon">V</div>ViralPro
+      </a>
+      <button id="drawerClose" class="drawer-close" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+          width="18" height="18">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="../index.html">🏠 Home</a>
+      <a href="home2.html">🚀 Home 2</a>
+      <a href="about.html">👤 About</a>
+      <a href="services.html">⚡ Services</a>
+      <a href="portfolio.html">📊 Portfolio</a>
+      <a href="case-studies.html">📋 Case Studies</a>
+      <a href="pricing.html">💎 Pricing</a>
+      <a href="blog.html">📝 Blog</a>
+      <a href="contact.html" class="active">📬 Contact</a>
+      <a href="dashboard.html">🎛️ Dashboard</a>
+    </nav>
+    <div class="drawer-icons">
+      <button class="nav-icon-btn theme-toggle" aria-label="Toggle theme">
+        <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+        </svg>
+        <svg class="theme-icon-sun" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5" />
+        </svg>
+      </button>
+      <button class="nav-icon-btn rtl-toggle" aria-label="Toggle RTL">
+        <svg class="rtl-icon-default" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+        </svg>
+        <svg class="rtl-icon-active" style="display:none" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16 7H4m0 0l4-4m-4 4l4 4m0 6h12m0 0l-4 4m4-4l-4-4" />
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-ctas">
+      <a href="login.html" class="btn btn-secondary">Login</a>
+    </div>
   </div>
 
   <!-- S1: HERO -->
   <section class="contact-hero"><div class="orb orb-1"></div><div class="orb orb-2"></div>
     <div class="container"><div class="section-center reveal">
       <div class="section-label" style="background:rgba(255,45,85,0.15);color:#FF6B8A;">Let's Talk</div>
-      <h1 style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1rem;">Book Your <span class="text-gradient">Free Strategy Call</span></h1>
-      <p style="color:rgba(255,255,255,0.7);max-width:500px;margin:0 auto;">30 minutes. Zero obligation. I'll audit your TikTok live and outline exactly what needs to change.</p>
+      <h1 style="font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--clr-hero-text);line-height:1.1;margin-bottom:1rem;">Book Your <span class="text-gradient">Free Strategy Call</span></h1>
+      <p style="color:var(--clr-text-muted);max-width:500px;margin:0 auto;">30 minutes. Zero obligation. I'll audit your TikTok live and outline exactly what needs to change.</p>
     </div></div>
   </section>
 
@@ -64,11 +165,11 @@
           <p style="color:var(--clr-text-muted);font-size:0.875rem;margin-bottom:2rem;">Fill in the form and I'll get back within 24 hours.</p>
           <form id="contactForm" onsubmit="handleSubmit(event)">
             <div class="form-row">
-              <div class="form-group"><label for="firstName">First Name *</label><input type="text" id="firstName" class="form-input" placeholder="Alex" required /></div>
-              <div class="form-group"><label for="lastName">Last Name *</label><input type="text" id="lastName" class="form-input" placeholder="Rivera" required /></div>
+              <div class="form-group"><label for="firstName">First Name *</label><input type="text" id="firstName" class="form-input" placeholder="First Name" required /></div>
+              <div class="form-group"><label for="lastName">Last Name *</label><input type="text" id="lastName" class="form-input" placeholder="Last Name" required /></div>
             </div>
-            <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" class="form-input" placeholder="alex@example.com" required /></div>
-            <div class="form-group"><label for="tiktok">TikTok Handle</label><input type="text" id="tiktok" class="form-input" placeholder="@yourusername" /></div>
+            <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" class="form-input" placeholder="Email Address" required /></div>
+            <div class="form-group"><label for="tiktok">TikTok Handle</label><input type="text" id="tiktok" class="form-input" placeholder="@username" /></div>
             <div class="form-group"><label for="service">Service Interested In *</label>
               <select id="service" class="form-select" required>
                 <option value="">Choose a service...</option>
@@ -103,19 +204,31 @@
         <div class="reveal reveal-delay-2">
           <div class="contact-info-card">
             <h3 style="font-size:1.2rem;font-weight:800;margin-bottom:1.5rem;">Contact Information</h3>
-            <div class="ci-item"><div class="ci-icon">📧</div><div><div style="font-weight:600;margin-bottom:2px;">Email</div><div style="opacity:0.8;font-size:0.875rem;">alex@viralprostudio.com</div></div></div>
+            <div class="ci-item"><div class="ci-icon">📧</div><div><div style="font-weight:600;margin-bottom:2px;">Email</div><div style="opacity:0.8;font-size:0.875rem;">contact@viralpro.com</div></div></div>
             <div class="ci-item"><div class="ci-icon">📅</div><div><div style="font-weight:600;margin-bottom:2px;">Strategy Calls</div><div style="opacity:0.8;font-size:0.875rem;">Mon–Fri · 9am–6pm EST</div></div></div>
             <div class="ci-item"><div class="ci-icon">⚡</div><div><div style="font-weight:600;margin-bottom:2px;">Response Time</div><div style="opacity:0.8;font-size:0.875rem;">Within 24 hours</div></div></div>
             <div class="ci-item" style="margin-bottom:0;"><div class="ci-icon">🌍</div><div><div style="font-weight:600;margin-bottom:2px;">Location</div><div style="opacity:0.8;font-size:0.875rem;">Available Worldwide · Remote Only</div></div></div>
-            <hr style="border:none;border-top:1px solid rgba(255,255,255,0.15);margin:2rem 0;" />
-            <h4 style="margin-bottom:1rem;font-size:0.95rem;">Follow for Daily Growth Tips</h4>
-            <div style="display:flex;gap:10px;flex-wrap:wrap;">
-              <a href="#" style="background:rgba(255,255,255,0.15);color:#fff;padding:8px 14px;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;">TikTok</a>
-              <a href="#" style="background:rgba(255,255,255,0.15);color:#fff;padding:8px 14px;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;">Instagram</a>
-              <a href="#" style="background:rgba(255,255,255,0.15);color:#fff;padding:8px 14px;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;">YouTube</a>
-              <a href="#" style="background:rgba(255,255,255,0.15);color:#fff;padding:8px 14px;border-radius:8px;font-size:0.8rem;font-weight:600;text-decoration:none;">X / Twitter</a>
+            
+            <div style="margin-top:2rem;">
+              <h4 style="font-size:0.9rem;font-weight:700;margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.05em;">Follow Me</h4>
+              <div class="footer-socials" style="margin-top:0;">
+                <a href="#" class="social-btn" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 448 512"><path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg></a>
+                <a href="#" class="social-btn" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                <a href="#" class="social-btn" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3: MAP -->
+  <section style="background:var(--clr-bg-2);padding-bottom:5rem;">
+    <div class="container">
+      <div class="reveal">
+        <div style="width:100%;height:450px;border-radius:24px;overflow:hidden;border:1px solid var(--clr-card-border);box-shadow:var(--shadow-lg);">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1715760000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
@@ -125,7 +238,7 @@
   <section class="section-dark">
     <div class="container">
       <div class="section-center reveal"><div class="section-label">Book a Call</div><h2 class="section-title">Available <span class="text-gradient">This Week</span></h2><p class="section-desc">Choose a time that works for you. 30-minute strategy session, no obligation, completely free.</p></div>
-      <div class="grid-7 mt-4 reveal" style="display:grid;grid-template-columns:repeat(7,1fr);gap:10px;">
+      <div class="grid-7 mt-4 reveal calendar-grid-responsive" style="display:grid;grid-template-columns:repeat(7,1fr);gap:10px;">
         <div class="calendar-slot selected"><div class="slot-day">MON</div><div class="slot-time">9:00 AM</div></div>
         <div class="calendar-slot"><div class="slot-day">MON</div><div class="slot-time">2:00 PM</div></div>
         <div class="calendar-slot"><div class="slot-day">TUE</div><div class="slot-time">10:00 AM</div></div>
@@ -134,7 +247,7 @@
         <div class="calendar-slot"><div class="slot-day">FRI</div><div class="slot-time">9:00 AM</div></div>
         <div class="calendar-slot"><div class="slot-day">FRI</div><div class="slot-time">3:00 PM</div></div>
       </div>
-      <div class="text-center mt-3 reveal"><a href="#contactForm" class="btn btn-primary btn-lg">Book Selected Slot</a></div>
+      <div class="flex-center mt-3 reveal"><a href="#contactForm" class="btn btn-primary btn-lg">Book Selected Slot</a></div>
     </div>
   </section>
 
@@ -179,13 +292,59 @@
     </div>
   </section>
 
-  <footer class="footer"><div class="container">
-    <div class="footer-grid"><div class="footer-brand"><a href="../index.html" class="nav-logo" style="display:flex;margin-bottom:.75rem;"><div class="logo-icon">V</div><span>ViralPro<span style="color:var(--clr-primary);">Studio</span></span></a><p>Let's build your TikTok growth system.</p><div class="footer-socials"><a href="#" class="social-btn">𝕋</a><a href="#" class="social-btn">𝕀</a><a href="#" class="social-btn">𝕐</a><a href="#" class="social-btn">𝕏</a></div></div>
-    <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="services.html">All Services</a></li><li><a href="services.html">Hook Writing</a></li></ul></div>
-    <div class="footer-col"><h4>Pages</h4><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li></ul></div>
-    <div class="footer-col"><h4>Account</h4><ul class="footer-links"><li><a href="pricing.html">Pricing</a></li><li><a href="login.html">Login</a></li><li><a href="register.html">Register</a></li></ul></div></div>
-    <div class="footer-bottom"><span>© 2026 ViralPro Studio.</span><span>All rights reserved.</span></div>
-  </div></footer>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo" style="margin-bottom:0.75rem;display:flex;">
+            <div class="logo-icon">V</div>
+            <span>ViralPro</span>
+          </a>
+          <p>Expert TikTok organic growth strategy for creators and brands ready to build real audiences.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="#" class="social-btn" aria-label="Google"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"></path><path d="M12 7v10m-5-5h10"></path></svg></a>
+            <a href="#" class="social-btn" aria-label="Apple"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 20.94c1.88 0 3.39-.66 4.47-1.67 1.09-1.02 1.75-2.45 1.75-4.21 0-3.32-2.31-5.06-4.94-5.06-1.12 0-2.18.29-3.03.82-.85-.53-1.91-.82-3.03-.82-2.63 0-4.94 1.74-4.94 5.06 0 1.76.66 3.19 1.75 4.21 1.08 1.01 2.59 1.67 4.47 1.67.92 0 1.83-.16 2.51-.48.68.32 1.59.48 2.51.48zM12 8c.39-1.36 1.41-2.43 2.65-2.83-1.06-.11-2.15.22-2.92.89-.77-.67-1.86-1-2.92-.89 1.24.4 2.26 1.47 2.65 2.83z"></path></svg></a>
+            <a href="#" class="social-btn" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Organic Growth</a></li>
+            <li><a href="services.html">Hook Writing</a></li>
+            <li><a href="services.html">Trend Research</a></li>
+            <li><a href="services.html">Content Calendar</a></li>
+            <li><a href="services.html">Analytics Reports</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Started</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="contact.html">Free Consultation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ViralPro. All rights reserved.</span>
+        <span>Built for creators who want to go viral organically.</span>
+      </div>
+    </div>
+  </footer>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="../assets/js/main.js"></script>
   <script>
@@ -208,3 +367,5 @@
   </script>
 </body>
 </html>
+
+
