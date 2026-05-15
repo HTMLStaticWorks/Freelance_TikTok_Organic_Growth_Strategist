@@ -1427,17 +1427,6 @@ textarea.form-input {
 /* ============================================================
    Responsive Breakpoints
    ============================================================ */
-@media (max-width: 1024px) {
-  .grid-4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-}
-
 @media (max-width: 1100px) {
   :root {
     --section-padding: 3.5rem 0;
@@ -1468,12 +1457,12 @@ textarea.form-input {
   }
 
   .grid-4 {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   .footer-bottom {
@@ -1484,6 +1473,13 @@ textarea.form-input {
 
   .pricing-card.featured {
     transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 
