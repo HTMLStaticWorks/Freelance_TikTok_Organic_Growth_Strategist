@@ -1,5 +1,5 @@
 /**
- * ViralPro Dashboard - Premium Logic
+ * Alex Rivera Dashboard - Premium Logic
  */
 
 $(document).ready(function () {
@@ -14,47 +14,131 @@ $(document).ready(function () {
   $('#hamburgerBtn').on('click', () => toggleSidebar(true));
   $('#sidebarClose, #sidebarOverlay').on('click', () => toggleSidebar(false));
 
-  // --- Submenu Logic ---
+  // --- Sidebar Link / Anchor Scrolling ---
   $('.sidebar-link').on('click', function (e) {
-    const parent = $(this).closest('.nav-item-wrap');
-    const hasSubmenu = parent.find('.submenu').length > 0;
+    const href = $(this).attr('href') || '';
+    const hashIndex = href.indexOf('#');
     
-    if (hasSubmenu) {
-      e.preventDefault();
+    if (hashIndex !== -1) {
+      const hash = href.substring(hashIndex);
+      const target = $(hash);
       
-      // Close other submenus if needed (optional)
-      // $('.nav-item-wrap').not(parent).removeClass('open');
-      
-      parent.toggleClass('open');
+      if (target.length) {
+        e.preventDefault();
+        
+        $('.sidebar-link').removeClass('active');
+        $(this).addClass('active');
+
+        const topbarHeight = parseInt($(':root').css('--topbar-height')) || 70;
+        $('html, body').stop().animate({ scrollTop: target.offset().top - topbarHeight - 15 }, 600);
+        
+        if ($(window).width() <= 768) {
+          toggleSidebar(false);
+        }
+      }
     } else {
-      // Normal link behavior
+      // Normal page navigation
       $('.sidebar-link').removeClass('active');
       $(this).addClass('active');
       
-      // Close sidebar on mobile after clicking a link
       if ($(window).width() <= 768) {
         toggleSidebar(false);
       }
     }
   });
 
+  // --- Scroll Spy for Dashboard ---
+  if ($('#overview').length) {
+    const sections = ['#overview', '#analytics', '#contentCalendar', '#hookScripts', '#trendingAudio'];
+    $(window).on('scroll', function () {
+      const scrollPos = $(window).scrollTop() + 120; // topbar height + buffer
+      sections.forEach(id => {
+        const el = $(id);
+        if (el.length) {
+          const top = el.offset().top;
+          const bottom = top + el.outerHeight();
+          if (scrollPos >= top && scrollPos < bottom) {
+            $('.sidebar-link').removeClass('active');
+            $(`.sidebar-link[href$="${id}"]`).addClass('active');
+          }
+        }
+      });
+    });
+  }
+
+  // --- Scroll to URL Hash on Page Load ---
+  const hash = window.location.hash;
+  if (hash) {
+    const target = $(hash);
+    if (target.length) {
+      setTimeout(() => {
+        const topbarHeight = parseInt($(':root').css('--topbar-height')) || 70;
+        $('html, body').stop().animate({ scrollTop: target.offset().top - topbarHeight - 15 }, 600);
+        
+        $('.sidebar-link').removeClass('active');
+        $(`.sidebar-link[href$="${hash}"]`).addClass('active');
+      }, 300);
+    }
+  }
+
   // --- Logout ---
   $('#logoutBtn').on('click', () => {
     window.location.href = 'login.html';
   });
 
-  // --- Theme Toggle ---
+  // --- Theme Management ---
+  const THEME_KEY = 'tiktok-theme';
+  function setTheme(theme) {
+    $('html').attr('data-theme', theme);
+    localStorage.setItem(THEME_KEY, theme);
+    $('.theme-icon-sun').toggle(theme === 'dark');
+    $('.theme-icon-moon').toggle(theme !== 'dark');
+    $('.theme-toggle-ui').toggleClass('on', theme === 'dark');
+  }
+
+  function initTheme() {
+    const saved = localStorage.getItem(THEME_KEY) || 'dark';
+    setTheme(saved);
+  }
+
   $(document).on('click', '.theme-toggle', function () {
     const current = $('html').attr('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    $('html').attr('data-theme', next);
-    localStorage.setItem('tiktok-theme', next);
-    $('.theme-icon-sun').toggle(next === 'dark');
-    $('.theme-icon-moon').toggle(next !== 'dark');
-    
-    // Refresh charts if they depend on theme colors
-    updateChartsTheme();
+    setTheme(current === 'dark' ? 'light' : 'dark');
   });
+
+  $(document).on('click', '.theme-toggle-ui', function () {
+    const current = $('html').attr('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  initTheme();
+
+  // --- RTL Toggle ---
+  const RTL_KEY = 'tiktok-rtl';
+  function setRTL(isRtl) {
+    $('html').attr('dir', isRtl ? 'rtl' : 'ltr');
+    localStorage.setItem(RTL_KEY, isRtl ? 'rtl' : 'ltr');
+    $('.rtl-icon-active').toggle(isRtl);
+    $('.rtl-icon-default').toggle(!isRtl);
+    $('.rtl-toggle-ui').toggleClass('on', isRtl);
+  }
+
+  function initRTL() {
+    const saved = localStorage.getItem(RTL_KEY) || 'ltr';
+    setRTL(saved === 'rtl');
+  }
+
+  $(document).on('click', '.rtl-toggle', function () {
+    const current = $('html').attr('dir');
+    setRTL(current !== 'rtl');
+  });
+
+  $(document).on('click', '.rtl-toggle-ui', function () {
+    const current = $('html').attr('dir');
+    setRTL(current !== 'rtl');
+  });
+
+  initRTL();
 
   // --- Dashboard Data & Charts ---
   

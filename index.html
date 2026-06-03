@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ViralPro | TikTok Organic Growth Strategist</title>
+  <title>Alex Rivera | Freelance TikTok Organic Growth Strategist</title>
   <meta name="description"
-    content="Expert TikTok organic growth strategies, viral content planning, hook writing, and creator branding. Grow your audience to millions." />
+    content="I help brands and creators grow organically on TikTok. Scale your views, followers, and revenue with custom content strategies, script writing, and algorithm optimization." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23ff2d55'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='60' font-weight='bold' fill='white'>V</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23ff2d55'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='60' font-weight='bold' fill='white'>A</text></svg>">
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
     /* Home 1 Specific */
@@ -153,6 +153,15 @@
       overflow: hidden;
     }
 
+    .portfolio-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.35);
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+
     .portfolio-card img {
       width: 100%;
       aspect-ratio: 4/3;
@@ -167,23 +176,27 @@
     .portfolio-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.55) 60%, rgba(15, 23, 42, 0.2) 100%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       padding: 1.5rem;
+      z-index: 2;
     }
 
     .portfolio-overlay h3 {
       color: #fff;
-      font-size: 1rem;
-      font-weight: 700;
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .portfolio-overlay p {
-      color: rgba(255, 255, 255, 0.75);
-      font-size: 0.78rem;
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 0.82rem;
       margin-top: 4px;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
 
     .process-line {
@@ -220,8 +233,8 @@
   <nav class="navbar" id="mainNav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <div class="logo-icon">V</div>
-        <span>ViralPro</span>
+        <div class="logo-icon">AR</div>
+        <span>Alex Rivera</span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
@@ -231,10 +244,10 @@
         <li><a href="pages/portfolio.html">Portfolio</a></li>
         <li><a href="pages/case-studies.html">Case Studies</a></li>
         <li><a href="pages/pricing.html">Pricing</a></li>
-        <li><a href="pages/blog.html">Blog</a></li>
         <li><a href="pages/contact.html">Contact</a></li>
       </ul>
       <div class="nav-actions">
+        <a href="pages/contact.html" class="btn btn-primary nav-cta">Let's Talk</a>
         <button class="nav-icon-btn theme-toggle" title="Toggle Dark Mode" aria-label="Toggle theme">
           <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="2">
@@ -289,7 +302,7 @@
   <div id="mobileDrawer" class="mobile-drawer">
     <div class="drawer-header">
       <a href="index.html" class="nav-logo">
-        <div class="logo-icon">V</div>ViralPro
+        <div class="logo-icon">AR</div>Alex Rivera
       </a>
       <button id="drawerClose" class="drawer-close" aria-label="Close menu">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
@@ -300,15 +313,13 @@
     </div>
     <nav class="drawer-nav">
       <a href="index.html" class="active">🏠 Home</a>
-      <a href="pages/home2.html">🚀 Home 2</a>
+      <a href="pages/home2.html">🏠 Home 2</a>
       <a href="pages/about.html">👤 About</a>
       <a href="pages/services.html">⚡ Services</a>
-      <a href="pages/portfolio.html">📊 Portfolio</a>
-      <a href="pages/case-studies.html">📋 Case Studies</a>
-      <a href="pages/pricing.html">💎 Pricing</a>
-      <a href="pages/blog.html">📝 Blog</a>
+      <a href="pages/portfolio.html">💼 Portfolio</a>
+      <a href="pages/case-studies.html">📁 Case Studies</a>
+      <a href="pages/pricing.html">🏷️ Pricing</a>
       <a href="pages/contact.html">📬 Contact</a>
-      <a href="pages/dashboard.html">🎛️ Dashboard</a>
     </nav>
     <div class="drawer-icons">
       <button class="nav-icon-btn theme-toggle" aria-label="Toggle theme">
@@ -333,7 +344,7 @@
       </button>
     </div>
     <div class="drawer-ctas">
-      <a href="pages/login.html" class="btn btn-secondary">Login</a>
+      <a href="pages/contact.html" class="btn btn-primary">Let's Talk</a>
     </div>
   </div>
 
@@ -354,13 +365,11 @@
           </div>
           <h1
             style="font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.1;color:var(--clr-hero-text);margin-bottom:1.25rem;">
-            Turn Your TikTok Into a<br>
-            <span class="typewriter-text text-gradient"
-              data-words="Viral Machine|Growth Engine|Revenue Stream|Brand Empire">Viral Machine</span>
+            Grow Your TikTok Organically With a<br>
+            <span class="text-gradient">Dedicated TikTok Growth Strategist</span>
           </h1>
-          <p style="font-size:1.1rem;color:var(--clr-text-muted);max-width:540px;line-height:1.75;margin-bottom:1.5rem;">
-            I architect data-driven organic growth strategies that transform creator accounts into viral powerhouses.
-            185,000+ followers grown. 50+ campaigns launched.
+          <p style="font-size:1.1rem;color:var(--clr-text-muted);max-width:560px;line-height:1.75;margin-bottom:1.5rem;">
+            I help brands, creators, coaches, and eCommerce businesses gain more views, followers, and customers through proven TikTok growth strategies, viral content planning, script writing, and trend research.
           </p>
           <div class="flex gap-3 mb-4" style="flex-wrap:wrap;">
             <a href="pages/contact.html" class="btn btn-primary btn-lg">
@@ -369,9 +378,9 @@
                 <path stroke-linecap="round" stroke-linejoin="round"
                   d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              Book Strategy Call
+              Book a Free Consultation
             </a>
-            <a href="pages/case-studies.html" class="btn btn-secondary btn-lg">View Results</a>
+            <a href="pages/portfolio.html" class="btn btn-secondary btn-lg">View Results</a>
           </div>
           <div class="flex gap-3 mb-4" style="flex-wrap:wrap;">
             <div style="display:flex;align-items:center;gap:8px;color:var(--clr-text-muted);font-size:0.85rem;">
@@ -384,29 +393,23 @@
             </div>
             <div style="display:flex;align-items:center;gap:8px;color:var(--clr-text-muted);font-size:0.85rem;">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#10B981" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              Proven 3x growth average
+              Proven organic scale
             </div>
           </div>
           <div class="hero-stats">
             <div class="hero-stat">
-              <div class="val"><span class="counter-value" data-target="185" data-suffix="K+">0</span></div>
+              <div class="val"><span class="counter-value" data-target="50" data-suffix="M+">0</span></div>
+              <div class="lbl">Organic Views Generated</div>
+            </div>
+            <div class="divider-v"></div>
+            <div class="hero-stat">
+              <div class="val"><span class="counter-value" data-target="500" data-suffix="K+">0</span></div>
               <div class="lbl">Followers Grown</div>
             </div>
             <div class="divider-v"></div>
             <div class="hero-stat">
-              <div class="val"><span class="counter-value" data-target="50" data-suffix="+">0</span></div>
-              <div class="lbl">Campaigns</div>
-            </div>
-            <div class="divider-v"></div>
-            <div class="hero-stat">
-              <div class="val"><span class="counter-value" data-target="8.7" data-suffix="%"
-                  data-duration="1500">0</span></div>
-              <div class="lbl">Avg Engagement</div>
-            </div>
-            <div class="divider-v"></div>
-            <div class="hero-stat">
-              <div class="val"><span class="counter-value" data-target="2.4" data-suffix="M+">0</span></div>
-              <div class="lbl">Total Views</div>
+              <div class="val"><span class="counter-value" data-target="100" data-suffix="+">0</span></div>
+              <div class="lbl">Strategies Delivered</div>
             </div>
           </div>
         </div>
@@ -439,41 +442,38 @@
     </div>
   </div>
 
-  <!-- ========== ABOUT SNAPSHOT: SECTION 2 ========== -->
+  <!-- ========== MEET YOUR STRATEGIST: SECTION 2 ========== -->
   <section id="about" style="background:var(--clr-bg);">
     <div class="container">
       <div class="grid-2" style="gap:4rem;align-items:center;">
         <div class="reveal">
           <div class="img-frame about-img-wrap" style="position:relative;">
-            <img src="assets/images/analytics_dashboard.png" alt="Analytics Dashboard" class="img-cover"
-              style="aspect-ratio:1;" />
+            <img src="assets/images/hero_strategist.png" alt="Alex Rivera - TikTok Growth Strategist" class="img-cover"
+              style="aspect-ratio:1; object-fit:cover; border-radius: 24px;" />
           </div>
         </div>
         <div class="reveal reveal-delay-2">
-          <div class="section-label">About Me</div>
-          <h2 class="section-title" style="text-align:left;">The Strategist Behind <span class="text-gradient">Viral
-              Brands</span></h2>
+          <div class="section-label">Meet Your Strategist</div>
+          <h2 class="section-title" style="text-align:left;">Hi, I'm <span class="text-gradient">Alex Rivera</span></h2>
+          <p style="color:var(--clr-text-muted);line-height:1.8;margin-bottom:1.25rem;">
+            I started as a content creator myself, testing hooks and analyzing watch times in my bedroom. Today, I'm a dedicated, independent TikTok Organic Growth Strategist who helps brands, creators, coaches, and eCommerce businesses gain millions of organic views, build loyal audiences, and generate customers without spending a single dollar on ads.
+          </p>
           <p style="color:var(--clr-text-muted);line-height:1.8;margin-bottom:1.5rem;">
-            With 5+ years immersed in the creator economy, I've cracked the TikTok algorithm for dozens of brands and
-            personal creators. My data-first approach combines trend intelligence, psychological hook writing, and
-            precision content timing.
+            Unlike corporate agencies that pass your account to junior interns, you work **one-on-one** directly with me. My data-first strategy blends psychological hook writing, trend forecasting, and TikTok algorithm optimization to engineer repeatable organic growth.
           </p>
           <div class="grid-2" style="gap:1rem;margin-bottom:2rem;">
-            <div class="card" style="padding:1rem;">
-              <div
-                style="font-size:1.5rem;font-weight:900;font-family:var(--font-primary);background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
-                98%</div>
-              <div style="font-size:0.8rem;color:var(--clr-text-muted);">Client Satisfaction Rate</div>
+            <div class="card" style="padding:1.25rem;">
+              <div style="font-size:1.75rem;font-weight:900;font-family:var(--font-primary);background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1;margin-bottom:4px;">50M+</div>
+              <div style="font-size:0.8rem;color:var(--clr-text-muted);font-weight:600;">Organic Views Generated</div>
             </div>
-            <div class="card" style="padding:1rem;">
-              <div
-                style="font-size:1.5rem;font-weight:900;font-family:var(--font-primary);background:var(--gradient-secondary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
-                3.2x</div>
-              <div style="font-size:0.8rem;color:var(--clr-text-muted);">Avg Growth Multiplier</div>
+            <div class="card" style="padding:1.25rem;">
+              <div style="font-size:1.75rem;font-weight:900;font-family:var(--font-primary);background:var(--gradient-secondary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1;margin-bottom:4px;">100%</div>
+              <div style="font-size:0.8rem;color:var(--clr-text-muted);font-weight:600;">Direct One-on-One Support</div>
             </div>
           </div>
-          <div class="flex-center mt-3">
-            <a href="pages/about.html" class="btn btn-primary">Learn My Story</a>
+          <div class="flex" style="gap:1rem;flex-wrap:wrap;">
+            <a href="pages/about.html" class="btn btn-primary">My Full Story</a>
+            <a href="pages/contact.html" class="btn btn-secondary">Let's Talk</a>
           </div>
         </div>
       </div>
@@ -486,80 +486,126 @@
       <div class="section-center reveal">
         <div class="section-label">What I Do</div>
         <h2 class="section-title">Growth Services That <span class="text-gradient">Actually Work</span></h2>
-        <p class="section-desc">Every service is custom-built around your brand voice, audience psychology, and platform
-          algorithm signals.</p>
+        <p class="section-desc">Every service is custom-built around your brand voice, audience psychology, and platform algorithm signals.</p>
       </div>
       <div class="service-grid mt-4">
         <!-- Service 1 -->
         <div class="service-card reveal">
           <div class="service-image-wrap">
-            <img src="images/Organic Growth Strategy.png" alt="Organic Growth Strategy">
+            <img src="images/Organic Growth Strategy.png" alt="TikTok Growth Strategy">
           </div>
           <div class="service-card-body">
-            <h3 class="service-title">Organic Growth Strategy</h3>
-            <p class="service-desc">Full-funnel TikTok strategy tailored to your niche, audience, and business goals.
-            </p>
-
+            <h3 class="service-title">TikTok Growth Strategy</h3>
+            <p class="service-desc" style="margin-bottom:0.75rem;">Full-funnel organic strategy tailored specifically to your brand voice, target audience, and business goals.</p>
+            <div style="font-size:0.75rem; font-weight:700; color:var(--clr-primary); margin-top:auto;">🚀 Benefit: Clear roadmap to target the right audience.</div>
           </div>
         </div>
 
         <!-- Service 2 -->
         <div class="service-card reveal reveal-delay-1">
           <div class="service-image-wrap">
-            <img src="images/Hook & Script Writing.png" alt="Hook & Script Writing">
+            <img src="images/Viral Content Planning.png" alt="Content Planning">
           </div>
           <div class="service-card-body">
-            <h3 class="service-title">Hook & Script Writing</h3>
-            <p class="service-desc">Psychologically engineered hooks and scripts designed to stop scrollers dead in
-              their
-              tracks.</p>
+            <h3 class="service-title">Content Planning</h3>
+            <p class="service-desc" style="margin-bottom:0.75rem;">Strategic content planning designed around what performs best in your niche, keeping your posting schedule active.</p>
+            <div style="font-size:0.75rem; font-weight:700; color:var(--clr-primary); margin-top:auto;">🎬 Benefit: Never run out of engaging, highly relevant ideas.</div>
           </div>
         </div>
 
         <!-- Service 3 -->
         <div class="service-card reveal reveal-delay-2">
           <div class="service-image-wrap">
-            <img src="images/Trend Research.png" alt="Trend Research">
+            <img src="images/Hook & Script Writing.png" alt="Script Writing">
           </div>
           <div class="service-card-body">
-            <h3 class="service-title">Trend Research</h3>
-            <p class="service-desc">Real-time trend analysis and early adoption strategy so you ride waves before they
-              peak.</p>
+            <h3 class="service-title">Script Writing</h3>
+            <p class="service-desc" style="margin-bottom:0.75rem;">High-converting, psychologically engineered hook and full-length script writing to keep viewers watching.</p>
+            <div style="font-size:0.75rem; font-weight:700; color:var(--clr-primary); margin-top:auto;">✍️ Benefit: Stops scrollers immediately, maximizing watch time.</div>
           </div>
         </div>
 
         <!-- Service 4 -->
         <div class="service-card reveal">
           <div class="service-image-wrap">
-            <img src="images/TikTok SEO & Hashtags.png" alt="TikTok SEO & Hashtags">
+            <img src="images/Trend Research.png" alt="Trending Audio Research">
           </div>
           <div class="service-card-body">
-            <h3 class="service-title">TikTok SEO & Hashtags</h3>
-            <p class="service-desc">Data-backed hashtag clustering and caption optimization for maximum discoverability.
-            </p>
+            <h3 class="service-title">Trending Audio Research</h3>
+            <p class="service-desc" style="margin-bottom:0.75rem;">Real-time auditing of trending sounds, audio cues, and music before they peak to ride waves early.</p>
+            <div style="font-size:0.75rem; font-weight:700; color:var(--clr-primary); margin-top:auto;">🎵 Benefit: Boosts account distribution by tapping audio momentum.</div>
           </div>
         </div>
 
         <!-- Service 5 -->
         <div class="service-card reveal reveal-delay-1">
           <div class="service-image-wrap">
-            <img src="images/Content Calendar.png" alt="Content Calendar">
+            <img src="images/TikTok SEO & Hashtags.png" alt="TikTok Algorithm Optimization">
           </div>
           <div class="service-card-body">
-            <h3 class="service-title">Content Calendar</h3>
-            <p class="service-desc">30/60/90-day content roadmaps aligned with platform momentum and campaign goals.</p>
+            <h3 class="service-title">TikTok Algorithm Optimization</h3>
+            <p class="service-desc" style="margin-bottom:0.75rem;">Optimizing video formats, metadata, posting patterns, and watch-time signals to feed key algorithm metrics.</p>
+            <div style="font-size:0.75rem; font-weight:700; color:var(--clr-primary); margin-top:auto;">⚙️ Benefit: Signals TikTok to push your content directly to the FYP.</div>
           </div>
         </div>
 
         <!-- Service 6 -->
         <div class="service-card reveal reveal-delay-2">
           <div class="service-image-wrap">
-            <img src="images/Analytics & Reporting.png" alt="Analytics & Reporting">
+            <img src="images/Creator Branding Strategy.png" alt="Viral Content Ideas">
           </div>
           <div class="service-card-body">
-            <h3 class="service-title">Analytics & Reporting</h3>
-            <p class="service-desc">Weekly performance reports with actionable insights, A/B test results, and next-step
-              recommendations.</p>
+            <h3 class="service-title">Viral Content Ideas</h3>
+            <p class="service-desc" style="margin-bottom:0.75rem;">Creative, highly engaging video concepts customized for your niche, built to trigger shares and saves.</p>
+            <div style="font-size:0.75rem; font-weight:700; color:var(--clr-primary); margin-top:auto;">💡 Benefit: Triggers massive user engagement and organic reach.</div>
+          </div>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="service-card reveal">
+          <div class="service-image-wrap">
+            <img src="images/Audience Growth Optimization.png" alt="Audience Growth Strategy">
+          </div>
+          <div class="service-card-body">
+            <h3 class="service-title">Audience Growth Strategy</h3>
+            <p class="service-desc" style="margin-bottom:0.75rem;">Interactive community engagement plans and account positioning to attract high-value, active followers.</p>
+            <div style="font-size:0.75rem; font-weight:700; color:var(--clr-primary); margin-top:auto;">👥 Benefit: Transforms casual viewers into a loyal customer base.</div>
+          </div>
+        </div>
+
+        <!-- Service 8 -->
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-image-wrap">
+            <img src="images/Content Calendar.png" alt="Content Calendar Creation">
+          </div>
+          <div class="service-card-body">
+            <h3 class="service-title">Content Calendar Creation</h3>
+            <p class="service-desc" style="margin-bottom:0.75rem;">Cohesive monthly calendar planning outlining exact posting times, topics, content pillars, and drafts.</p>
+            <div style="font-size:0.75rem; font-weight:700; color:var(--clr-primary); margin-top:auto;">📅 Benefit: Removes daily posting stress and ensures consistency.</div>
+          </div>
+        </div>
+
+        <!-- Service 9 -->
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-image-wrap">
+            <img src="images/Analytics & Performance Reporting.png" alt="Performance Analysis">
+          </div>
+          <div class="service-card-body">
+            <h3 class="service-title">Performance Analysis</h3>
+            <p class="service-desc" style="margin-bottom:0.75rem;">Deep-dive analytics review, weekly KPI updates, and hook retention A/B testing to refine content.</p>
+            <div style="font-size:0.75rem; font-weight:700; color:var(--clr-primary); margin-top:auto;">📊 Benefit: Clear data inputs on exactly what formats drive sales.</div>
+          </div>
+        </div>
+
+        <!-- Service 10 -->
+        <div class="service-card reveal">
+          <div class="service-image-wrap">
+            <img src="images/Content Calendar Management.png" alt="Time-Saving Support">
+          </div>
+          <div class="service-card-body">
+            <h3 class="service-title">Time-Saving Support</h3>
+            <p class="service-desc" style="margin-bottom:0.75rem;">Complete strategic management, trends monitoring, script revisions, and daily account direction.</p>
+            <div style="font-size:0.75rem; font-weight:700; color:var(--clr-primary); margin-top:auto;">⚡ Benefit: Saves busy owners 20+ hours a week of video planning.</div>
           </div>
         </div>
       </div>
@@ -612,7 +658,7 @@
   </section>
 
   <!-- ========== TESTIMONIALS: SECTION 5 ========== -->
-  <section class="section-dark">
+  <section id="testimonials" class="section-dark">
     <div class="container">
       <div class="section-center reveal">
         <div class="section-label">Testimonials</div>
@@ -666,7 +712,7 @@
   </section>
 
   <!-- ========== PROCESS: SECTION 6 ========== -->
-  <section style="background:var(--clr-bg);">
+  <section id="process" style="background:var(--clr-bg);">
     <div class="container">
       <div class="grid-2" style="gap:4rem;align-items:center;">
         <div class="reveal">
@@ -771,7 +817,7 @@
         <p class="section-desc">Choose a time that works for you. 30-minute strategy session, no obligation, completely free.</p>
       </div>
       <div class="grid-7 mt-4 reveal calendar-grid-responsive" style="display:grid;grid-template-columns:repeat(7,1fr);gap:10px;">
-        <div class="calendar-slot selected"><div class="slot-day">MON</div><div class="slot-time">9:00 AM</div></div>
+        <div class="calendar-slot"><div class="slot-day">MON</div><div class="slot-time">9:00 AM</div></div>
         <div class="calendar-slot"><div class="slot-day">MON</div><div class="slot-time">2:00 PM</div></div>
         <div class="calendar-slot"><div class="slot-day">TUE</div><div class="slot-time">10:00 AM</div></div>
         <div class="calendar-slot"><div class="slot-day">TUE</div><div class="slot-time">4:00 PM</div></div>
@@ -788,11 +834,10 @@
     <div class="container reveal">
       <div class="cta-banner">
         <h2>Ready to Go Viral?</h2>
-        <p>Let's build a custom growth strategy for your TikTok account. No cookie-cutter plans — just results-driven
-          strategy built for your brand.</p>
+        <p>Let's build a custom organic growth strategy for your TikTok account. I create personalized strategies designed to scale your views, followers, and revenue.</p>
         <div class="flex-center gap-3" style="flex-wrap:wrap;">
-          <a href="pages/contact.html" class="btn btn-white btn-lg">Book Strategy Call</a>
-          <a href="pages/case-studies.html" class="btn btn-white-outline btn-lg">See Proof of Results</a>
+          <a href="pages/contact.html" class="btn btn-white btn-lg">Book a Free Consultation</a>
+          <a href="pages/portfolio.html" class="btn btn-white-outline btn-lg">See Proof of Results</a>
         </div>
       </div>
     </div>
@@ -804,10 +849,10 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-logo" style="margin-bottom:0.75rem;display:flex;">
-            <div class="logo-icon">V</div>
-            <span>ViralPro</span>
+            <div class="logo-icon">AR</div>
+            <span>Alex Rivera</span>
           </a>
-          <p>Expert TikTok organic growth strategy for creators and brands ready to build real audiences.</p>
+          <p>Personalized organic TikTok growth strategy for creators, brands, and eCommerce businesses ready to build real audiences.</p>
           <div class="footer-socials">
             <a href="#" class="social-btn" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18"
                 height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -839,20 +884,20 @@
         <div class="footer-col">
           <h4>Services</h4>
           <ul class="footer-links">
-            <li><a href="pages/services.html">Organic Growth</a></li>
-            <li><a href="pages/services.html">Hook Writing</a></li>
-            <li><a href="pages/services.html">Trend Research</a></li>
-            <li><a href="pages/services.html">Content Calendar</a></li>
-            <li><a href="pages/services.html">Analytics Reports</a></li>
+            <li><a href="pages/services.html">TikTok Growth Strategy</a></li>
+            <li><a href="pages/services.html">Content Planning</a></li>
+            <li><a href="pages/services.html">Script Writing</a></li>
+            <li><a href="pages/services.html">Trending Audio Research</a></li>
+            <li><a href="pages/services.html">Performance Analysis</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <ul class="footer-links">
             <li><a href="pages/about.html">About Me</a></li>
-            <li><a href="pages/portfolio.html">Portfolio</a></li>
-            <li><a href="pages/case-studies.html">Case Studies</a></li>
-            <li><a href="pages/blog.html">Blog</a></li>
+            <li><a href="pages/portfolio.html">Results</a></li>
+            <li><a href="#process">My Process</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="pages/contact.html">Contact</a></li>
           </ul>
         </div>
@@ -868,8 +913,8 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 ViralPro. All rights reserved.</span>
-        <span>Built for creators who want to go viral organically.</span>
+        <span>© 2026 Alex Rivera. All rights reserved.</span>
+        <span>Built for creators who want to grow organically.</span>
       </div>
     </div>
   </footer>

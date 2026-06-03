@@ -10,13 +10,13 @@
    ============================================================ */
 :root {
   /* Brand Colors */
-  --clr-primary: #FF2D55;
-  --clr-primary-dark: #D9002A;
-  --clr-primary-light: #FF6B8A;
-  --clr-secondary: #00F2EA;
-  --clr-secondary-dark: #00C4BE;
+  --clr-primary: #FE2C55;
+  --clr-primary-dark: #D01C40;
+  --clr-primary-light: #FF5E7E;
+  --clr-secondary: #25F4EE;
+  --clr-secondary-dark: #1ED4CE;
   --clr-accent: #FF6B35;
-  --clr-purple: #7B2FBE;
+  --clr-purple: #8B5CF6;
 
   /* Light Mode Background */
   --clr-bg: #FFFFFF;
@@ -30,22 +30,28 @@
   --clr-text-2: #3D3D5C;
   --clr-text-muted: #7B7B9E;
 
+  /* Calendar Slot Variables */
+  --clr-calendar-bg: #FFFFFF;
+  --clr-calendar-border: #C4C9E6;
+  --clr-calendar-day: #4B5563;
+  --clr-calendar-time: #111827;
+
   /* Navigation */
   --clr-nav-bg: rgba(255, 255, 255, 0.95);
   --clr-nav-border: rgba(0, 0, 0, 0.08);
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #FF2D55 0%, #7B2FBE 100%);
-  --gradient-secondary: linear-gradient(135deg, #00F2EA 0%, #00A8E8 100%);
+  --gradient-primary: linear-gradient(135deg, #FE2C55 0%, #8B5CF6 100%);
+  --gradient-secondary: linear-gradient(135deg, #25F4EE 0%, #00A8E8 100%);
   --gradient-hero: linear-gradient(135deg, #FFFFFF 0%, #F8F9FE 100%);
   --clr-hero-text: var(--clr-text);
-  --gradient-card: linear-gradient(135deg, rgba(255, 45, 85, 0.05) 0%, rgba(123, 47, 190, 0.05) 100%);
+  --gradient-card: linear-gradient(135deg, rgba(254, 44, 85, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
 
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.10);
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.14);
-  --shadow-primary: 0 8px 30px rgba(255, 45, 85, 0.30);
+  --shadow-primary: 0 8px 30px rgba(254, 44, 85, 0.30);
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
 
   /* Typography */
@@ -71,21 +77,28 @@
    Dark Mode
    ============================================================ */
 [data-theme="dark"] {
-  --clr-bg: #0A0A14;
-  --clr-bg-2: #111122;
-  --clr-bg-3: #1A1A2E;
-  --clr-card: #141428;
-  --clr-card-border: #2A2A4A;
-  --clr-text: #F0F0FF;
-  --clr-text-2: #B0B0D0;
-  --clr-text-muted: #6B6B9A;
-  --clr-nav-bg: rgba(10, 10, 20, 0.95);
-  --clr-nav-border: rgba(255, 255, 255, 0.08);
+  --clr-bg: #0F172A;
+  --clr-bg-2: #1E293B;
+  --clr-bg-3: #334155;
+  --clr-card: #1E293B;
+  --clr-card-border: rgba(255, 255, 255, 0.08);
+  --clr-text: #F8FAFC;
+  --clr-text-2: #CBD5E1;
+  --clr-text-muted: #94A3B8;
+
+  /* Calendar Slot Variables */
+  --clr-calendar-bg: rgba(255, 255, 255, 0.04);
+  --clr-calendar-border: rgba(255, 255, 255, 0.08);
+  --clr-calendar-day: var(--clr-text-muted);
+  --clr-calendar-time: var(--clr-text);
+
+  --clr-nav-bg: rgba(15, 23, 42, 0.95);
+  --clr-nav-border: rgba(255, 255, 255, 0.06);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --gradient-hero: linear-gradient(135deg, #0D0D1A 0%, #1a0a2e 50%, #0d1a2e 100%);
+  --gradient-hero: linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #0F172A 100%);
   --clr-hero-text: #ffffff;
 }
 
@@ -609,6 +622,27 @@ section {
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
+}
+
+.nav-cta {
+  background: var(--gradient-primary) !important;
+  color: #fff !important;
+  border: none !important;
+  font-weight: 700 !important;
+  padding: 8px 18px !important;
+  font-size: 0.85rem !important;
+  border-radius: 100px !important;
+  box-shadow: var(--shadow-primary) !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition) !important;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 10px 25px rgba(254, 44, 85, 0.45) !important;
+  filter: brightness(1.1);
 }
 
 .nav-icon-btn {
@@ -1436,8 +1470,14 @@ textarea.form-input {
     display: none;
   }
 
-  .nav-actions .btn {
+  .nav-actions .btn:not(.nav-cta) {
     display: none;
+  }
+
+  .nav-actions .nav-cta {
+    display: inline-flex !important;
+    padding: 6px 12px !important;
+    font-size: 0.78rem !important;
   }
 
   .nav-actions .nav-icon-btn {
@@ -1819,35 +1859,46 @@ textarea.form-input {
 }
 
 .calendar-slot {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--clr-calendar-bg);
+  border: 1px solid var(--clr-calendar-border);
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
   cursor: pointer;
   transition: var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.calendar-slot .slot-day {
+  font-size: 0.7rem;
+  color: var(--clr-calendar-day);
+  margin-bottom: 4px;
+  transition: var(--transition-fast);
+}
+
+.calendar-slot .slot-time {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--clr-calendar-time);
+  transition: var(--transition-fast);
 }
 
 .calendar-slot:hover,
 .calendar-slot.selected {
-  background: rgba(255, 45, 85, 0.15);
+  background: rgba(255, 45, 85, 0.12);
   border-color: var(--clr-primary);
+  box-shadow: 0 6px 16px rgba(255, 45, 85, 0.1);
 }
 
+.calendar-slot:hover .slot-time,
 .calendar-slot.selected .slot-time {
   color: var(--clr-primary);
   font-weight: 700;
 }
 
-.slot-day {
-  font-size: 0.7rem;
-  color: var(--clr-text-muted);
-  margin-bottom: 4px;
-}
-
-.slot-time {
-  font-size: 0.9rem;
-  font-weight: 600;
+.calendar-slot:hover .slot-day,
+.calendar-slot.selected .slot-day {
+  color: var(--clr-primary-dark);
 }
 
 .flex-center {

@@ -274,6 +274,12 @@ $(document).ready(function () {
   initCounters();
   initTicker();
 
+  // Calendar Slot Selection
+  $(document).on('click', '.calendar-slot', function () {
+    $('.calendar-slot').removeClass('selected');
+    $(this).addClass('selected');
+  });
+
   // Init first FAQ open
   const firstFaq = $('.faq-item').first();
   if (firstFaq.length) {
