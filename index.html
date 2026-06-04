@@ -135,6 +135,12 @@
       margin-bottom: 0.5rem;
     }
 
+    @media (min-width: 993px) {
+      .service-grid > .service-card:last-child {
+        grid-column: 2;
+      }
+    }
+
     @media (max-width: 992px) {
       .service-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -320,6 +326,7 @@
       <a href="pages/case-studies.html">📁 Case Studies</a>
       <a href="pages/pricing.html">🏷️ Pricing</a>
       <a href="pages/contact.html">📬 Contact</a>
+      <a href="pages/dashboard.html">📊 Dashboard</a>
     </nav>
     <div class="drawer-icons">
       <button class="nav-icon-btn theme-toggle" aria-label="Toggle theme">
@@ -609,7 +616,7 @@
           </div>
         </div>
       </div>
-      <div class="flex-between mt-4 reveal" style="width: 100%;">
+      <div class="flex-center mt-4 reveal" style="width: 100%;">
         <a href="pages/services.html" class="btn btn-outline-primary btn-lg">View All Services</a>
         <a href="pages/contact.html" class="btn btn-primary btn-lg">Book Strategy Call</a>
       </div>

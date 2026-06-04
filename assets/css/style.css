@@ -1516,6 +1516,12 @@ textarea.form-input {
   }
 }
 
+@media (max-width: 1024px) {
+  .nav-actions .nav-cta {
+    display: none !important;
+  }
+}
+
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
