@@ -143,6 +143,9 @@
     .pw-wrap {
       position: relative;
     }
+    .pw-wrap .form-input {
+      padding-right: 3rem;
+    }
     .pw-toggle {
       position: absolute;
       right: 1rem;
@@ -153,6 +156,19 @@
       color: var(--clr-text-muted);
       cursor: pointer;
       padding: 0.25rem;
+      transition: color 0.2s;
+    }
+    .pw-toggle:hover {
+      color: var(--clr-primary);
+    }
+    /* RTL Mode adjustments for password toggle */
+    [dir="rtl"] .pw-wrap .form-input {
+      padding-right: 1rem;
+      padding-left: 3rem;
+    }
+    [dir="rtl"] .pw-toggle {
+      right: auto;
+      left: 1rem;
     }
     .social-auth {
       display: flex;
@@ -226,7 +242,7 @@
       color: var(--clr-primary);
       text-decoration: none;
       font-weight: 700;
-      margin-left: 0.25rem;
+      margin-inline-start: 0.25rem;
       transition: opacity 0.2s;
     }
     .auth-footer a:hover {
